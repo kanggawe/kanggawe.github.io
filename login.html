@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="expires" content="-1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="title"></title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- two other colors
+
+<body class="lite">
+<body class="dark">
+
+-->
+    <div class="ie-fixMinHeight">
+        <div class="main">
+            <div class="wrap animated fadeIn">
+		
+		<div class="entry-content" style="padding-bottom:10px">
+			<img src="img/logo.svg" class="img-responsive" style="margin-bottom:5px;width:100%;	height:auto;"><br><br>
+			<div class="tab" style="text-align:center">
+				<button class="tablinks btn btn-warning form-control tombol-48" onclick="openLogin(event, 'KV')" id="defaultOpen"><i class="fa fa-qrcode fa-lg"></i><strong>&nbsp; VOUCHER</strong></button>
+				<button class="tablinks btn btn-info form-control tombol-48" onclick="openLogin(event, 'UP')"><span class="fa fa-user fa-lg"></span><strong>&nbsp; MEMBER</strong></button>
+			</div>
+
+			<div class="usr-login">
+				<div id="KV" class="tabcontent">
+				$(if chap-id)
+					<form name="sendinkv" action="$(link-login-only)" method="post">
+						<input type="hidden" name="username" />
+						<input type="hidden" name="password" />
+						<input type="hidden" name="dst" value="$(link-orig)" />
+						<input type="hidden" name="popup" value="true" />
+					</form>
+
+					<script type="text/javascript" src="/md5.js"></script>
+					<script type="text/javascript">
+					<!--
+					    function doLoginkv() {
+						document.sendinkv.username.value = document.loginkv.usernamekv.value;
+						document.sendinkv.password.value = hexMD5('$(chap-id)' + document.loginkv.usernamekv.value + '$(chap-challenge)');
+						document.sendinkv.submit();
+						return false;
+					    }
+					//-->
+					</script>
+				$(endif)<br/>
+										$(if error)
+						<div class="alert alert-warning alert-dismissible" role="alert">
+						  <strong>Maaf Terjadi Kesalahan!</strong> $(error).
+						  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						  </button>
+						</div>				
+						$(endif)
+						<form autocomplete="off" name="loginkv" action="$(link-login-only)" method="post"
+							$(if chap-id) onSubmit="return doLoginkv()" $(endif)>
+								<input type="hidden" name="dst" value="$(link-orig)" />
+								<input type="hidden" name="popup" value="true" />
+							<label>
+								<img class="ico" src="img/discount.svg" alt="#" />
+								<input class="form-control kolom-input" name="usernamekv" type="text" placeholder="MASUKAN KODE VOUCHER" onchange="if (!window.__cfRLUnblockHandlers) return false; updateInput(this.value)"/>
+							</label>
+							<!-- ini komen -->
+								<input type="submit" value="AKTIFKAN"/>			
+						</form>						
+				</div>				
+			</div>
+			<div class="usr-login">
+				<div id="UP" class="tabcontent">
+				$(if chap-id)
+					<form name="sendinup" action="$(link-login-only)" method="post">
+						<input type="hidden" name="username" />
+						<input type="hidden" name="password" />
+						<input type="hidden" name="dst" value="$(link-orig)" />
+						<input type="hidden" name="popup" value="true" />
+					</form>
+
+					<script type="text/javascript" src="/md5.js"></script>
+					<script type="text/javascript">
+					<!--
+					    function doLoginup() {
+						document.sendinup.username.value = document.loginup.usernameup.value;
+						document.sendinup.password.value = hexMD5('$(chap-id)' + document.loginup.passwordup.value + '$(chap-challenge)');
+						document.sendinup.submit();
+						return false;
+					    }
+					//-->
+					</script>
+				$(endif)<br/>
+										$(if error)
+						<div class="alert alert-warning alert-dismissible" role="alert" style="font-size:12px;">
+							<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+							<strong>Error!</strong> $(error).
+						</div>
+						$(endif)
+				<form autocomplete="off" name="loginup" action="$(link-login-only)" method="post"
+							$(if chap-id) onSubmit="return doLoginup()" $(endif)>
+								<input type="hidden" name="dst" value="$(link-orig)" />
+								<input type="hidden" name="popup" value="true" />
+						<label>	
+							<img class="ico" src="img/user.svg" alt="#" />
+							<input class="form-control kolom-input" name="usernameup" type="text" placeholder="MASUKAN USERNAME" onchange="if (!window.__cfRLUnblockHandlers) return false; updateInput(this.value)"/>
+						</label>
+						<label>
+							<img class="ico" src="img/password.svg" alt="#" />
+							<input class="form-control kolom-input" name="passwordup" type="password" placeholder="MASUKAN PASSWORD" onchange="if (!window.__cfRLUnblockHandlers) return false; updateInput(this.value)">
+						</label>
+								<input type="submit" value="AKTIFKAN"/>		
+							</form>
+				</div>				
+			</div>
+			
+		</div>						
+		
+
+                <p class="info bt">Powered by MikroTik Modify By Dunia Komputer</p>
+
+            </div>
+        </div>
+    </div>
+              <script type='text/javascript'>
+                //<![CDATA[
+                //Script Redirect CTRL + U
+                function redirectCU(e) {
+                  if (e.ctrlKey && e.which == 85) {
+                    //window.location.replace("https://demo.wifi-indonesia.com/login.html");
+                    return false;
+                  }
+                }
+                document.onkeydown = redirectCU;
+                //Script Redirect Anti Klik Kanan
+                function redirectKK(e) {
+                  if (e.which == 3) {
+                    //window.location.replace("https://demo.wifi-indonesia.com/login.html");
+                    return false;
+                  }
+                }
+                document.oncontextmenu = redirectKK;
+                //]]>
+              </script>
+<script>
+ <!--
+    document.login.username.focus();
+     document.getElementById('title').innerHTML = "BRONET WIFI Hotspot";
+
+    var username = document.login.username;
+    var password = document.login.password;
+    var luser = document.getElementById("luser");
+    var lpass = document.getElementById("lpass");
+    var btnmem = document.getElementById("btnmem");
+    var btnvcr = document.getElementById("btnvcr");
+
+    // set password = username
+    function setpass() {
+      var user = username.value
+      password.value = user;
+    }
+
+    username.onkeyup = setpass;
+
+
+    // change to voucher mode
+    function voucher() {
+      username.focus();
+      username.onkeyup = setpass;
+      username.placeholder = "MASUKAN KODE VOUCHER";
+      password.type = "hidden";
+      password.value = username.value;
+    }
+
+    // change to member mode
+    function member() {
+      username.focus();
+      username.onkeyup = "";
+      username.placeholder = "USERNAME";
+      password.type = "PASSWORD";
+      password.value = "";
+
+    }
+
+    //-->
+  </script>
+		
+	<script>
+function openLogin(evt, loginName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(loginName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+	<script type="text/javascript">
+	$().alert('close');
+<!--
+  document.login.username.focus();
+//-->
+</script>
+</body>
+
+</html>
