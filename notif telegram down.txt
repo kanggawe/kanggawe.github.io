@@ -1,6 +1,6 @@
-:local bott "1645126467:AAHU4f4xWs2WcbEi6dtUz0ssedD1Kp24MjM";
-:local bot "5642080988:AAF_dIGd9CNksewTpCqBWBPHgMDy7qle9G0";
-:local chat "-594094705";
+:local bott "tokentelegram";
+:local bot "idtoken";
+:local chat "idchat/group";
 :local lastdisc [/ppp secret get [find name=$user] last-disconnect-reason];
 :local lastlogout [/ppp secret get [find name=$user] last-logged-out];
 :local lastcall [/ppp secret get [find name=$user] last-caller-id];
