@@ -1,7 +1,7 @@
 :local nama "$user";
-:local bot "5642080988:AAF_dIGd9CNksewTpCqBWBPHgMDy7qle9G0";
-:local bott "1645126467:AAHU4f4xWs2WcbEi6dtUz0ssedD1Kp24MjM";
-:local chat "-543211852";
+:local bot "";
+:local bott "";
+:local chat "-idgroup";
 :local ips [/ppp active get [find name=$nama] address];
 :local up [/ppp active get [find name=$nama] uptime];
 :local caller [/ppp active get [find name=$nama] caller-id];
