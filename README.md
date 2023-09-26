@@ -17,3 +17,6 @@
 Made for MikroTik RouterOS https://mikrotik.com
 
 ## <b>ForMe</b>
+
+## 🔗 <b>link external</b>
+- ⚡ Web : https://esanet.id
