@@ -1,22 +1,8 @@
-![image](https://user-images.githubusercontent.com/42666125/202864286-43913603-5fae-4532-a329-36f26c547c5a.png)
+# React + Vite
 
-- ⚡ Github Page : https://kanggawe.github.io
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## :link: <b>You can find me at:</b>
+Currently, two official plugins are available:
 
-- ⚡ Twitter : https://twitter.com/kangbajuri
-- ⚡ Instagram : https://instagram.com/kangbajuri.id
-
-## <b>License</b><br>
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)
-
-© Copyright <a href="https://kanggawe.github.io/">Kanggawe.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a> <br>
-
-Made for MikroTik RouterOS https://mikrotik.com
-
-## <b>ForMe</b>
-
-## 🔗 <b>link external</b>
-- ⚡ Web : https://esanet.id
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
