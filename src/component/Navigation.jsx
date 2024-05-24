@@ -1,23 +1,18 @@
+import { Link } from 'react-router-dom';
+import { useState } from 'react'
 
-// import { Switch, Route } from 'react-router-dom';
-// import Home from './component/Home'
-// import About from './component/About'
-// import Contact from './component/Contact'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-import './App.css'
-
-function App() {
-   return (
-  <>
-  <div id="menutop-wrapper">
+function Navigation() {
+  const [count, setCount] = useState(0)
+  return (
+   <>
+       <div id="menutop-wrapper">
       <div className="topmenu section" id="topmenu">
         <nav id="menutop">
           <input type="checkbox" />
           <label htmlFor="toggleMenu"><span>&nbsp;</span></label>
           <ul>
             <li>
-            {/* <Link to="/">Home</Link> */}
+            <Link to="/">Home</Link>
             <a href="/p/about.html" title="Tentang">About</a></li>
             <li><a href="/p/kontak.html" title="Kontak">Kontak</a></li>
             <li>
@@ -40,21 +35,12 @@ function App() {
     </div>
       <h1>Eling Semesta Alam</h1>
       <div className="card">
-        {/* <button onClick={() => setCount((count) => count + 1)}>
+        <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
-        </button> */}
+        </button>
       </div>
-  </>
-
-    // <Router>
-    //   <Switch>
-    //     <Route exact path="/" component={Home} />
-    //     <Route path="/about" component={About} />
-    //     <Route path="/contact" component={Contact} />
-    //   </Switch>
-    // </Router>
-  
-  )
+   </>
+  );
 }
 
-export default App
+export default Navigation;
