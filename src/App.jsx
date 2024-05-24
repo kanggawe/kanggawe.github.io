@@ -1,10 +1,5 @@
 
-// import { Switch, Route } from 'react-router-dom';
-// import Home from './component/Home'
-// import About from './component/About'
-// import Contact from './component/Contact'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
+import Button from '@mui/material/Button';
 import './App.css'
 
 function App() {
@@ -40,9 +35,9 @@ function App() {
     </div>
       <h1>Eling Semesta Alam</h1>
       <div className="card">
-        {/* <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button> */}
+      <Button variant="contained" color="primary">
+        Hello World
+      </Button>
       </div>
   </>
 
