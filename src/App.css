@@ -63,8 +63,22 @@ body {
   padding: 30px 0 15px; */
   max-width: 100%;
 }
+
+#footer-credit {
+  line-height: 1.6em;
+  text-align: center;
+  overflow: hidden;
+  clear: both;
+  margin: 0 auto;
+  padding: 10px;
+  position: relative;
+  display: block;
+  font-size: 85%;
+  color: #999;
+}
+
 #footer-credit,
-#menutop-wrapper {
+#menutop-wrappers {
   background: linear-gradient(
     -45deg,
     #2ad674,
@@ -78,6 +92,23 @@ body {
   -webkit-animation: Gradient 15s ease infinite;
   -moz-animation: Gradient 15s ease infinite;
   animation: Gradient 15s ease infinite;
+}
+#menutop-wrapper {
+  background: linear-gradient(
+    -45deg,
+    #2ad674,
+    #2a9cd6,
+    #d62aa2,
+    #e52971,
+    #38b3e0,
+    #e53bb2
+  );
+opcity: 0.7;
+filter:alpha(opacity=70);
+  /* background-size: 400% 400%;
+  -webkit-animation: Gradient 15s ease infinite;
+  -moz-animation: Gradient 15s ease infinite;
+  animation: Gradient 15s ease infinite; */
 }
 @-webkit-keyframes Gradient {
   0% {
@@ -442,3 +473,4 @@ body {
     color: #8493a0;
   }
 }
+

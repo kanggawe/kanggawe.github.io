@@ -1,8 +1,16 @@
 // src/pages/Home.jsx
 import React from "react";
+import Hero from "../components/Hero";
+import Contact from "../components/Contact";
 
-function Home() {
-  return <h1>Home Page</h1>;
+const Home = () => {
+  return (
+    <div>
+      <Hero />
+      <Contact/>
+    </div>
+   
+  )
 }
 
 export default Home;
