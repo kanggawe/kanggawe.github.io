@@ -4,6 +4,10 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Sitemap from "./pages/Sitemap";
+import Disclaimer from "./pages/Disclaimer";
+import Iklan from "./pages/Iklan";
 
 function App() {
   return (
@@ -23,6 +27,18 @@ function App() {
                 <li>
                   <Link to="/about">About</Link>
                 </li>
+                <li>
+                  <Link to="/disclaimer">Disclaimer</Link>
+                </li>
+                <li>
+                  <Link to="/sitemap">Sitemap</Link>
+                </li>
+                <li>
+                  <Link to="/contact">contact</Link>
+                </li>
+                <li>
+                  <Link to="/iklan">Pasang Iklan</Link>
+                </li>
               </ul>
             </nav>
           </div>
@@ -30,6 +46,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/disclaimer" element={<Disclaimer />} />
+          <Route path="/sitemap" element={<Sitemap />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/iklan" element={<Iklan />} />
         </Routes>
       </Router>
       <h1>Eling Semesta Alam</h1>
