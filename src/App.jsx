@@ -2,10 +2,10 @@
 import "./App.css";
 //import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import MainContent from './components/MainContent';
-import Header from './components/Header';
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import MainContent from "./components/MainContent";
+import Header from "./components/Header";
 // import Home from "./pages/Home";
 // import About from "./pages/About";
 // import Contact from "./pages/Contact";
@@ -18,7 +18,7 @@ function App() {
     <>
       <Router>
         <Navbar />
-        <Header/>
+        <Header />
         <MainContent />
         <Footer />
       </Router>

@@ -1,19 +1,23 @@
-import React from 'react';
-import * as bootstrap from 'bootstrap'
+import React from "react";
+import * as bootstrap from "bootstrap";
 // import { Outlet } from 'react-router-dom';
-import { Routes, Route } from 'react-router-dom';
-import Home from '../pages/Home';
-import About from '../pages/About';
-import Disclaimer from '../pages/Disclaimer';
-import Sitemap from '../pages/Sitemap';
-import Contact from '../pages/Contact';
-import Iklan from '../pages/Iklan';
-
+import { Routes, Route } from "react-router-dom";
+import Home from "../pages/Home";
+import About from "../pages/About";
+import Disclaimer from "../pages/Disclaimer";
+import Sitemap from "../pages/Sitemap";
+import Contact from "../pages/Contact";
+import Iklan from "../pages/Iklan";
+import Sidebar from "./sidebar";
 
 const MainContent = () => {
   return (
-    <main className="main-content">
-      <Routes>
+    <>
+      <sidebar className="col-xs-12 col-ml-3" style={{ width: "200px" }}>
+        <Sidebar />
+      </sidebar>
+      <main className="col-xs-12 col-ml-9 main-content" style={{ flexGrow: 1 }}>
+        <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/disclaimer" element={<Disclaimer />} />
@@ -21,7 +25,8 @@ const MainContent = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/iklan" element={<Iklan />} />
         </Routes>
-    </main>
+      </main>
+    </>
   );
 };
 
