@@ -1,7 +1,17 @@
 import React from 'react';
+import "../assets/header.css";
 
-function Home() {
-  return <h2>About Page</h2>;
+function Header() {
+  return  (
+  <header className="header">
+  <div className="logo">
+    <h1>MyWebsite</h1>
+  </div>
+  <div className="banner">
+    <img src="path-to-your-banner.jpg" alt="Banner Ad" />
+  </div>
+</header>
+)
 }
 
-export default Home;
+export default Header;
