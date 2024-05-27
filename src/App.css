@@ -89,6 +89,9 @@ body {
 #credit-kanan a, #credit-kiri a{
   color: #fff;
 }
+#credit-kanan a:hover, #credit-kiri a:hover {
+  color: #e8ff00;
+}
 
 #footer-credit,
 #menutop-wrappers {
