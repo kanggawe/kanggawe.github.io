@@ -5,12 +5,12 @@
   text-align: center;
 }
 
-.logo {
+/* .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
-}
+} */
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
@@ -41,7 +41,6 @@
   color: #888;
 }
 
-
 body {
   margin: 0;
   padding: 0;
@@ -69,7 +68,7 @@ body {
   text-align: center;
   overflow: hidden;
   clear: both;
-  margin: 20px auto;
+  margin: 0 auto;
   padding: 10px;
   position: relative;
   display: block;
@@ -86,35 +85,29 @@ body {
   text-align: right;
   color: #fff;
 }
-#credit-kanan a, #credit-kiri a{
+#credit-kanan a,
+#credit-kiri a {
   color: #fff;
+  text-decoration: none;
 }
-#credit-kanan a:hover, #credit-kiri a:hover {
+#credit-kanan a:hover,
+#credit-kiri a:hover {
   color: #e8ff00;
 }
 
 #footer-credit,
 #menutop-wrappers {
-  background: linear-gradient(
-    -45deg,
-    #2ad674,
-    #2a9cd6,
-    #d62aa2,
-    #e52971,
-    #38b3e0,
-    #e53bb2
-  );
+  background: linear-gradient(-45deg, #2ad674, #2a9cd6, #d62aa2, #e52971, #38b3e0, #e53bb2);
   background-size: 400% 400%;
   -webkit-animation: Gradient 15s ease infinite;
   -moz-animation: Gradient 15s ease infinite;
   animation: Gradient 15s ease infinite;
 }
 #menutop-wrapper {
-  background: linear-gradient(
-    -45deg,
-    #3fff23, #2a9cd6, #d62aa2, #299ee5, #3fff23
-  );
+  background: linear-gradient(228deg, #3fff23, #2a9cd6, #0066ff, #1179ff, #0066ff, #299ee5, #3fff23 /* 228deg,
+    #3fff23, #2a9cd6, #0066ff, #299ee5, #2a44d6, #0066ff, #299ee5, #3fff23 */);
   /* background-size: 400% 400%;
+  #d62aa2
   -webkit-animation: Gradient 15s ease infinite;
   -moz-animation: Gradient 15s ease infinite;
   animation: Gradient 15s ease infinite; */
@@ -482,4 +475,3 @@ body {
     color: #8493a0;
   }
 }
-

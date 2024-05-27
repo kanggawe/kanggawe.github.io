@@ -1,4 +1,5 @@
 import React from 'react';
+import * as bootstrap from 'bootstrap'
 // import { Outlet } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom';
 import Home from '../pages/Home';
