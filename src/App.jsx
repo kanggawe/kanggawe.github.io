@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import MainContent from "./components/MainContent";
 import Header from "./components/Header";
+//import "bootstrap/dist/css/bootstrap.min.css";
 // import Home from "./pages/Home";
 // import About from "./pages/About";
 // import Contact from "./pages/Contact";
@@ -18,7 +19,7 @@ function App() {
     <>
       <Router>
         <Navbar />
-        <Header />
+        {/* <Header /> */}
         <MainContent />
         <Footer />
       </Router>

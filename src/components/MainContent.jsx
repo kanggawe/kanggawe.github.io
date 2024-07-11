@@ -8,14 +8,15 @@ import Disclaimer from "../pages/Disclaimer";
 import Sitemap from "../pages/Sitemap";
 import Contact from "../pages/Contact";
 import Iklan from "../pages/Iklan";
-import Sidebar from "./sidebar";
+import Sidebar from "./Sidebar";
 
 const MainContent = () => {
   return (
     <>
-      <sidebar className="col-xs-12 col-ml-3" style={{ width: "200px" }}>
-        <Sidebar />
-      </sidebar>
+      {/* <sidebar className="col-xs-12 col-ml-3" style={{ width: "200px" }}>
+       
+      </sidebar> */}
+      {/* <Sidebar /> */}
       <main className="col-xs-12 col-ml-9 main-content" style={{ flexGrow: 1 }}>
         <Routes>
           <Route path="/" element={<Home />} />
