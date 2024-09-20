@@ -1,7 +1,7 @@
 #root {
   min-width: 380px;
   margin: 0 auto;
-  padding: 2px 0 0 0;
+  padding: 0;
   text-align: center;
 }
 
@@ -474,4 +474,14 @@ body {
     background: #f1f1f1;
     color: #8493a0;
   }
+}
+
+
+/* Navbar specific styles */
+.navbar-nav .nav-link {
+  color: white !important; /* Warna teks tetap putih */
+}
+
+.navbar-brand {
+  color: white !important; /* Warna brand tetap putih */
 }

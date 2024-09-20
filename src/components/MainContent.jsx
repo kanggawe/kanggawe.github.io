@@ -6,9 +6,9 @@ import Home from "../pages/Home";
 import About from "../pages/About";
 import Disclaimer from "../pages/Disclaimer";
 import Sitemap from "../pages/Sitemap";
+import Price from "../pages/Price";
 import Contact from "../pages/Contact";
 import Iklan from "../pages/Iklan";
-import Sidebar from "./Sidebar";
 
 const MainContent = () => {
   return (
@@ -23,6 +23,7 @@ const MainContent = () => {
           <Route path="/about" element={<About />} />
           <Route path="/disclaimer" element={<Disclaimer />} />
           <Route path="/sitemap" element={<Sitemap />} />
+          <Route path="/pricing" element={<Price />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/iklan" element={<Iklan />} />
         </Routes>

@@ -6,13 +6,6 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import MainContent from "./components/MainContent";
 import Header from "./components/Header";
-//import "bootstrap/dist/css/bootstrap.min.css";
-// import Home from "./pages/Home";
-// import About from "./pages/About";
-// import Contact from "./pages/Contact";
-// import Sitemap from "./pages/Sitemap";
-// import Disclaimer from "./pages/Disclaimer";
-// import Iklan from "./pages/Iklan";
 
 function App() {
   return (

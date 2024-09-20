@@ -4,88 +4,8 @@ import React from "react";
 const About = () => {
   return (
     <>
-      <div className="container">
-        <header className="blog-header py-3">
-          <div className="row flex-nowrap justify-content-between align-items-center">
-            <div className="col-4 pt-1">
-              <a className="link-secondary" href="#">
-                Berlangganan
-              </a>
-            </div>
-            <div className="col-4 text-center">
-              <a className="blog-header-logo text-dark" href="#">
-                Besar
-              </a>
-            </div>
-            <div className="col-4 d-flex justify-content-end align-items-center">
-              <a className="link-secondary" href="#" aria-label="Cari">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  className="mx-3"
-                  role="img"
-                  viewBox="0 0 24 24"
-                >
-                  <title>Cari</title>
-                  <circle cx="10.5" cy="10.5" r="7.5" />
-                  <path d="M21 21l-5.2-5.2" />
-                </svg>
-              </a>
-              <a className="btn btn-sm btn-outline-secondary" href="#">
-                Daftar
-              </a>
-            </div>
-          </div>
-        </header>
-
-        <div className="nav-scroller py-1 mb-2">
-          <nav className="nav d-flex justify-content-between">
-            <a className="p-2 link-secondary" href="#">
-              Dunia
-            </a>
-            <a className="p-2 link-secondary" href="#">
-              AS
-            </a>
-            <a className="p-2 link-secondary" href="#">
-              Teknologi
-            </a>
-            <a className="p-2 link-secondary" href="#">
-              Desain
-            </a>
-            <a className="p-2 link-secondary" href="#">
-              Budaya
-            </a>
-            <a className="p-2 link-secondary" href="#">
-              Bisnis
-            </a>
-            <a className="p-2 link-secondary" href="#">
-              Politik
-            </a>
-            <a className="p-2 link-secondary" href="#">
-              Opini
-            </a>
-            <a className="p-2 link-secondary" href="#">
-              Sains
-            </a>
-            <a className="p-2 link-secondary" href="#">
-              Kesehatan
-            </a>
-            <a className="p-2 link-secondary" href="#">
-              Gaya
-            </a>
-            <a className="p-2 link-secondary" href="#">
-              Perjalanan
-            </a>
-          </nav>
+      <div style={{ paddingTop: '0.3rem' }}> 
         </div>
-      </div>
-
       <main className="container">
         <div className="p-4 p-md-5 mb-4 text-white rounded bg-dark">
           <div className="col-md-6 px-0">
@@ -327,7 +247,7 @@ const About = () => {
           </div>
 
           <div className="col-md-4">
-            <div className="position-sticky" style={{ top: "2rem" }}>
+            <div className="position-sticky" style={{ top: "5rem" }}>
               <div className="p-4 mb-3 bg-light rounded">
                 <h4 className="fst-italic">Tentang</h4>
                 <p className="mb-0">

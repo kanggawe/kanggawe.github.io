@@ -1,7 +1,6 @@
-import React from "react";
-
 function Sitemap() {
-  return <h1>Sitemap Page</h1>;
+  return (
+   <h1>hallo</h1>  )
 }
 
 export default Sitemap;
