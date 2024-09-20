@@ -1,0 +1,65 @@
+/* Sticky Navbar */
+.navbar-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+    background-color: #333; /* Default background color */
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  /* Light and dark mode classes */
+  .navbar-light-mode {
+    background-color: #fff !important;
+    color: #333;
+  }
+  
+  .navbar-dark-mode {
+    background-color: #333 !important;
+    color: #fff;
+  }
+  
+  /* Ensure the links in navbar are styled properly */
+  .navbar a.nav-link {
+    color: #fff;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-light-mode a.nav-link {
+    color: #333;
+  }
+  
+  .navbar a.nav-link:hover {
+    color: #e8ff00; /* Hover color */
+  }
+  
+  /* Navbar logo styles */
+  .navbar-brand img {
+    max-height: 50px;
+    width: auto;
+  }
+  
+  /* Adjust button and icon styles */
+  .navbar-toggler {
+    border: none;
+  }
+  
+  .navbar-toggler-icon {
+    background-color: #fff;
+  }
+  
+  /* Ensure no content is covered by navbar */
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .dark-mode {
+    background-color: #121212;
+    color: white;
+  }
+  
+  /* Padding for content */
+  .content {
+    padding-top: 80px;
+  }
+  
