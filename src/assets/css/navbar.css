@@ -1,0 +1,115 @@
+#menutop-wrapper {
+  background: linear-gradient(
+    228deg,
+    #3fff23,
+    #2a9cd6,
+    #0066ff,
+    #1179ff,
+    #0066ff,
+    #299ee5,
+    #3fff23
+  );
+  -webkit-animation: Gradient 15s ease infinite;
+  -moz-animation: Gradient 15s ease infinite;
+  animation: Gradient 15s ease infinite;
+}
+
+/* Warna hover untuk link di dalam navbar */
+.navbar-nav .nav-link:hover {
+  color: #e8ff00 !important; /* Warna hover kuning terang */
+  transition: color 0.3s ease; /* Efek transisi smooth saat hover */
+}
+
+/* Warna hover untuk icon di dalam navbar */
+.navbar-nav .nav-item .nav-link:hover .fa-icon {
+  color: #e8ff00 !important; /* Warna hover kuning terang untuk icon */
+  transition: color 0.3s ease; /* Efek transisi smooth */
+}
+
+/* Menambahkan posisi sticky untuk navbar */
+.navbar-sticky {
+  position: -webkit-sticky; /* Support untuk browser Webkit seperti Safari */
+  position: sticky;
+  top: 0; /* Navbar akan tetap di posisi 0px dari atas */
+  z-index: 1020; /* Pastikan navbar berada di atas elemen lain */
+  background-color: #333; /* Warna default background */
+  transition: top 0.3s ease-in-out; /* Efek smooth saat navbar muncul/hilang */
+}
+
+/* Efek sembunyi saat scroll ke bawah */
+/* .navbar-hidden {
+  top: -100px; /* Sembunyikan navbar di luar layar */
+} */
+
+/* Warna untuk dark mode dan light mode */
+.navbar-light-mode {
+  background-color: #555; /* Warna background untuk light mode */
+}
+
+.navbar-dark-mode {
+  background-color: #333; /* Warna background untuk dark mode */
+}
+
+/* Default light mode styles */
+body {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+.navbar {
+  background-color: #ffffff;
+  color: #212529;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.navbar.hidden {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #212529;
+  color: #f8f9fa;
+}
+
+body.dark-mode .navbar {
+  background-color: #343a40;
+  color: #f8f9fa;
+}
+
+body.dark-mode .navbar .nav-link {
+  color: #f8f9fa;
+}
+
+body.dark-mode a.nav-link:hover {
+  color: #adb5bd;
+}
+
+body.dark-mode .navbar-toggler-icon {
+  filter: invert(100%);
+}
+
+body.dark-mode .navbar-brand {
+  color: #f8f9fa;
+}
+
+/* Style for other elements in dark mode */
+body.dark-mode .card {
+  background-color: #343a40;
+  color: #f8f9fa;
+}
+
+body.dark-mode .btn {
+  background-color: #495057;
+  color: #f8f9fa;
+}
+
+body.dark-mode .btn:hover {
+  background-color: #6c757d;
+}
+
+
