@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faLinkedinIn, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { useCookies } from "react-cookie";
 import { Toggle } from "./Toggle";
+import eLogo  from "../assets/img/eslog1.png";
 
 function Navbar() {
     // Cek preferensi warna sistem
@@ -58,12 +59,21 @@ function Navbar() {
   };
   
   return (
+    <>
+    {/* <nav
+     className={`navbar navbar-expand-lg navbar-light bg-light fixed-top ${showNavbar ? '' : 'd-none'}` } id='menutop-wrapper'
+   > */}
     <nav
-      className={`navbar navbar-expand-lg navbar-light bg-light fixed-top ${showNavbar ? '' : 'd-none'}` } id='menutop-wrapper'
+      className={`navbar navbar-expand-lg navbar-light bg-light fixed-top ${showNavbar ? '' : 'hidden'}` } id='menutop-wrapper'
     >
       <div className="container">
         <Link className="navbar-brand" to="/">
-          MySite
+          {/* MySite */}
+              <img
+              src={eLogo} // Ganti dengan URL atau path logo Anda
+              alt="Your Logo"
+              style={{ width: "130px", height: "50px" }} // Atur ukuran logo
+            />
         </Link>
         <button
           className="navbar-toggler"
@@ -79,32 +89,32 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link" to="/">
+                <Link className="nav-link fw-bold" to="/">
                   Home
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/about">
+                <Link className="nav-link fw-bold" to="/about">
                   About
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/disclaimer">
+                <Link className="nav-link fw-bold" to="/disclaimer">
                   Disclaimer
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/sitemap">
+                <Link className="nav-link fw-bold" to="/sitemap">
                   Sitemap
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/contact">
+                <Link className="nav-link fw-bold" to="/contact">
                   Contact
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/iklan">
+                <Link className="nav-link fw-bold" to="/iklan">
                   Pasang Iklan
                 </Link>
               </li>
@@ -112,7 +122,7 @@ function Navbar() {
             <ul className="navbar-nav">
               <li className="nav-item">
                 <a
-                  className="nav-link"
+                  className="nav-link fw-bold"
                   href="https://www.blogger.com/follow-blog.g?blogID=6192590825799115879"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -122,7 +132,7 @@ function Navbar() {
               </li>
               <li className="nav-item">
                 <a
-                  className="nav-link"
+                  className="nav-link fw-bold"
                   href="https://www.youtube.com/c/dukom"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -132,7 +142,7 @@ function Navbar() {
               </li>
               <li className="nav-item">
                 <a
-                  className="nav-link"
+                  className="nav-link fw-bold"
                   href="https://www.linkedin.com/in/cbblogger"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -145,7 +155,7 @@ function Navbar() {
                   <FontAwesomeIcon
                     icon={isDark ? faMoon : faSun}
                     onClick={toggleMode}
-                    style={{ cursor: "pointer", fontSize: "1.5rem", marginRight: "10px", color: "white" }}
+                    style={{ cursor: "pointer", fontSize: "1.8rem", marginRight: "10px", color: "white", padding: "4px 10px 5px 10px" }}
                   />
                   <Toggle
                     isChecked={isDark}
@@ -159,6 +169,14 @@ function Navbar() {
         </div>
       </div>
     </nav>
+    
+            {/* Tambahkan padding-top untuk menghindari konten yang tertutup oleh navbar */}
+      <div style={{ paddingTop: '70px' }}>
+        {/* Konten halaman lainnya */}
+      </div>
+    </>
+   
+
   );
 }
 
