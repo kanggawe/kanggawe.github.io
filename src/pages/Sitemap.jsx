@@ -1,7 +1,11 @@
 import React from "react";
 
 function Sitemap() {
-  return <h1>Sitemap Page</h1>;
+  return (
+    <div className="container">
+      <h1>contact page</h1>
+    </div>
+  )
 }
 
 export default Sitemap;
