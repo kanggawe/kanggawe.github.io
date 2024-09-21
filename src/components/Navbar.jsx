@@ -170,10 +170,7 @@ function Navbar() {
       </div>
     </nav>
     
-            {/* Tambahkan padding-top untuk menghindari konten yang tertutup oleh navbar */}
-      <div style={{ paddingTop: '70px' }}>
-        {/* Konten halaman lainnya */}
-      </div>
+      <div style={{ paddingTop: '70px' }}></div>
     </>
    
 
