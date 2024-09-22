@@ -2,7 +2,7 @@
 import React from 'react';
 import { useState } from 'react'
 
-function Contact() {
+function Contect() {
 
   const [count, setCount] = useState(0)
  return (
@@ -19,4 +19,4 @@ function Contact() {
 
 }
 
-export default Contact;
+export default Contect;

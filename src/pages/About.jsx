@@ -327,8 +327,8 @@ const About = () => {
           </div>
 
           <div className="col-md-4">
-            <div className="position-sticky" style={{ top: "2rem" }}>
-              <div className="p-4 mb-3 bg-light rounded">
+            <div className="position-sticky py-3 mt-3" style={{ top: "2rem" }}>
+              <div className="p-4 mb-3 mt-4 bg-light rounded">
                 <h4 className="fst-italic">Tentang</h4>
                 <p className="mb-0">
                   Tambahkan beberapa informasi biografi tentang penulis blog,

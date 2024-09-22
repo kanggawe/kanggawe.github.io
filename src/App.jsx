@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import Footer from "./components/Footer";
 import MainContent from "./components/MainContent";
+import ScrollToTopButton from "./components/ScrollToTopBotton";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
         <MainContent/>
         <Footer/>
       </Router>
-
+      <ScrollToTopButton/>
     </>
   );
 }

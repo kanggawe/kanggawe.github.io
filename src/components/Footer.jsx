@@ -1,5 +1,5 @@
 import React from "react";
-//import { Link } from 'react-router-dom';
+import "../assets/css/footer.css";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -205,7 +205,7 @@ const Footer = () => {
 
       <footer className="footer" id="footer-credit">
         <div className="container">
-          <div id="credit-kiri">
+          <div id="credit-kiri" className="fs-6">
             <strong>Support :</strong>
             <a
               href="http://webanakcirebon.blogspot.com"
@@ -254,7 +254,7 @@ const Footer = () => {
             </a>
             &nbsp; All rights reserved.
           </div>
-          <div id="credit-kanan">
+          <div id="credit-kanan" className="fw-bold">
             Design by{" "}
             <a href="http://www.duniakomputer.net/" title="Mas Kholis">
               {" "}
