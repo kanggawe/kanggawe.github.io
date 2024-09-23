@@ -1,7 +1,11 @@
 import React from "react";
 
 function Iklan() {
-  return <h1>Sitemap Page</h1>;
+  return (
+    <div className="container">
+    <h1>IKLAN</h1>
+    </div>
+    )
 }
 
 export default Iklan;
