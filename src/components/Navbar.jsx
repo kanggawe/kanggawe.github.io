@@ -94,8 +94,13 @@ function Navbar() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link fw-bold" to="/about">
-                  About
+                <Link className="nav-link fw-bold" to="/about-me">
+                  Tentang Kami
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link fw-bold" to="/layanan-produk">
+                  layanan & produk
                 </Link>
               </li>
               <li className="nav-item">
@@ -104,8 +109,8 @@ function Navbar() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link fw-bold" to="/sitemap">
-                  Sitemap
+                <Link className="nav-link fw-bold" to="/pricelist">
+                  Pasang Iklan
                 </Link>
               </li>
               <li className="nav-item">
@@ -114,10 +119,10 @@ function Navbar() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link fw-bold" to="/iklan">
-                  Pasang Iklan
+                <Link className="nav-link fw-bold" to="/sitemap">
+                  Sitemap
                 </Link>
-              </li>
+              </li> 
             </ul>
             <ul className="navbar-nav">
               <li className="nav-item">
@@ -127,7 +132,7 @@ function Navbar() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FontAwesomeIcon icon={faFacebook} /> Follow DuniaKompi
+                  <FontAwesomeIcon icon={faFacebook} />
                 </a>
               </li>
               <li className="nav-item">

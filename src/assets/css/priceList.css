@@ -1,0 +1,27 @@
+
+/*price harus buat css baru */
+body {
+    background-color: #f8f9fa;
+  }
+  
+.pricing-card {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .pricing-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .pricing-header {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .pricing-header h1 {
+    font-size: 3rem;
+  }
+  
+  .card-footer {
+    background-color: #007bff;
+    color: white;
+  }

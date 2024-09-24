@@ -8,6 +8,7 @@ import Disclaimer from "../pages/Disclaimer";
 import Sitemap from "../pages/Sitemap";
 import Contact from "../pages/Contact";
 import Iklan from "../pages/Iklan";
+import Service from "../pages/Service"
 // import Sidebar from "./Sidebar";
 // import CarouselComponent from "./CarouselComponent";
 
@@ -22,11 +23,12 @@ const MainContent = () => {
       <main className="col-xs-12 col-ml-9 main-content" style={{ flexGrow: 1 }}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/about-me" element={<About />} />
           <Route path="/disclaimer" element={<Disclaimer />} />
+          <Route path="/layanan-produk" element={<Service />} />
           <Route path="/sitemap" element={<Sitemap />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/iklan" element={<Iklan />} />
+          <Route path="/pricelist" element={<Iklan />} />
         </Routes>
       </main>
     </>
