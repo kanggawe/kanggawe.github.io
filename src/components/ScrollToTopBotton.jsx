@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap'; // Gunakan Bootstrap untuk styling
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
+
 
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -13,12 +16,16 @@ const ScrollToTopButton = () => {
     }
   };
 
-  // Fungsi untuk scroll ke atas
+  // Fungsi untuk scroll ke atas dengan animasi slow motion
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
+    const scrollStep = -window.scrollY / (1500 / 15); // Durasi lebih lambat (1500 ms)
+    const scrollInterval = setInterval(() => {
+      if (window.scrollY !== 0) {
+        window.scrollBy(0, scrollStep);
+      } else {
+        clearInterval(scrollInterval);
+      }
+    }, 15); // Mengatur kecepatan per frame
   };
 
   useEffect(() => {
@@ -49,7 +56,7 @@ const ScrollToTopButton = () => {
             textAlign: 'center',
           }}
         >
-          ↑
+         <FontAwesomeIcon icon={faChevronUp} />
         </Button>
       )}
     </div>
