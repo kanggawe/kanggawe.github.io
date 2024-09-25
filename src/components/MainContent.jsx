@@ -9,6 +9,7 @@ import Sitemap from "../pages/Sitemap";
 import Contact from "../pages/Contact";
 import Iklan from "../pages/Iklan";
 import Service from "../pages/Service"
+import NotFound from "../pages/NotFound";
 // import Sidebar from "./Sidebar";
 // import CarouselComponent from "./CarouselComponent";
 
@@ -29,6 +30,7 @@ const MainContent = () => {
           <Route path="/sitemap" element={<Sitemap />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/pricelist" element={<Iklan />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
     </>

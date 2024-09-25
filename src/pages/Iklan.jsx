@@ -13,7 +13,7 @@ function Iklan() {
         {/* Basic Plan */}
         <div className="col-lg-4">
           <div className="card pricing-card shadow-sm">
-            <div className="card-header text-center pricing-header py-5">
+            <div className="card-header text-center pricing-heawder py-5">
               <h2>Basic</h2>
               <h1 className="display-3">$9</h1>
               <p className="lead">per month</p>
@@ -32,7 +32,7 @@ function Iklan() {
         {/* Standard Plan */}
         <div className="col-lg-4">
           <div className="card pricing-card shadow-sm">
-            <div className="card-header text-center pricing-header py-5">
+            <div className="card-header text-center pricing-heawder py-5">
               <h2>Standard</h2>
               <h1 className="display-3">$29</h1>
               <p className="lead">per month</p>
@@ -51,7 +51,7 @@ function Iklan() {
         {/* Premium Plan */}
         <div className="col-lg-4">
           <div className="card pricing-card shadow-sm">
-            <div className="card-header text-center pricing-header py-5">
+            <div className="card-header text-center pricing-heawder py-5">
               <h2>Premium</h2>
               <h1 className="display-3">$99</h1>
               <p className="lead">per month</p>

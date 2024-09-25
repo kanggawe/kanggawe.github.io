@@ -12,12 +12,12 @@ body {
     transform: scale(1.05);
   }
   
-  .pricing-header {
+  .pricing-heawder {
     background-color: #007bff;
     color: white;
   }
   
-  .pricing-header h1 {
+  .pricing-heawder h1 {
     font-size: 3rem;
   }
   
