@@ -128,3 +128,14 @@
     text-align: center;
   }
 }
+
+.bg-darking{
+  background-color: #181818;
+}
+.footer-links ul li{
+  display: block;
+  text-align: left;
+}
+.footer-links ul li a{
+  text-decoration: none;
+}

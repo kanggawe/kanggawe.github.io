@@ -7,10 +7,10 @@ const Footer = () => {
     <>
       <div className="b-example-divider pt-5"></div>
 
-      <div className="bg-dark text-secondary px-4 py-5 text-center info">
+      <div className="bg-darking text-secondary px-4 py-5 text-center info">
         <div className="container">
           <div className="row">
-            <div className="col-md-6">
+            {/* <div className="col-md-6">
               <div className="py-5">
                 <h1 className="display-5 fw-bold text-white">Dark mode hero</h1>
                 <div className="mx-auto">
@@ -92,7 +92,7 @@ const Footer = () => {
                   </button>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
 
           <div className="row gy-4">
@@ -119,7 +119,7 @@ const Footer = () => {
                   </span>
                 </p>
               </div>
-              <div className="social-links d-flex mt-4">
+              {/* <div className="social-links d-flex mt-4">
                 <a href="">
                   <i className="bi bi-twitter-x"></i>
                 </a>
@@ -132,7 +132,7 @@ const Footer = () => {
                 <a href="">
                   <i className="bi bi-linkedin"></i>
                 </a>
-              </div>
+              </div> */}
             </div>
 
             <div className="col-lg-2 col-md-3 footer-links">
@@ -256,7 +256,7 @@ const Footer = () => {
           </div>
           <div id="credit-kanan" className="fw-bold">
             Design by{" "}
-            <a href="http://www.duniakomputer.net/" title="Mas Kholis">
+            <a href="https://www.esanet.id/" title="Mas Kholis">
               {" "}
               ESANET.ID
             </a>
