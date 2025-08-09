@@ -1,7 +1,7 @@
 //import Button from "@mui/material/Button";
 import "./App.css";
 //import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { HashRouter as Router, Link } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
@@ -14,10 +14,10 @@ function App() {
     <>
       <Router>
         <Navbar />
-        <MainContent/>
-        <Footer/>
+        <MainContent />
+        <Footer />
       </Router>
-      <ScrollToTopButton/>
+      <ScrollToTopButton />
     </>
   );
 }
