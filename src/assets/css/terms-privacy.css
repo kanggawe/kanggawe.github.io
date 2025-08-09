@@ -1,0 +1,26 @@
+.terms-privacy-container {
+  
+  color: #eee;
+  min-height: 80vh;
+  padding: 3rem 0;
+}
+.terms-privacy-container h1 {
+  color: #0af;
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+.terms-privacy-container h3 {
+  color: #0af;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+.terms-privacy-container p {
+  color: #eee;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.terms-privacy-container .mt-5 {
+  margin-top: 3rem !important;
+}
