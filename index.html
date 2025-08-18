@@ -5,27 +5,24 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>React Router v7 App</title>
-    <script type="module" crossorigin src="/assets/index-B6GlQOhQ.js"></script>
+    <script type="module" crossorigin src="/assets/index-aH275ICg.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/vendor-ClZwdvRs.js">
-    <link rel="modulepreload" crossorigin href="/assets/router-Cjrk-LXg.js">
-    <link rel="modulepreload" crossorigin href="/assets/ui-CI-RyjZ6.js">
-    <link rel="modulepreload" crossorigin href="/assets/icons-DlotafKL.js">
+    <link rel="modulepreload" crossorigin href="/assets/router-C_gidv2T.js">
+    <link rel="modulepreload" crossorigin href="/assets/ui-BSpZbNiH.js">
+    <link rel="modulepreload" crossorigin href="/assets/icons-CUwMd9_Y.js">
     <link rel="stylesheet" crossorigin href="/assets/index-DefgWCf5.css">
   </head>
   <body>
     <div id="root"></div>
     <script type="text/javascript">
-      // Single Page Apps for GitHub Pages - Root Domain Fix
-      (function(l) {
-        if (l.search[1] === '/' ) {
-          var decoded = l.search.slice(1).split('&').map(function(s) { 
-            return s.replace(/~and~/g, '&')
-          }).join('?');
-          window.history.replaceState(null, null,
-              l.pathname + decoded + l.hash
-          );
+      // Simple SPA routing fix for GitHub Pages
+      (function() {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect != location.href) {
+          history.replaceState(null, null, redirect);
         }
-      }(window.location))
+      })();
     </script>
   </body>
 </html>
