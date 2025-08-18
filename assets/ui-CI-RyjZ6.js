@@ -1,4 +1,4 @@
-import{g as S}from"./vendor-ClZwdvRs.js";import"./router-C_gidv2T.js";var u={exports:{}},a={};/**
+import{g as S}from"./vendor-ClZwdvRs.js";import"./router-Cjrk-LXg.js";var u={exports:{}},a={};/**
  * @license React
  * react-jsx-runtime.production.js
  *
