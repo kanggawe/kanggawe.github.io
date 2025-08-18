@@ -1,19 +1,18 @@
 import './App.css'
+import { HashRouter as Router } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import MainContent from './components/MainContent'
 import ScrollToTop from './components/ScrollToTop'
 
 function App() {
-
   return (
-    <>
-      {/* <Header/> */}
+    <Router>
       <Navbar/>
       <MainContent/>
       <Footer/>
       <ScrollToTop/>
-    </>
+    </Router>
   )
 }
 
