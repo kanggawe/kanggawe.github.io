@@ -1,21 +1,12 @@
-import React from 'react'
+import Slider from '../components/Slider'
+import Units from '../components/Units'
 
-function Home() {
+const Home = () => {
   return (
-    <div className="page">
-      <h1>Welcome to Home Page</h1>
-      <p>This is the home page of our React Router v7 application.</p>
-      <div className="features">
-        <h2>Features:</h2>
-        <ul>
-          <li>React Router v7 for navigation</li>
-          <li>Vite for fast development</li>
-          <li>Modern React with hooks</li>
-          <li>Responsive design</li>
-        </ul>
-      </div>
+    <div>
+      <Slider/>
+      <Units/>
     </div>
-  )
+  );
 }
-
-export default Home
+export default Home;
