@@ -1,13 +1,13 @@
 /* ===== GLOBAL CSS VARIABLES ===== */
 :root {
-  /* Primary Colors */
-  --primary-color: #007bff;
+  /* Primary Colors (Blue, Red, Yellow) */
+  --primary-color: #007bff;  /* Blue */
   --primary-dark: #0056b3;
   --primary-light: #4da6ff;
-  --secondary-color: #6c757d;
-  --accent-color: #28a745;
-  --accent-dark: #1e7e34;
-  --accent-light: #5cb85c;
+  --secondary-color: #dc3545; /* Red */
+  --accent-color: #ffc107;    /* Yellow */
+  --accent-dark: #e0a800;
+  --accent-light: #ffd85e;
   
   /* Neutral Colors */
   --dark-color: #343a40;
@@ -24,9 +24,9 @@
   --gray-900: #212529;
   
   /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --gradient-primary: linear-gradient(135deg, #2a6df4 0%, #007bff 100%);
+  --gradient-secondary: linear-gradient(135deg, #ff6b6b 0%, #dc3545 100%);
+  --gradient-accent: linear-gradient(135deg, #ffd54f 0%, #ffc107 100%);
   --gradient-dark: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
   
   /* Light Mode Colors */
