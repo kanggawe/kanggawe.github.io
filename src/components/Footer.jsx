@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ScrollToTop from "./ScrollToTop";
 import eLogo from "../assets/img/eslog1.png";
-import "./Footer.css";
+import "../assets/css/Footer.css";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -33,7 +33,7 @@ const Footer = () => {
             </div>
 
             {/* Layanan Kami */}
-            <div className="col-lg-4 col-md-6">
+            <div className="col-lg-3 col-md-6">
               <div className="py-5 h-100">
                 <h4 className="mb-3" style={{ color: "#fff", letterSpacing: "1px" }}>Layanan Kami</h4>
                 <ul className="list-unstyled mb-0">
@@ -79,9 +79,19 @@ const Footer = () => {
                 <ul className="list-unstyled" style={{ color: "var(--text-light)" }}>
                   <li className="mb-1"><strong>Administrasi:</strong> Senin - Jumat 08.00–17.00</li>
                   <li className="mb-3"><strong>Teknis:</strong> Senin - Minggu 08.00–21.00</li>
-                </ul>
+                </ul>                
+              </div>
+            </div>
 
-                <h4 className="mb-2" style={{ color: "#fff", letterSpacing: "1px" }}>Kontak Kami</h4>
+            {/* Newsletter */}
+            <div className="col-lg-2 col-md-12">
+              <div className="py-5 h-100 d-flex flex-column justify-content-between">
+                <h4 className="mb-3" style={{ color: "#fff", letterSpacing: "1px" }}>
+                  <span style={{ verticalAlign: "middle", marginRight: "8px" }}></span>Kontak Kami
+                </h4>
+                <p className="mb-3" style={{ color: "var(--text-light)", fontSize: "1rem", lineHeight: 1.6 }}>
+                  Dapatkan info terbaru tentang layanan dan promo menarik dari kami!
+                </p>
                 <ul className="list-unstyled mb-0" style={{ color: "var(--text-light)" }}>
                   <li className="mb-1">
                     📞 <a href="tel:+6282117777187" style={{ color: "var(--text-light)", textDecoration: "none" }}>+62 821-1777-7187</a>
@@ -93,51 +103,6 @@ const Footer = () => {
                     🌐 <a href="https://esanet.id" target="_blank" rel="noopener noreferrer" style={{ color: "var(--text-light)", textDecoration: "none" }}>esanet.id</a>
                   </li>
                 </ul>
-              </div>
-            </div>
-
-            {/* Newsletter */}
-            <div className="col-lg-4 col-md-12">
-              <div className="py-5 h-100 d-flex flex-column justify-content-between">
-                <h4 className="mb-3" style={{ color: "#fff", letterSpacing: "1px" }}>
-                  <span style={{ verticalAlign: "middle", marginRight: "8px" }}>📧</span>Newsletter
-                </h4>
-                <p className="mb-3" style={{ color: "var(--text-light)", fontSize: "1rem", lineHeight: 1.6 }}>
-                  Dapatkan info terbaru tentang layanan dan promo menarik dari kami!
-                </p>
-                <form className="d-flex flex-column gap-3" autoComplete="off">
-                  <div className="position-relative">
-                    <input
-                      type="email"
-                      className="form-control newsletter-input"
-                      placeholder="Masukkan email Anda"
-                      required
-                      style={{
-                        backgroundColor: "rgba(255,255,255,0.1)",
-                        border: "1px solid rgba(255,255,255,0.2)",
-                        color: "#fff",
-                        borderRadius: "8px",
-                        padding: "12px 16px",
-                        fontSize: "0.95rem",
-                      }}
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="btn newsletter-btn"
-                    style={{
-                      background: "linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%)",
-                      border: "none",
-                      borderRadius: "8px",
-                      fontWeight: "600",
-                      padding: "12px 24px",
-                      color: "#fff",
-                      transition: "all 0.3s ease",
-                    }}
-                  >
-                    Berlangganan
-                  </button>
-                </form>
               </div>
             </div>
 

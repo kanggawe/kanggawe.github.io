@@ -1,5 +1,5 @@
 import React from "react";
-// import "../assets/css/priceList.css";
+import "../assets/css/priceList.css";
 
 function Contact() {
   const contactMethods = [

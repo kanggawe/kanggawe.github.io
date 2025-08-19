@@ -67,7 +67,7 @@
 
 /* ===== FOOTER CREDIT SECTION ===== */
 #footer-credit {
-  background: linear-gradient(
+  /* background: linear-gradient(
     -45deg,
     var(--primary-color),
     var(--accent-color),
@@ -75,7 +75,8 @@
     var(--primary-dark),
     var(--accent-dark),
     var(--primary-light)
-  );
+  ); */
+  background: linear-gradient(-45deg, #2ad674, #2a9cd6, #d62aa2, #e52971, #38b3e0, #e53bb2);
   background-size: 400% 400%;
   animation: Gradient 15s ease infinite;
   position: relative;
@@ -92,7 +93,7 @@
 }
 
 /* Dark mode footer credit */
-[data-theme="dark"] #footer-credit {
+/* [data-theme="dark"] #footer-credit {
   background: linear-gradient(
     -45deg,
     var(--primary-color),
@@ -106,7 +107,7 @@
   animation: Gradient 15s ease infinite;
   color: var(--text-light);
   border-top: 1px solid var(--border-color);
-}
+} */
 
 /* Light mode footer credit */
 [data-theme="light"] #footer-credit {
