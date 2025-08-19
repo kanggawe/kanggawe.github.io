@@ -76,43 +76,7 @@
   --z-tooltip: 1070;
 }
 
-/* Dark Mode Colors */
-[data-theme="dark"] {
-  --bg-primary: #1a1a1a;
-  --bg-secondary: #2d2d2d;
-  --bg-card: #2d2d2d;
-  --bg-overlay: rgba(255, 255, 255, 0.1);
-  --text-primary: #ffffff;
-  --text-secondary: #e0e0e0;
-  --text-muted: #b0b0b0;
-  --text-light: #ffffff;
-  --border-color: #404040;
-  --border-light: #505050;
-  --shadow-color: rgba(0, 0, 0, 0.5);
-  --shadow-light: rgba(0, 0, 0, 0.3);
-  --card-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
-  --card-shadow-hover: 0 1rem 2rem rgba(0, 0, 0, 0.7);
-}
-
-/* Auto dark mode based on system preference */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg-primary: #1a1a1a;
-    --bg-secondary: #2d2d2d;
-    --bg-card: #2d2d2d;
-    --bg-overlay: rgba(255, 255, 255, 0.1);
-    --text-primary: #ffffff;
-    --text-secondary: #e0e0e0;
-    --text-muted: #b0b0b0;
-    --text-light: #ffffff;
-    --border-color: #404040;
-    --border-light: #505050;
-    --shadow-color: rgba(0, 0, 0, 0.5);
-    --shadow-light: rgba(0, 0, 0, 0.3);
-    --card-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
-    --card-shadow-hover: 0 1rem 2rem rgba(0, 0, 0, 0.7);
-  }
-}
+/* Dark Mode disabled globally to keep dark theme only in navbar */
 
 /* ===== RESET & BASE STYLES ===== */
 * {

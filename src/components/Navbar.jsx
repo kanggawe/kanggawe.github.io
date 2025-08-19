@@ -7,15 +7,7 @@ import { faFacebook, faLinkedinIn, faYoutube } from "@fortawesome/free-brands-sv
 
 const Navbar = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
-
-  // Handle Dark Mode
-  useEffect(() => {
-    if (isDarkMode) {
-      document.body.classList.add("bg-dark", "text-light");
-    } else {
-      document.body.classList.remove("bg-dark", "text-light");
-    }
-  }, [isDarkMode]);
+  
 
   return (
     <nav className={`navbar navbar-expand-lg fixed-top ${isDarkMode ? "navbar-dark bg-dark" : "navbar-light bg-white shadow-sm"}`}>
