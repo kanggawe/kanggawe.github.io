@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react'
 import Slider from '../components/Slider'
+import PathnetSlider from '../components/PathnetSlider'
 
 // Lazy load Units component karena ukurannya besar
 const Units = lazy(() => import('../components/Units'))
@@ -8,6 +9,7 @@ const Home = () => {
   return (
     <div>
       <Slider/>
+      <PathnetSlider/>
       <Suspense fallback={
         <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '400px' }}>
           <div className="spinner-border text-primary" role="status">

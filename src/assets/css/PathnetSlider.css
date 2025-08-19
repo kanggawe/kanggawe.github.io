@@ -1,0 +1,63 @@
+.pathnet { position: relative; }
+
+.section-heading {
+	font-size: clamp(1.25rem, 1.2vw + 1rem, 2rem);
+	font-weight: 800;
+	letter-spacing: 0.5px;
+	color: #ff7a00;
+}
+
+.brand-rows { position: relative; }
+
+.brand-slide { padding: 10px 12px; flex: 0 0 auto; }
+
+/* CSS-only marquee using keyframes */
+.marquee { overflow: hidden; position: relative; }
+.marquee__track {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	min-width: 200%;
+	animation: marquee-scroll 30s linear infinite;
+}
+.marquee--reverse .marquee__track { animation-direction: reverse; }
+
+@keyframes marquee-scroll {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(-50%); }
+}
+
+/* Palindo-like card style */
+.client-card {
+	background: #fff;
+	border: 1px solid #e5e7eb;
+	border-radius: 12px;
+	padding: 14px 18px;
+	height: 86px;
+	box-shadow: 0 1px 0 rgba(0,0,0,0.02);
+	transition: box-shadow .25s ease, transform .2s ease;
+}
+
+.client-card:hover {
+	box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+	transform: translateY(-2px);
+}
+
+.client-logo {
+	max-width: 150px;
+	max-height: 58px;
+	width: auto;
+	height: auto;
+	filter: grayscale(100%);
+	opacity: .9;
+	transition: opacity .25s ease, filter .25s ease;
+}
+
+.client-card:hover .client-logo { filter: grayscale(0%); opacity: 1; }
+
+@media (max-width: 576px) {
+	.client-card { height: 74px; padding: 10px 12px; }
+	.client-logo { max-width: 120px; max-height: 46px; }
+}
+
+
