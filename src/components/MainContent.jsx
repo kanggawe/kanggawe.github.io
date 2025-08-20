@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 // Lazy load semua halaman untuk optimasi bundle size
 const Home = lazy(() => import('../pages/Home'));
 const About = lazy(() => import('../pages/About'));   
+const Portfolio = lazy(() => import('../pages/Portfolio'));
 const Disclaimer = lazy(() => import('../pages/Disclaimer'));
 const Service = lazy(() => import('../pages/Service'));
 const Sitemap = lazy(() => import('../pages/Sitemap'));
@@ -29,6 +30,7 @@ const MainContent = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/disclaimer" element={<Disclaimer />} />
             <Route path="/services" element={<Service />} />
             <Route path="/sitemap" element={<Sitemap />} />

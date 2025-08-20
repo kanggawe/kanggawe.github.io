@@ -1,3 +1,11 @@
+/* ===== COMPONENT CSS IMPORTS ===== */
+@import './assets/css/Navbar.css';
+@import './assets/css/Slider.css';
+@import './assets/css/PathnetSlider.css';
+@import './assets/css/Units.css';
+@import './assets/css/priceList.css';
+@import './assets/css/Footer.css';
+
 /* ===== SCROLL TO TOP BUTTON ===== */
 .scroll-to-top-btn {
   position: fixed;
@@ -42,7 +50,7 @@
 /* ===== INFO SECTION ===== */
 .info {
   border-top: 3px solid var(--primary-color);
-  border-bottom: 3px solid var(--primary-color);
+  /* border-bottom: 3px solid var(--primary-color); */
   background: var(--bg-secondary);
   padding: 2rem 0;
 }
@@ -89,7 +97,7 @@
   display: block;
   font-size: 85%;
   color: var(--text-light);
-  border-top: 1px solid var(--border-color);
+  /* border-top: 1px solid var(--border-color); */
 }
 
 /* Dark mode footer credit */

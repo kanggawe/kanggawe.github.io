@@ -1,3 +1,37 @@
+/* ===== BOOTSTRAP ICONS ===== */
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css');
+
+/* Ensure Bootstrap Icons font is loaded */
+@font-face {
+  font-family: 'Bootstrap Icons';
+  src: url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/fonts/bootstrap-icons.woff2') format('woff2'),
+       url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/fonts/bootstrap-icons.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Icon display rules */
+.bi {
+  font-family: 'Bootstrap Icons' !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Specific icon sizes */
+.bi.fs-6 { font-size: 1rem !important; }
+.bi.fs-5 { font-size: 1.25rem !important; }
+.bi.fs-4 { font-size: 1.5rem !important; }
+.bi.fs-3 { font-size: 1.875rem !important; }
+.bi.fs-2 { font-size: 2.25rem !important; }
+.bi.fs-1 { font-size: 3rem !important; }
+
 /* ===== GLOBAL CSS VARIABLES ===== */
 :root {
   /* Primary Colors (Blue, Red, Yellow) */
