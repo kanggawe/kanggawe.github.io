@@ -1,141 +1,424 @@
-# React Router v7 Application
+# 🌐 ESANET - Penyedia Layanan Internet
 
-A modern React application built with Vite and React Router v7, featuring a clean and responsive design.
+Website resmi ESANET, penyedia layanan internet terpercaya dengan teknologi fiber optic terdepan. Website ini dibangun menggunakan React.js dengan desain modern dan responsif.
 
-## 🚀 Features
+![ESANET Website](https://img.shields.io/badge/React-18.2.0-blue)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.0-purple)
+![Vite](https://img.shields.io/badge/Vite-4.4.0-yellow)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-- **React Router v7**: Latest version with modern routing capabilities
-- **Vite**: Fast development server and build tool
-- **Responsive Design**: Mobile-friendly navigation and layout
-- **Modern UI**: Clean and professional design with gradient navigation
-- **JavaScript**: Built with modern JavaScript (ES6+)
+## 📋 Daftar Isi
 
-## 📁 Project Structure
+- [Fitur Utama](#-fitur-utama)
+- [Teknologi yang Digunakan](#-teknologi-yang-digunakan)
+- [Instalasi](#-instalasi)
+- [Cara Menjalankan](#-cara-menjalankan)
+- [Struktur Project](#-struktur-project)
+- [Komponen](#-komponen)
+- [Styling](#-styling)
+- [Konfigurasi](#-konfigurasi)
+- [Deployment](#-deployment)
+- [Kontribusi](#-kontribusi)
+- [Lisensi](#-lisensi)
 
-```
-src/
-├── components/
-│   └── Navigation.jsx          # Navigation component with React Router links
-├── pages/
-│   ├── Home.jsx               # Home page component
-│   ├── About.jsx              # About page component
-│   └── Contact.jsx            # Contact page with form
-├── App.jsx                    # Main App component with routing setup
-├── main.jsx                   # Application entry point
-├── App.css                    # Component-specific styles
-└── index.css                  # Global styles
-```
+## ✨ Fitur Utama
 
-## 🛠️ Technologies Used
+### 🎨 **Desain & UI/UX**
+- **Responsive Design** - Optimal di semua device (Desktop, Tablet, Mobile)
+- **Modern UI** - Desain clean dan profesional dengan gradien warna menarik
+- **Dark Mode** - Toggle dark/light mode di navbar
+- **Smooth Animations** - Transisi dan animasi yang halus
+- **Accessibility** - Mendukung keyboard navigation dan screen reader
 
-- **React 19.1.1**: Latest React version
-- **React Router DOM 7.8.1**: Latest React Router version
-- **Vite 7.1.2**: Fast build tool and dev server
-- **JavaScript**: Modern ES6+ syntax
+### 🚀 **Fungsionalitas**
+- **Hero Slider** - Banner utama dengan animasi zoom dan fade
+- **Pathnet Slider** - Logo partner dengan marquee animation
+- **Coverage Checker** - Cek ketersediaan layanan berdasarkan alamat
+- **Package Cards** - Tampilan paket internet dengan efek hover
+- **Contact Integration** - Integrasi WhatsApp dan telepon langsung
+- **SEO Optimized** - Meta tags dan struktur HTML yang SEO-friendly
 
-## 🚀 Getting Started
+### 📱 **Komponen Interaktif**
+- **Navigation Bar** - Menu responsive dengan dropdown
+- **Scroll to Top** - Button untuk kembali ke atas halaman
+- **Form Validation** - Validasi input form yang user-friendly
+- **Loading States** - Indikator loading untuk UX yang lebih baik
 
-### Prerequisites
+## 🛠 Teknologi yang Digunakan
 
-- Node.js (version 16 or higher)
-- npm or yarn
+### **Frontend Framework**
+- **React 18.2.0** - JavaScript library untuk UI
+- **React Router DOM** - Client-side routing
+- **Vite** - Build tool dan development server
 
-### Installation
+### **Styling & UI**
+- **Bootstrap 5.3.0** - CSS framework untuk layout dan komponen
+- **Bootstrap Icons** - Icon library
+- **CSS Variables** - Custom properties untuk theming
+- **CSS Animations** - Custom keyframes dan transitions
 
-1. Clone the repository or navigate to the project directory
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+### **Development Tools**
+- **ESLint** - Code linting
+- **Git** - Version control
+- **npm** - Package manager
 
-### Development
+## 📦 Instalasi
 
-Start the development server:
+### **Prerequisites**
+Pastikan Anda telah menginstall:
+- [Node.js](https://nodejs.org/) (versi 16 atau lebih baru)
+- [npm](https://www.npmjs.com/) atau [yarn](https://yarnpkg.com/)
+
+### **Clone Repository**
 ```bash
+# Clone repository dari GitHub
+git clone https://github.com/your-username/kanggawe.github.io.git
+
+# Masuk ke direktori project
+cd kanggawe.github.io
+```
+
+### **Install Dependencies**
+```bash
+# Install semua dependencies
+npm install
+
+# Atau menggunakan yarn
+yarn install
+```
+
+## 🚀 Cara Menjalankan
+
+### **Development Mode**
+```bash
+# Jalankan development server
 npm run dev
+
+# Atau menggunakan yarn
+yarn dev
 ```
 
-The application will be available at `http://localhost:5173`
+Website akan berjalan di `http://localhost:5173`
 
-### Build
-
-Build the application for production:
+### **Build untuk Production**
 ```bash
+# Build project untuk production
 npm run build
-```
 
-### Preview
-
-Preview the production build:
-```bash
+# Preview build production
 npm run preview
 ```
 
-## 📱 Pages
+### **Linting**
+```bash
+# Jalankan ESLint
+npm run lint
 
-### Home Page (`/`)
-- Welcome message
-- Features overview
-- Clean and informative layout
+# Fix linting errors otomatis
+npm run lint:fix
+```
 
-### About Page (`/about`)
-- Company/Project information
-- Mission statement
-- Technologies used
+## 📁 Struktur Project
 
-### Contact Page (`/contact`)
-- Contact form with validation-ready fields
+```
+kanggawe.github.io/
+├── public/                 # Static files
+│   ├── 404.html           # Custom 404 page
+│   └── vite.svg           # Vite logo
+├── src/
+│   ├── assets/            # Assets (images, CSS, JS)
+│   │   ├── css/          # Component-specific CSS
+│   │   │   ├── Footer.css
+│   │   │   ├── Navbar.css
+│   │   │   ├── PathnetSlider.css
+│   │   │   ├── priceList.css
+│   │   │   ├── Slider.css
+│   │   │   └── Units.css
+│   │   ├── img/          # Images
+│   │   └── js/           # JavaScript files
+│   ├── components/       # React components
+│   │   ├── Footer.jsx
+│   │   ├── MainContent.jsx
+│   │   ├── Navbar.jsx
+│   │   ├── PathnetSlider.jsx
+│   │   ├── ScrollToTop.jsx
+│   │   ├── Slider.jsx
+│   │   └── Units.jsx
+│   ├── pages/            # Page components
+│   │   ├── About.jsx
+│   │   ├── Contact.jsx
+│   │   ├── Disclaimer.jsx
+│   │   ├── Home.jsx
+│   │   ├── NotFound.jsx
+│   │   ├── Portfolio.jsx
+│   │   ├── PrivacyPolicy.jsx
+│   │   ├── Service.jsx
+│   │   ├── Sitemap.jsx
+│   │   └── TermsOfService.jsx
+│   ├── App.css           # Main app styles
+│   ├── App.jsx           # Main app component
+│   ├── index.css         # Global CSS variables
+│   └── main.jsx          # Entry point
+├── .eslintrc.cjs         # ESLint configuration
+├── index.html            # HTML template
+├── package.json          # Dependencies & scripts
+├── README.md             # Project documentation
+└── vite.config.js        # Vite configuration
+```
+
+## 🧩 Komponen
+
+### **Core Components**
+
+#### **Navbar.jsx**
+- Navigation bar dengan dark mode toggle
+- Responsive mobile menu
+- Active link highlighting
+
+#### **Slider.jsx**
+- Hero slider dengan animasi zoom
+- Slick carousel integration
+- Custom navigation arrows
+
+#### **PathnetSlider.jsx**
+- Logo partner marquee animation
+- CSS-only continuous scroll
+- Hover effects dengan grayscale to color
+
+#### **Units.jsx**
+- Coverage checker form
+- Package cards dengan popular badge
+- Feature cards dan stats section
+
+#### **Footer.jsx**
+- 4-column dynamic layout
+- Newsletter subscription
+- Social media links
+
+### **Pages**
+
+#### **Home.jsx**
+- Landing page dengan semua sections
+- Lazy loading untuk performance
+
+#### **About.jsx**
+- Company information
+- Team details
+- Mission & vision
+
+#### **Service.jsx**
+- Service packages
+- Pricing tables
+- Feature comparison
+
+#### **Contact.jsx**
+- Contact form
+- Location map
 - Contact information
-- Professional layout
 
 ## 🎨 Styling
 
-The application uses:
-- **CSS Modules**: Component-specific styling
-- **Responsive Design**: Mobile-first approach
-- **Modern Gradients**: Beautiful navigation design
-- **Accessibility**: Proper focus states and semantic HTML
+### **CSS Architecture**
+- **CSS Variables** - Global theme colors dan spacing
+- **Component-specific CSS** - Styling terpisah untuk setiap komponen
+- **Responsive Design** - Mobile-first approach
+- **Dark Mode** - Theme switching dengan CSS variables
 
-## 🔧 Available Scripts
+### **Color Scheme**
+```css
+/* Primary Colors */
+--primary-color: #007bff;    /* Blue */
+--secondary-color: #dc3545;  /* Red */
+--accent-color: #ffc107;     /* Yellow */
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
+/* Gradients */
+--gradient-primary: linear-gradient(135deg, #2a6df4 0%, #007bff 100%);
+--gradient-secondary: linear-gradient(135deg, #ff6b6b 0%, #dc3545 100%);
+--gradient-accent: linear-gradient(135deg, #ffd54f 0%, #ffc107 100%);
+```
 
-## 📦 Dependencies
+### **Typography**
+- **Font Family**: Segoe UI, Tahoma, Geneva, Verdana, sans-serif
+- **Font Sizes**: Responsive scale dari 0.75rem hingga 3rem
+- **Line Heights**: 1.2 untuk headings, 1.6 untuk body text
 
-### Production Dependencies
-- `react`: ^19.1.1
-- `react-dom`: ^19.1.1
-- `react-router-dom`: ^7.8.1
+## ⚙️ Konfigurasi
 
-### Development Dependencies
-- `@vitejs/plugin-react`: ^5.0.0
-- `vite`: ^7.1.2
-- `eslint`: ^9.33.0
-- And other development tools
+### **Environment Variables**
+Buat file `.env` di root directory:
+```env
+VITE_APP_TITLE=ESANET - Penyedia Layanan Internet
+VITE_APP_DESCRIPTION=Website resmi ESANET, penyedia layanan internet terpercaya
+VITE_APP_URL=https://your-domain.com
+```
 
-## 🌟 Features
+### **Vite Configuration**
+File `vite.config.js`:
+```javascript
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
-- **Fast Development**: Vite provides instant hot module replacement
-- **Modern Routing**: React Router v7 with latest features
-- **Responsive Navigation**: Mobile-friendly navigation menu
-- **Clean Code**: Well-structured components and modern JavaScript
-- **Professional Design**: Beautiful UI with attention to detail
+export default defineConfig({
+  plugins: [react()],
+  base: '/',
+  build: {
+    outDir: 'dist',
+    sourcemap: false,
+    minify: 'terser'
+  }
+})
+```
 
-## 📄 License
+### **ESLint Configuration**
+File `.eslintrc.cjs`:
+```javascript
+module.exports = {
+  root: true,
+  env: { browser: true, es2020: true },
+  extends: [
+    'eslint:recommended',
+    '@eslint/js',
+    'plugin:react-hooks/recommended',
+  ],
+  ignorePatterns: ['dist', '.eslintrc.cjs'],
+  parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
+  settings: { react: { version: '18.2' } },
+  plugins: ['react-refresh'],
+  rules: {
+    'react-refresh/only-export-components': [
+      'warn',
+      { allowConstantExport: true },
+    ],
+  },
+}
+```
 
-This project is open source and available under the [MIT License](LICENSE).
+## 🚀 Deployment
 
-## 🤝 Contributing
+### **GitHub Pages**
+1. **Build project**:
+   ```bash
+   npm run build
+   ```
 
-Feel free to contribute to this project by:
-1. Forking the repository
-2. Creating a feature branch
-3. Making your changes
-4. Submitting a pull request
+2. **Deploy ke GitHub Pages**:
+   - Push ke repository GitHub
+   - Aktifkan GitHub Pages di repository settings
+   - Set source ke `gh-pages` branch atau `/docs` folder
+
+### **Netlify**
+1. **Connect repository** ke Netlify
+2. **Build settings**:
+   - Build command: `npm run build`
+   - Publish directory: `dist`
+3. **Deploy otomatis** saat push ke main branch
+
+### **Vercel**
+1. **Import project** ke Vercel
+2. **Framework preset**: Vite
+3. **Build settings** otomatis terdeteksi
+4. **Deploy** dengan satu klik
+
+### **Custom Domain**
+1. **Add custom domain** di hosting provider
+2. **Update base URL** di `vite.config.js`
+3. **Rebuild dan deploy**
+
+## 🔧 Customization
+
+### **Mengubah Warna Theme**
+Edit file `src/index.css`:
+```css
+:root {
+  --primary-color: #your-color;
+  --secondary-color: #your-color;
+  --accent-color: #your-color;
+}
+```
+
+### **Mengubah Content**
+- **Text content**: Edit file JSX di `src/components/` dan `src/pages/`
+- **Images**: Ganti file di `src/assets/img/`
+- **Icons**: Gunakan Bootstrap Icons atau custom SVG
+
+### **Menambah Halaman Baru**
+1. Buat file baru di `src/pages/`
+2. Import di `src/components/MainContent.jsx`
+3. Tambahkan route baru
+4. Update navigation di `src/components/Navbar.jsx`
+
+### **Menambah Komponen Baru**
+1. Buat file baru di `src/components/`
+2. Buat CSS file di `src/assets/css/` (jika diperlukan)
+3. Import CSS di `src/App.css`
+4. Gunakan komponen di halaman yang diinginkan
+
+## 🤝 Kontribusi
+
+### **Cara Berkontribusi**
+1. **Fork** repository
+2. **Create feature branch**:
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+3. **Commit changes**:
+   ```bash
+   git commit -m 'Add: your feature description'
+   ```
+4. **Push to branch**:
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+5. **Create Pull Request**
+
+### **Coding Standards**
+- Gunakan **ESLint** untuk code linting
+- Ikuti **React best practices**
+- Tulis **descriptive commit messages**
+- Test di **multiple browsers**
+
+### **File Structure Guidelines**
+- **Components**: PascalCase naming
+- **CSS files**: kebab-case naming
+- **Assets**: Organize by type (img, css, js)
+- **Pages**: One component per page
+
+## 📞 Support
+
+### **Contact Information**
+- **Email**: info@mitracom-isp.com
+- **WhatsApp**: +62 822-6060-1982
+- **Phone**: +62 822-6060-1982
+
+### **Documentation**
+- **React Docs**: https://react.dev/
+- **Vite Docs**: https://vitejs.dev/
+- **Bootstrap Docs**: https://getbootstrap.com/
+
+### **Issues & Bugs**
+Jika menemukan bug atau masalah:
+1. **Search existing issues** di GitHub
+2. **Create new issue** dengan template yang sesuai
+3. **Provide detailed information**:
+   - Browser dan version
+   - Steps to reproduce
+   - Expected vs actual behavior
+   - Screenshots (jika diperlukan)
+
+## 📄 Lisensi
+
+Project ini dilisensikan di bawah **MIT License** - lihat file [LICENSE](LICENSE) untuk detail.
+
+## 🙏 Acknowledgments
+
+- **Bootstrap** - CSS framework
+- **React** - JavaScript library
+- **Vite** - Build tool
+- **Bootstrap Icons** - Icon library
+- **Slick Carousel** - Slider component
 
 ---
 
-Built with ❤️ using React, Vite, and React Router v7
+**© 2024 ESANET. All rights reserved.**
+
+*Dibuat dengan ❤️ untuk pengalaman internet yang lebih baik*
