@@ -3,7 +3,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <div style={{ backgroundColor: 'var(--bg-primary)', color: 'var(--text-primary)'}}>
+    <div style={{ backgroundColor: 'var(--bg-primary)', color: 'var(--text-primary)', paddingTop: '70px' }}>
 
       <main className="container">
         <div className="p-4 p-md-5 mb-4 text-white rounded" style={{ backgroundColor: 'var(--bs-emphasis-color)' }}>

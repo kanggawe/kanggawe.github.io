@@ -73,7 +73,7 @@ function Slider() {
             <div className="hero-slide__content container">
               <h2 className="hero-slide__title">{slide.title}</h2>
               <p className="hero-slide__subtitle">{slide.subtitle}</p>
-              <a 
+              {/* <a 
                 href={slide.ctaLink} 
                 className="btn btn-light text-primary-custom fw-semibold rounded-pill px-4 py-2 hero-cta-btn"
                 style={{
@@ -85,7 +85,7 @@ function Slider() {
               >
                 <span className="btn-text">{slide.ctaText}</span>
                 <span className="btn-icon">→</span>
-              </a>
+              </a> */}
             </div>
           </div>
         ))}
