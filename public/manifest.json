@@ -1,9 +1,0 @@
-{
-  "name": "ESANET - Penyedia Layanan Internet",
-  "short_name": "ESANET",
-  "description": "Penyedia layanan internet terpercaya dengan koneksi cepat dan stabil",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#007bff"
-}
