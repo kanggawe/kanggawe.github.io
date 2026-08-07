@@ -1,15 +1,9 @@
-import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
-import { AuthProvider } from './contexts/AuthContext';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import RootLayout from './layouts/RootLayout';
-import AdminLayout from './layouts/AdminLayout';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
-import Login from './pages/Login';
-import Dashboard from './pages/admin/Dashboard';
-import AdminServices from './pages/admin/Services';
-import AdminContacts from './pages/admin/Contacts';
 
 // Error Boundary Component
 const ErrorBoundary = () => {
@@ -47,12 +41,6 @@ const ErrorBoundary = () => {
   );
 };
 
-// Protected Route Component
-const ProtectedRoute = ({ children }) => {
-  const token = localStorage.getItem('auth_token');
-  return token ? children : <Navigate to="/login" replace />;
-};
-
 // Create router configuration
 const router = createBrowserRouter([
   {
@@ -79,49 +67,13 @@ const router = createBrowserRouter([
     ]
   },
   {
-    path: '/login',
-    element: <Login />,
-    errorElement: <ErrorBoundary />
-  },
-  {
-    path: '/admin',
-    element: (
-      <ProtectedRoute>
-        <AdminLayout />
-      </ProtectedRoute>
-    ),
-    errorElement: <ErrorBoundary />,
-    children: [
-      {
-        index: true,
-        element: <Navigate to="/admin/dashboard" replace />
-      },
-      {
-        path: 'dashboard',
-        element: <Dashboard />
-      },
-      {
-        path: 'services',
-        element: <AdminServices />
-      },
-      {
-        path: 'contacts',
-        element: <AdminContacts />
-      }
-    ]
-  },
-  {
     path: '*',
     element: <ErrorBoundary />
   }
 ]);
 
 function App() {
-  return (
-    <AuthProvider>
-      <RouterProvider router={router} />
-    </AuthProvider>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
