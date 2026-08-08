@@ -59,6 +59,28 @@
   color: var(--accent);
 }
 
+/* Theme Toggle Button Top Bar */
+.theme-toggle-btn-sm {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.theme-toggle-btn-sm:hover {
+  background: var(--accent);
+  color: var(--text-dark);
+  border-color: var(--accent);
+}
+
 /* ===== NAVBAR ===== */
 .navbar-esanet {
   position: sticky;
@@ -156,10 +178,35 @@
   font-weight: 600;
 }
 
-/* CTA Button in nav */
+/* CTA Button Desktop & Theme Switcher */
 .nav-cta {
   margin-left: 1rem;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.theme-toggle-btn {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.theme-toggle-btn:hover {
+  background: var(--accent);
+  color: var(--text-dark);
+  border-color: var(--accent);
+  transform: scale(1.08);
 }
 
 .navbar-btn {

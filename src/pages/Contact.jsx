@@ -45,8 +45,8 @@ const Contact = () => {
         </div>
         <div className="container">
           <div className="contact-hero-content">
-            <span className="section-tag" style={{background:'rgba(255,255,255,0.15)', color:'#fff'}}>Hubungi Kami</span>
-            <h1>Siap Membantu <span style={{color:'var(--accent)'}}>Anda</span></h1>
+            <span className="section-tag" style={{ background: 'rgba(255,255,255,0.15)', color: '#fff' }}>Hubungi Kami</span>
+            <h1>Siap Membantu <span style={{ color: 'var(--accent)' }}>Anda</span></h1>
             <p>Tim kami siap menjawab pertanyaan dan membantu Anda mendapatkan layanan internet terbaik dari ESANET.</p>
           </div>
         </div>
@@ -204,16 +204,16 @@ const Contact = () => {
               <div className="contact-socials">
                 <p className="social-title">Ikuti kami di media sosial</p>
                 <div className="social-row">
-                  <a href="#" aria-label="Facebook" className="social-btn">
+                  <a href="#" aria-label="Facebook" className="social-btn fb">
                     <i className="bi bi-facebook"></i>
                   </a>
-                  <a href="#" aria-label="Instagram" className="social-btn">
+                  <a href="#" aria-label="Instagram" className="social-btn ig">
                     <i className="bi bi-instagram"></i>
                   </a>
-                  <a href="#" aria-label="Twitter" className="social-btn">
+                  <a href="#" aria-label="Twitter" className="social-btn x">
                     <i className="bi bi-twitter-x"></i>
                   </a>
-                  <a href="#" aria-label="YouTube" className="social-btn">
+                  <a href="#" aria-label="YouTube" className="social-btn yt">
                     <i className="bi bi-youtube"></i>
                   </a>
                   <a href="#" aria-label="WhatsApp" className="social-btn wa">

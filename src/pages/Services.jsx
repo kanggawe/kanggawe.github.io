@@ -5,7 +5,7 @@ import './Services.css';
 const services = [
   {
     id: 1,
-    icon: 'bi-house-wifi-fill',
+    icon: 'bi-house-fill',
     title: 'Home Broadband',
     desc: 'Internet rumah super cepat berbasis fiber optic. Cocok untuk streaming 4K, gaming online, dan work from home tanpa gangguan.',
     features: ['Kecepatan hingga 100 Mbps', 'WiFi Router gratis', 'Instalasi gratis', 'Support 24/7'],
@@ -92,8 +92,8 @@ const Services = () => {
         </div>
         <div className="container">
           <div className="services-hero-content">
-            <span className="section-tag" style={{background:'rgba(255,255,255,0.15)', color:'#fff'}}>Layanan Kami</span>
-            <h1>Solusi Internet untuk <span style={{color:'var(--accent)'}}>Setiap Kebutuhan</span></h1>
+            <span className="section-tag" style={{ background: 'rgba(255,255,255,0.15)', color: '#fff' }}>Layanan Kami</span>
+            <h1>Solusi Internet untuk <span style={{ color: 'var(--accent)' }}>Setiap Kebutuhan</span></h1>
             <p>Dari rumah pribadi hingga perusahaan besar, ESANET menyediakan layanan internet lengkap dengan teknologi fiber optic terdepan.</p>
           </div>
         </div>
@@ -182,7 +182,7 @@ const Services = () => {
                 <Link
                   to="/contact"
                   className={`btn ${plan.featured ? 'btn-primary' : 'btn-outline-primary'}`}
-                  style={{width:'100%', justifyContent:'center'}}
+                  style={{ width: '100%', justifyContent: 'center' }}
                 >
                   {plan.cta}
                 </Link>

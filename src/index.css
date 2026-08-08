@@ -1,18 +1,22 @@
 /* ============================================
-   ESANET - Global Design System
+   ESANET - Global Design System & Theme Mode
    ============================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 /* ---- CSS Variables (Design Tokens) ---- */
-:root {
+
+/* Light Mode (Default) */
+:root, [data-theme="light"] {
   --primary:       #0047CC;
   --primary-dark:  #0035A0;
   --primary-light: #3B7AFF;
   --accent:        #00C8FF;
   --accent-dark:   #009AC8;
+  --bg-body:       #ffffff;
   --bg-light:      #f0f4ff;
   --bg-white:      #ffffff;
+  --bg-card:       #ffffff;
   --bg-dark:       #0a0f1e;
   --bg-dark-card:  #111827;
   --text-dark:     #0f172a;
@@ -20,6 +24,7 @@
   --text-muted:    #6b7280;
   --text-light:    #f1f5f9;
   --border:        #e2e8f0;
+  --marquee-bg:    #ffffff;
   --shadow-sm:     0 1px 3px rgba(0,0,0,0.08);
   --shadow-md:     0 4px 16px rgba(0,71,204,0.12);
   --shadow-lg:     0 12px 40px rgba(0,71,204,0.18);
@@ -29,6 +34,24 @@
   --radius-full:   9999px;
   --transition:    all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   --font:          'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Dark Mode Overrides */
+[data-theme="dark"] {
+  --bg-body:       #090d16;
+  --bg-light:      #0f172a;
+  --bg-white:      #131b2e;
+  --bg-card:       #1a243b;
+  --bg-dark:       #050810;
+  --bg-dark-card:  #090e1a;
+  --text-dark:     #f8fafc;
+  --text-body:     #cbd5e1;
+  --text-muted:    #94a3b8;
+  --border:        #1e293b;
+  --marquee-bg:    #090d16;
+  --shadow-sm:     0 1px 3px rgba(0,0,0,0.3);
+  --shadow-md:     0 4px 16px rgba(0,0,0,0.4);
+  --shadow-lg:     0 12px 40px rgba(0,0,0,0.5);
 }
 
 /* ---- Reset ---- */
@@ -47,10 +70,11 @@ body {
   font-size: 16px;
   line-height: 1.6;
   color: var(--text-body);
-  background-color: var(--bg-white);
+  background-color: var(--bg-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-width: 320px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
@@ -162,6 +186,11 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1rem;
 }
 
+[data-theme="dark"] .section-tag {
+  background: rgba(0, 200, 255, 0.15);
+  color: var(--accent);
+}
+
 .section-title {
   font-size: clamp(1.75rem, 4vw, 2.5rem);
   font-weight: 800;
@@ -191,10 +220,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .tech-marquee-section {
   padding: 3.5rem 0 4rem;
-  background: #ffffff;
+  background: var(--marquee-bg);
   overflow: hidden;
-  border-top: 1px solid #f1f5f9;
-  border-bottom: 1px solid #f1f5f9;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  transition: background-color 0.3s ease;
 }
 
 .tech-marquee-header {
@@ -206,7 +236,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.35rem;
   font-weight: 800;
   letter-spacing: 0.12em;
-  color: #1e293b;
+  color: var(--text-dark);
   text-transform: uppercase;
   position: relative;
   display: inline-block;
@@ -224,7 +254,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   width: 100%;
   height: 3px;
-  background: #0066FF;
+  background: var(--primary);
   border-radius: 2px;
 }
 
@@ -252,12 +282,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .marquee-wrapper::before {
   left: 0;
-  background: linear-gradient(to right, #ffffff, transparent);
+  background: linear-gradient(to right, var(--marquee-bg), transparent);
 }
 
 .marquee-wrapper::after {
   right: 0;
-  background: linear-gradient(to left, #ffffff, transparent);
+  background: linear-gradient(to left, var(--marquee-bg), transparent);
 }
 
 .marquee-track {

@@ -24,15 +24,19 @@
 }
 
 .ch-s1 {
-  width: 400px; height: 400px;
+  width: 400px;
+  height: 400px;
   background: var(--accent);
-  top: -160px; right: -80px;
+  top: -160px;
+  right: -80px;
 }
 
 .ch-s2 {
-  width: 180px; height: 180px;
+  width: 180px;
+  height: 180px;
   background: #fff;
-  bottom: -60px; left: 6%;
+  bottom: -60px;
+  left: 6%;
 }
 
 .contact-hero-content {
@@ -51,7 +55,7 @@
 
 .contact-hero-content p {
   font-size: 1.1rem;
-  color: rgba(255,255,255,0.8);
+  color: rgba(255, 255, 255, 0.8);
   line-height: 1.75;
 }
 
@@ -127,8 +131,15 @@
 }
 
 @keyframes fadeSlide {
-  from { opacity: 0; transform: translateY(-8px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Form elements */
@@ -208,8 +219,13 @@
 }
 
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* ===== INFO PANEL ===== */
@@ -293,7 +309,7 @@
 .hotline-icon {
   width: 50px;
   height: 50px;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -311,7 +327,7 @@
 
 .hotline-box p {
   font-size: 0.82rem;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.7);
   margin-bottom: 0.75rem;
   line-height: 1.5;
 }
@@ -382,12 +398,40 @@
   border-color: #25D366;
 }
 
+.social-btn.yt:hover {
+  background: #d32525;
+  border-color: #d32533;
+}
+
+.social-btn.ig:hover {
+  background: #d32590;
+  border-color: #e7253f;
+}
+
+.social-btn.fb:hover {
+  background: #253dd3;
+  border-color: #2538d3;
+}
+
+.social-btn.x:hover {
+  background: #000;
+  border-color: #000;
+}
+
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
-  .contact-grid { grid-template-columns: 1fr; }
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 550px) {
-  .form-row { grid-template-columns: 1fr; }
-  .contact-form-wrapper { padding: 1.75rem 1.25rem; }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form-wrapper {
+    padding: 1.75rem 1.25rem;
+  }
 }

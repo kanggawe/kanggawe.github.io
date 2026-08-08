@@ -52,7 +52,7 @@ const infraHighlights = [
   { icon: 'bi-diagram-3-fill', title: 'Backbone Fiber 10.000+ KM', desc: 'Jaringan kabel serat optik berkecepatan tinggi yang menghubungkan kota-kota utama.' },
   { icon: 'bi-server', title: 'Data Center Tier-3 Dual Site', desc: 'Infrastruktur server di Jakarta dan Surabaya dengan redundansi daya ganda (N+1).' },
   { icon: 'bi-lightning-charge-fill', title: 'Direct Global Peering', desc: 'Koneksi langsung ke CDN global (Google, Akamai, Cloudflare, Netflix, Meta) tanpa lompatan ekstra.' },
-  { icon: 'bi-shield-check-fill', title: 'Sistem Redundansi Dual-Ring', desc: 'Arsitektur jaringan ring ganda yang otomatis mengalihkan jalur jika terjadi gangguan fisik.' },
+  { icon: 'bi-shield-fill-check', title: 'Sistem Redundansi Dual-Ring', desc: 'Arsitektur jaringan ring ganda yang otomatis mengalihkan jalur jika terjadi gangguan fisik.' },
 ];
 
 const certs = [
@@ -93,8 +93,8 @@ const About = () => {
         </div>
         <div className="container">
           <div className="about-hero-content">
-            <span className="section-tag" style={{background:'rgba(255,255,255,0.15)', color:'#fff'}}>Company Profile</span>
-            <h1>PT Esanet Telekomunikasi <span style={{color:'var(--accent)'}}>Indonesia</span></h1>
+            <span className="section-tag" style={{ background: 'rgba(255,255,255,0.15)', color: '#fff' }}>Company Profile</span>
+            <h1>PT Esanet Telekomunikasi <span style={{ color: 'var(--accent)' }}>Indonesia</span></h1>
             <p>
               Penyedia layanan jasa akses internet (ISP) terpercaya di Indonesia yang berkomitmen menghadirkan konektivitas fiber optic berkecepatan tinggi, aman, dan dapat diandalkan untuk masyarakat dan dunia usaha.
             </p>
@@ -108,7 +108,7 @@ const About = () => {
           <div className="legal-grid">
             <div className="legal-info">
               <span className="section-tag">Legalitas Perusahaan</span>
-              <h2 className="section-title" style={{textAlign:'left'}}>Profil Resmi & Legalitas</h2>
+              <h2 className="section-title" style={{ textAlign: 'left' }}>Profil Resmi & Legalitas</h2>
               <p className="legal-desc">
                 ESANET beroperasi penuh berdasarkan regulasi pemerintah Republik Indonesia dan terdaftar resmi di Kementerian Komunikasi dan Digital (Kominfo) serta Asosiasi Penyelenggara Jasa Internet Indonesia (APJII).
               </p>

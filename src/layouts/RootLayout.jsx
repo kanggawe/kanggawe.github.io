@@ -1,10 +1,12 @@
 import { Outlet, Link, NavLink, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { useTheme } from '../contexts/ThemeContext';
 import './RootLayout.css';
 
 const RootLayout = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { theme, toggleTheme } = useTheme();
   const location = useLocation();
 
   useEffect(() => {
@@ -34,6 +36,16 @@ const RootLayout = () => {
             </span>
             <span className="divider">|</span>
             <a href="#" className="top-link"><i className="bi bi-person-fill"></i> Portal Pelanggan</a>
+            <span className="divider">|</span>
+            {/* Theme toggle button top bar */}
+            <button 
+              className="theme-toggle-btn-sm"
+              onClick={toggleTheme}
+              title={`Ubah ke ${theme === 'light' ? 'Dark' : 'Light'} Mode`}
+            >
+              <i className={`bi ${theme === 'light' ? 'bi-moon-stars-fill' : 'bi-sun-fill'}`}></i>
+              <span>{theme === 'light' ? 'Dark' : 'Light'}</span>
+            </button>
           </div>
         </div>
       </div>
@@ -62,8 +74,15 @@ const RootLayout = () => {
             <NavLink to="/contact" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>Kontak</NavLink>
           </nav>
 
-          {/* CTA Button Desktop */}
+          {/* Theme Switcher & CTA Button Desktop */}
           <div className="nav-cta">
+            <button 
+              className="theme-toggle-btn"
+              onClick={toggleTheme}
+              title={`Switch to ${theme === 'light' ? 'Dark' : 'Light'} Mode`}
+            >
+              <i className={`bi ${theme === 'light' ? 'bi-moon-stars-fill' : 'bi-sun-fill'}`}></i>
+            </button>
             <Link to="/contact" className="btn btn-accent navbar-btn">
               <i className="bi bi-headset"></i> Hubungi Kami
             </Link>
@@ -98,8 +117,18 @@ const RootLayout = () => {
               <i className="bi bi-envelope"></i> Kontak
             </NavLink>
           </nav>
-          <div className="mobile-cta">
-            <Link to="/contact" className="btn btn-primary" style={{width:'100%', justifyContent:'center'}}>
+          <div className="mobile-cta" style={{display:'flex', gap:'0.75rem'}}>
+            <button 
+              className="theme-toggle-btn"
+              onClick={toggleTheme}
+              style={{padding:'0.75rem 1rem', borderRadius:'var(--radius-full)'}}
+            >
+              <i className={`bi ${theme === 'light' ? 'bi-moon-stars-fill' : 'bi-sun-fill'}`}></i>
+              <span style={{marginLeft:'0.4rem', fontSize:'0.85rem', fontWeight:'600'}}>
+                {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
+              </span>
+            </button>
+            <Link to="/contact" className="btn btn-primary" style={{flex:1, justifyContent:'center'}}>
               <i className="bi bi-headset"></i> Hubungi Kami
             </Link>
           </div>

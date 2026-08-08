@@ -54,7 +54,7 @@ const slides = [
 ];
 
 const services = [
-  { icon: 'bi-house-wifi-fill', title: 'Home Broadband', desc: 'Internet rumah super cepat hingga 1 Gbps dengan harga terjangkau dan koneksi stabil.' },
+  { icon: 'bi-house-fill', title: 'Home Broadband', desc: 'Internet rumah super cepat hingga 1 Gbps dengan harga terjangkau dan koneksi stabil.' },
   { icon: 'bi-building-fill', title: 'Business Internet', desc: 'Solusi internet bisnis dengan SLA terjamin, IP Publik, dan dukungan teknis prioritas.' },
   { icon: 'bi-router-fill', title: 'WiFi Hotspot', desc: 'Sistem manajemen hotspot untuk kafe, hotel, dan area publik dengan dashboard lengkap.' },
   { icon: 'bi-hdd-network-fill', title: 'Dedicated Internet', desc: 'Bandwidth dedicated simetris untuk kebutuhan data center dan enterprise.' },
@@ -64,7 +64,7 @@ const services = [
 const stats = [
   { number: '50.000+', label: 'Pelanggan Aktif', icon: 'bi-people-fill' },
   { number: '1 Gbps', label: 'Kecepatan Maks', icon: 'bi-speedometer2' },
-  { number: '99.9%', label: 'Uptime SLA', icon: 'bi-shield-check-fill' },
+  { number: '99.9%', label: 'Uptime SLA', icon: 'bi-shield-fill-check' },
   { number: '24/7', label: 'Dukungan Teknis', icon: 'bi-headset' },
 ];
 
@@ -163,7 +163,7 @@ const Home = () => {
   return (
     <div className="home">
       {/* ===== HERO SLIDER ===== */}
-      <section 
+      <section
         className="hero"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
@@ -175,15 +175,15 @@ const Home = () => {
         </div>
 
         {/* Slide navigation arrows */}
-        <button 
-          className="slider-arrow arrow-left" 
+        <button
+          className="slider-arrow arrow-left"
           onClick={prevSlide}
           aria-label="Slide sebelumnya"
         >
           <i className="bi bi-chevron-left"></i>
         </button>
-        <button 
-          className="slider-arrow arrow-right" 
+        <button
+          className="slider-arrow arrow-right"
           onClick={nextSlide}
           aria-label="Slide berikutnya"
         >
@@ -193,8 +193,8 @@ const Home = () => {
         <div className="container">
           <div className="hero-slider-wrapper">
             {slides.map((slide, index) => (
-              <div 
-                key={slide.id} 
+              <div
+                key={slide.id}
                 className={`hero-content slide-item ${index === currentSlide ? 'active' : ''}`}
               >
                 <div className="hero-text">
@@ -367,7 +367,7 @@ const Home = () => {
                 <strong>Selamat! Jaringan Fiber ESANET sudah tersedia di lokasi "{searchLocation}".</strong>
                 <p>Silakan hubungi tim kami untuk jadwal pemasangan gratis hari ini.</p>
               </div>
-              <Link to="/contact" className="btn btn-primary" style={{marginLeft:'auto'}}>
+              <Link to="/contact" className="btn btn-primary" style={{ marginLeft: 'auto' }}>
                 Pasang Sekarang
               </Link>
             </div>
@@ -510,13 +510,13 @@ const Home = () => {
           <div className="why-us-inner">
             <div className="why-us-left">
               <span className="section-tag">Keunggulan Kami</span>
-              <h2 className="section-title" style={{textAlign:'left', maxWidth:'420px'}}>
+              <h2 className="section-title" style={{ textAlign: 'left', maxWidth: '420px' }}>
                 Kenapa Memilih ESANET?
               </h2>
-              <p className="section-subtitle" style={{textAlign:'left', margin:'0'}}>
+              <p className="section-subtitle" style={{ textAlign: 'left', margin: '0' }}>
                 Kami berkomitmen memberikan pengalaman internet terbaik dengan teknologi fiber optic terkini dan dukungan penuh.
               </p>
-              <Link to="/about" className="btn btn-primary" style={{marginTop:'2rem'}}>
+              <Link to="/about" className="btn btn-primary" style={{ marginTop: '2rem' }}>
                 <i className="bi bi-info-circle"></i> Profil Perusahaan
               </Link>
             </div>

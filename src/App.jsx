@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { ThemeProvider } from './contexts/ThemeContext';
 import RootLayout from './layouts/RootLayout';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -8,8 +9,8 @@ import Contact from './pages/Contact';
 // Error Boundary Component
 const ErrorBoundary = () => {
   return (
-    <div style={{ 
-      padding: '2rem', 
+    <div style={{
+      padding: '2rem',
       textAlign: 'center',
       minHeight: '100vh',
       display: 'flex',
@@ -22,11 +23,12 @@ const ErrorBoundary = () => {
       <p style={{ color: '#64748b', marginBottom: '2rem' }}>
         The page you're looking for doesn't exist or there was an error.
       </p>
-      <button 
+      <button
         onClick={() => window.location.href = '/'}
         style={{
           padding: '12px 24px',
-          background: '#667eea',
+          // background: '#0047CC',
+          background: '#d9ff00ff',
           color: 'white',
           border: 'none',
           borderRadius: '8px',
@@ -73,7 +75,11 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <ThemeProvider>
+      <RouterProvider router={router} />
+    </ThemeProvider>
+  );
 }
 
 export default App;
