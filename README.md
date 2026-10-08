@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <strong>Platform Web Resmi MITRAXCON (PT Mitraxcon Telekomunikasi Indonesia)</strong><br />
+  <strong>Platform Web Resmi MITRAXCON (PT Mitraxcon Synergy Utama)</strong><br />
   Penyedia Layanan Akses Internet Cepat, Stabil, dan Terpercaya untuk Rumah dan Bisnis.
 </p>
 
@@ -32,7 +32,7 @@
 
 ## 📖 Tentang Proyek
 
-Website ini merupakan portal resmi dan company profile dari **MITRAXCON** (*PT Mitraxcon Telekomunikasi Indonesia*), ISP berlisensi resmi Kominfo RI dan anggota APJII. 
+Website ini merupakan portal resmi dan company profile dari **MITRAXCON** (*PT Mitraxcon Synergy Utama*), ISP berlisensi resmi Kominfo RI dan anggota APJII. 
 
 Aplikasi dibangun dengan arsitektur modern berbasis **React 19**, di-bundle menggunakan **Vite 8**, serta didukung sistem styling hibrida **Tailwind CSS v4** dan modul CSS terstruktur.
 
@@ -172,4 +172,4 @@ Proyek ini telah dikonfigurasi untuk rilis langsung ke GitHub Pages menggunakan 
 
 ## 📄 Lisensi
 
-Hak Cipta © 2026 **MITRAXCON / PT Mitraxcon Telekomunikasi Indonesia**. Seluruh hak cipta dilindungi undang-undang.
+Hak Cipta © 2026 **MITRAXCON / PT Mitraxcon Synergy Utama**. Seluruh hak cipta dilindungi undang-undang.

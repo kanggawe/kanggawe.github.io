@@ -7,14 +7,15 @@ const CustomerPortal = () => {
   const [activeTab, setActiveTab] = useState('overview'); // overview, billing, wifi, speedtest, tickets
   const [authMode, setAuthMode] = useState('login'); // login, quickBill, quickTicket
 
-  // Real IP and Network Detection
+  // Real IP and Network Detection (Fully Dynamic from Client)
   const [realNetwork, setRealNetwork] = useState({
-    ip: '103.139.127.241',
-    isp: 'PT. MITRACOM SOLUSI TEKNOLOGI',
-    city: 'Indramayu / Losarang',
-    region: 'Jawa Barat',
+    ip: '',
+    isp: '',
+    city: '',
+    region: '',
     country: 'Indonesia',
-    asn: 'AS149964',
+    countryCode: 'ID',
+    asn: '',
     browser: '',
     loading: true
   });
@@ -127,8 +128,10 @@ const CustomerPortal = () => {
   });
   const [ticketSuccess, setTicketSuccess] = useState(false);
 
-  // 1. DETECT REAL IP & REAL NETWORK INFO ON MOUNT
+  // 1. DETECT REAL IP & REAL NETWORK INFO ON MOUNT (DYNAMIC MULTI-PROVIDER)
   useEffect(() => {
+    let isMounted = true;
+
     const fetchRealNetworkInfo = async () => {
       const ua = navigator.userAgent;
       let browserName = 'Browser Web';
@@ -136,46 +139,107 @@ const CustomerPortal = () => {
       else if (ua.includes('Firefox')) browserName = 'Firefox';
       else if (ua.includes('Safari')) browserName = 'Safari';
 
+      // Provider 1: ipwho.is (Lengkap: IP, Org, ISP, Kota, Wilayah, Negara)
       try {
         const res = await fetch('https://ipwho.is/');
         const data = await res.json();
-        if (data && data.success) {
+        if (isMounted && data && data.success) {
+          // Pilih nama ISP / Organisasi yang spesifik (bukan nama generic IDNIC registry)
+          const orgName = data.connection?.org;
+          const ispName = data.connection?.isp;
+          let cleanIsp = 'Penyedia Layanan Internet';
+
+          if (orgName && !orgName.toLowerCase().includes('information center')) {
+            cleanIsp = orgName;
+          } else if (ispName && !ispName.toLowerCase().includes('information center')) {
+            cleanIsp = ispName;
+          } else if (orgName) {
+            cleanIsp = orgName;
+          } else if (ispName) {
+            cleanIsp = ispName;
+          }
+
           setRealNetwork({
             ip: data.ip,
-            isp: data.connection?.isp || data.connection?.org || 'MITRAXCON Telecom Infrastructure',
-            city: data.city || 'Jakarta',
-            region: data.region || 'Jawa Barat',
+            isp: cleanIsp,
+            city: data.city || 'Indonesia',
+            region: data.region || 'ID',
             country: data.country || 'Indonesia',
-            asn: data.connection?.asn ? `AS${data.connection.asn}` : 'AS149964',
+            countryCode: data.country_code || 'ID',
+            asn: data.connection?.asn ? `AS${data.connection.asn}` : '',
             browser: browserName,
             loading: false
           });
           return;
         }
       } catch (err) {
-        console.warn('ipwho.is error, trying fallback', err);
+        console.warn('ipwho.is lookup failed, trying fallback 1', err);
       }
 
+      // Provider 2: ipapi.co (Fallback 1)
       try {
-        const res2 = await fetch('https://api.ipify.org?format=json');
+        const res2 = await fetch('https://ipapi.co/json/');
         const data2 = await res2.json();
-        if (data2 && data2.ip) {
-          setRealNetwork((prev) => ({
-            ...prev,
+        if (isMounted && data2 && data2.ip) {
+          setRealNetwork({
             ip: data2.ip,
+            isp: data2.org || data2.isp || 'Online Network',
+            city: data2.city || 'Indonesia',
+            region: data2.region || 'ID',
+            country: data2.country_name || 'Indonesia',
+            countryCode: data2.country_code || 'ID',
+            asn: data2.asn || '',
             browser: browserName,
             loading: false
-          }));
+          });
           return;
         }
       } catch (err2) {
-        console.warn('ipify fallback error', err2);
+        console.warn('ipapi.co fallback failed, trying fallback 2', err2);
       }
 
-      setRealNetwork((prev) => ({ ...prev, browser: browserName, loading: false }));
+      // Provider 3: api.ipify.org (Fallback 2: hanya IP publik)
+      try {
+        const res3 = await fetch('https://api.ipify.org?format=json');
+        const data3 = await res3.json();
+        if (isMounted && data3 && data3.ip) {
+          setRealNetwork({
+            ip: data3.ip,
+            isp: 'Penyedia Layanan Internet',
+            city: 'Terdeteksi',
+            region: 'Indonesia',
+            country: 'Indonesia',
+            countryCode: 'ID',
+            asn: '',
+            browser: browserName,
+            loading: false
+          });
+          return;
+        }
+      } catch (err3) {
+        console.warn('ipify fallback failed', err3);
+      }
+
+      if (isMounted) {
+        setRealNetwork({
+          ip: 'Online (Terhubung)',
+          isp: 'Jaringan Aktif',
+          city: 'Indonesia',
+          region: 'ID',
+          country: 'Indonesia',
+          countryCode: 'ID',
+          asn: '',
+          browser: browserName,
+          loading: false
+        });
+      }
     };
 
     fetchRealNetworkInfo();
+
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   // SEO Page Title
@@ -364,13 +428,21 @@ const CustomerPortal = () => {
               </p>
 
               {/* Real IP Live Detection Badge on Login */}
-              <div className="login-real-ip-bar">
-                <span className="ip-indicator-dot"></span>
-                <span>IP Publik Anda: <strong>{realNetwork.loading ? 'Mendeteksi...' : realNetwork.ip}</strong></span>
-                <span className="ip-bar-sep">•</span>
-                <span>ISP: <strong>{realNetwork.loading ? 'Mendeteksi...' : realNetwork.isp}</strong></span>
-                <span className="ip-bar-sep">•</span>
-                <span>Lokasi: <strong>{realNetwork.city}, ID</strong></span>
+              <div className="login-real-ip-bar" title="Alamat IP Publik dan detail jaringan asli yang terdeteksi secara langsung saat ini">
+                <span className={`ip-indicator-dot ${realNetwork.loading ? 'loading' : ''}`}></span>
+                {realNetwork.loading ? (
+                  <span className="ip-loading-state">
+                    <i className="bi bi-arrow-repeat spin-icon"></i> Mendeteksi IP &amp; Jaringan Anda secara real-time...
+                  </span>
+                ) : (
+                  <>
+                    <span>IP Publik Anda: <strong>{realNetwork.ip}</strong></span>
+                    <span className="ip-bar-sep">•</span>
+                    <span>ISP: <strong>{realNetwork.isp}</strong></span>
+                    <span className="ip-bar-sep">•</span>
+                    <span>Lokasi: <strong>{realNetwork.city}, {realNetwork.countryCode || 'ID'}</strong></span>
+                  </>
+                )}
               </div>
             </div>
           </div>

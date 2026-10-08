@@ -4,7 +4,7 @@ import PartnerSlider from '../components/PartnerSlider';
 import '../assets/css/About.css';
 
 const companyDetails = [
-  { label: 'Nama Resmi', val: 'PT Mitraxcon Telekomunikasi Indonesia' },
+  { label: 'Nama Resmi', val: 'PT Mitraxcon Synergy Utama' },
   { label: 'Izin Penyelenggara ISP', val: 'Kominfo RI No. 1284/TEL.02.02/2012' },
   { label: 'Keanggotaan Resmi', val: 'Anggota APJII (Asosiasi Penyelenggara Jasa Internet Indonesia)' },
   { label: 'Sertifikasi Mutu', val: 'ISO 9001:2015 (Quality) & ISO 27001:2013 (Security)' },
@@ -43,7 +43,7 @@ const leadership = [
 ];
 
 const milestones = [
-  { year: '2010', title: 'Pendirian Perusahaan', desc: 'PT Mitraxcon Telekomunikasi Indonesia resmi didirikan dengan fokus layanan internet broadband.' },
+  { year: '2010', title: 'Pendirian Perusahaan', desc: 'PT Mitraxcon Synergy Utama resmi didirikan dengan fokus layanan internet broadband.' },
   { year: '2014', title: 'Izin Resmi Kominfo & APJII', desc: 'Memperoleh izin resmi ISP dari Kominfo RI dan resmi bergabung menjadi anggota APJII.' },
   { year: '2017', title: 'Pembangunan Backbone Fiber', desc: 'Membangun jaringan fiber optic mandiri sepanjang 3.000 KM mencakup wilayah Jabodetabek & Jawa Barat.' },
   { year: '2020', title: 'Sertifikasi ISO 27001 & Tier-3', desc: 'Mendapatkan sertifikasi ISO 27001 untuk standar keamanan informasi & peresmian Data Center Tier-3.' },
@@ -78,7 +78,7 @@ const About = () => {
         <div className="container">
           <div className="about-hero-content">
             <span className="section-tag" style={{ background: 'rgba(255,255,255,0.15)', color: '#fff' }}>Company Profile</span>
-            <h1>PT Mitraxcon Telekomunikasi <span style={{ color: 'var(--accent)' }}>Indonesia</span></h1>
+            <h1>PT Mitraxcon Synergy <span style={{ color: 'var(--accent)' }}>Utama</span></h1>
             <p>
               Penyedia layanan jasa akses internet (ISP) terpercaya di Indonesia yang berkomitmen menghadirkan konektivitas fiber optic berkecepatan tinggi, aman, dan dapat diandalkan untuk masyarakat dan dunia usaha.
             </p>

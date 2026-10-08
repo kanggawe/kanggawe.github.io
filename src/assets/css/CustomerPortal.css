@@ -117,6 +117,20 @@
   box-shadow: 0 0 8px #10b981;
 }
 
+.ip-indicator-dot.loading {
+  background: #f59e0b;
+  box-shadow: 0 0 8px #f59e0b;
+  animation: pulseDot 1s infinite alternate;
+}
+
+.ip-loading-state {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+
 .ip-bar-sep {
   opacity: 0.35;
   color: #94a3b8;

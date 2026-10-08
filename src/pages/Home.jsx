@@ -296,7 +296,7 @@ const Home = () => {
 
                 <div className="hero-visual">
                   {slide.visualType === 'speedometer' && (
-                    <div className="hero-card">
+                    <div className="hero-card speedometer-card">
                       <div className="speed-ring">
                         <div className="speed-inner">
                           <span className="speed-number">1</span>

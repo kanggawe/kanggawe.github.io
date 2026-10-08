@@ -230,7 +230,7 @@ export const blogPosts = [
     content: [
       {
         type: 'paragraph',
-        text: 'PT Mitraxcon Telekomunikasi Indonesia resmi mengumumkan penyelesaian fase modernisasi infrastruktur jaringan inti (*core network*) dengan implementasi link backbone 100 Gbps DWDM (Dense Wavelength Division Multiplexing).'
+        text: 'PT Mitraxcon Synergy Utama resmi mengumumkan penyelesaian fase modernisasi infrastruktur jaringan inti (*core network*) dengan implementasi link backbone 100 Gbps DWDM (Dense Wavelength Division Multiplexing).'
       },
       {
         type: 'heading',

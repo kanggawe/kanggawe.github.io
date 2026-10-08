@@ -38,14 +38,14 @@ const RootLayout = () => {
             </a>
           </div>
           <div className="top-bar-right">
-            <div className="net-status-badge">
+            {/* <div className="net-status-badge">
               <span className="status-indicator">
                 <span className="status-ping"></span>
                 <span className="status-dot"></span>
               </span>
               <span className="status-text">Status Jaringan: <strong>Normal (99.9%)</strong></span>
-            </div>
-            <span className="top-divider"></span>
+            </div> */}
+            {/* <span className="top-divider"></span> */}
             <Link to="/portal" className="top-link portal-link">
               <i className="bi bi-person-fill-lock"></i>
               <span>Portal Pelanggan</span>
@@ -80,7 +80,7 @@ const RootLayout = () => {
             </div>
             <div className="brand-text-group">
               <span className="brand-text">MITRAXCON</span>
-              <span className="brand-subtext">PT Mitraxcon Telekomunikasi Indonesia</span>
+              <span className="brand-subtext">PT Mitraxcon Synergy Utama</span>
             </div>
           </Link>
 
@@ -207,7 +207,7 @@ const RootLayout = () => {
                 />
                 <span>MITRAXCON</span>
               </div>
-              <p className="footer-company-legal">PT Mitraxcon Telekomunikasi Indonesia</p>
+              <p className="footer-company-legal">PT Mitraxcon Synergy Utama</p>
               <p className="footer-tagline">Penyedia Jasa Akses Internet (ISP) Berlisensi Resmi Kominfo RI & Anggota APJII.</p>
               <div className="footer-contacts">
                 <div className="footer-contact-item">
@@ -269,7 +269,7 @@ const RootLayout = () => {
 
           {/* Bottom bar */}
           <div className="footer-bottom">
-            <p>© {new Date().getFullYear()} PT Mitraxcon Telekomunikasi Indonesia. Hak Cipta Dilindungi Undang-Undang.</p>
+            <p>© {new Date().getFullYear()} PT Mitraxcon Synergy Utama. Hak Cipta Dilindungi Undang-Undang.</p>
             <p>Terdaftar & Diawasi oleh Kominfo RI | Anggota APJII</p>
           </div>
         </div>

@@ -12,6 +12,9 @@
   min-height: 85vh;
   display: flex;
   align-items: center;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* Background Slider with Smooth Crossfade & Ken Burns zoom */
@@ -114,12 +117,15 @@
   min-height: 460px;
   display: flex;
   align-items: center;
+  width: 100%;
+  max-width: 100%;
 }
 
 .slide-item {
   display: none;
   opacity: 0;
   width: 100%;
+  max-width: 100%;
 }
 
 .slide-item.active {
@@ -133,6 +139,9 @@
   grid-template-columns: 1.25fr 1fr;
   gap: 4rem;
   align-items: center;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* Staggered Entrance Animations for Active Slide */
@@ -322,6 +331,7 @@
   margin-bottom: 1.25rem;
   color: #fff;
   letter-spacing: -0.02em;
+  min-height: 2.3em;
 }
 
 .highlight-text {
@@ -668,6 +678,11 @@
 }
 
 /* ===== SPEEDOMETER CARD (Slide 1) ===== */
+.speedometer-card {
+  background: linear-gradient(155deg, rgba(7, 21, 48, 0.7) 0%, rgba(15, 35, 75, 0.4) 100%);
+  border: 1px solid rgba(45, 212, 191, 0.35);
+}
+
 .speed-ring {
   width: 155px;
   height: 155px;
@@ -799,10 +814,12 @@
   display: flex;
   gap: 0.65rem;
   justify-content: center;
+  width: 100%;
 }
 
 .mini-stat {
   flex: 1;
+  min-width: 0;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -823,6 +840,7 @@
 .mini-stat i {
   font-size: 1.15rem;
   color: #2dd4bf;
+  flex-shrink: 0;
 }
 
 .mini-val {
@@ -830,6 +848,7 @@
   font-weight: 800;
   color: #fff;
   line-height: 1.1;
+  white-space: nowrap;
 }
 
 .mini-key {
@@ -1458,15 +1477,39 @@
 
 @media (max-width: 850px) {
   .slider-arrow { display: none; }
-  .hero-content { grid-template-columns: 1fr; text-align: center; gap: 2.5rem; }
+  .hero-content { grid-template-columns: 1fr; text-align: center; gap: 2.25rem; }
+  .hero-title { min-height: 2.4em; }
   .hero-subtitle { margin-left: auto; margin-right: auto; }
   .hero-actions { justify-content: center; }
   .hero-trust { justify-content: center; }
-  .hero-visual { display: flex; }
+  .hero-visual { display: flex; width: 100%; }
 }
 
 @media (max-width: 768px) {
-  .hero { padding: 3.5rem 0 4.5rem; min-height: auto; }
+  .hero { padding: 3.25rem 0 4.25rem; min-height: auto; }
+  .hero-title { font-size: clamp(1.85rem, 5vw, 2.4rem); min-height: 2.4em; }
+  .speedometer-card .hero-stats-mini {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+  .speedometer-card .mini-stat {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0.55rem 0.35rem;
+    gap: 0.25rem;
+  }
+  .speedometer-card .mini-stat i {
+    font-size: 1.15rem;
+    margin-bottom: 2px;
+  }
+  .speedometer-card .mini-stat .mini-val {
+    font-size: 0.82rem;
+  }
+  .speedometer-card .mini-stat .mini-key {
+    font-size: 0.65rem;
+  }
   .stats-bar { padding: 2.75rem 0; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 0.9rem; }
   .stat-item { padding: 1.15rem 1.1rem; gap: 0.95rem; border-radius: 16px; }
@@ -1480,12 +1523,189 @@
 }
 
 @media (max-width: 600px) {
-  .services-grid-home { grid-template-columns: 1fr; }
-  .hero-actions { flex-direction: column; }
-  .hero-trust { flex-direction: column; gap: 0.5rem; }
+  .hero {
+    padding: 2.5rem 0 3.5rem;
+    min-height: auto;
+    width: 100%;
+    max-width: 100%;
+  }
+  .hero-slider-wrapper { min-height: auto; }
+  .hero-badge {
+    font-size: 0.775rem;
+    padding: 0.35rem 0.85rem;
+    max-width: 100%;
+    white-space: normal;
+  }
+  .hero-title {
+    font-size: clamp(1.65rem, 6.8vw, 2.2rem);
+    min-height: 2.5em;
+  }
+  .hero-subtitle {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .hero-trust {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.25rem;
+    justify-content: center;
+    font-size: 0.82rem;
+  }
+  
+  .hero-visual { width: 100%; max-width: 100%; }
+  .hero-visual::before { width: 260px; height: 260px; }
+  .hero-card {
+    padding: 1.35rem 1.1rem;
+    border-radius: 20px;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .speed-ring {
+    width: 135px;
+    height: 135px;
+    margin: 0 auto 1.25rem;
+  }
+  .speed-number {
+    font-size: 2.35rem;
+  }
+  .speed-unit {
+    font-size: 0.9rem;
+  }
+  .speed-label {
+    font-size: 0.65rem;
+  }
+
+  .speedometer-card .hero-stats-mini {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.4rem;
+  }
+  
+  .speedometer-card .mini-stat {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0.5rem 0.25rem;
+    gap: 0.2rem;
+    border-radius: 12px;
+  }
+  
+  .speedometer-card .mini-stat i {
+    font-size: 1.1rem;
+  }
+  
+  .speedometer-card .mini-stat .mini-val {
+    font-size: 0.78rem;
+    font-weight: 800;
+  }
+  
+  .speedometer-card .mini-stat .mini-key {
+    font-size: 0.62rem;
+  }
+
+  .corporate-card .hero-stats-mini {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+  .corporate-card .mini-stat {
+    padding: 0.55rem 0.65rem;
+  }
+
+  .checker-box {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    padding: 1.25rem 1rem;
+    border-radius: var(--radius-md);
+  }
   .checker-form { flex-direction: column; }
+  .checker-input-group input { font-size: 0.85rem; }
   .coverage-alert { flex-direction: column; align-items: flex-start; }
   .coverage-alert .btn { width: 100%; margin-left: 0 !important; text-align: center; }
+  .services-grid-home { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 420px) {
+  .hero-card {
+    padding: 1.2rem 0.85rem;
+  }
+  .speed-ring {
+    width: 125px;
+    height: 125px;
+    margin: 0 auto 1rem;
+  }
+  .speed-number {
+    font-size: 2.2rem;
+  }
+  .speedometer-card .hero-stats-mini {
+    gap: 0.35rem;
+  }
+  .speedometer-card .mini-stat {
+    padding: 0.45rem 0.2rem;
+  }
+  .speedometer-card .mini-stat .mini-val {
+    font-size: 0.74rem;
+  }
+  .speedometer-card .mini-stat .mini-key {
+    font-size: 0.6rem;
+  }
+  .corp-header {
+    gap: 0.75rem;
+  }
+  .corp-header h3 {
+    font-size: 1.02rem;
+  }
+  .corp-sla-box {
+    padding: 0.85rem 0.65rem;
+  }
+  .sla-num {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-card {
+    padding: 1.1rem 0.65rem;
+  }
+  .speed-ring {
+    width: 110px;
+    height: 110px;
+    margin-bottom: 0.85rem;
+  }
+  .speed-number {
+    font-size: 1.95rem;
+  }
+  .speed-unit {
+    font-size: 0.8rem;
+  }
+  .speedometer-card .hero-stats-mini {
+    gap: 0.25rem;
+  }
+  .speedometer-card .mini-stat {
+    padding: 0.4rem 0.15rem;
+  }
+  .speedometer-card .mini-stat .mini-val {
+    font-size: 0.68rem;
+  }
+  .speedometer-card .mini-stat .mini-key {
+    font-size: 0.55rem;
+  }
+  .hero-trust {
+    font-size: 0.76rem;
+    gap: 0.35rem 0.75rem;
+  }
 }
 
 /* Specific Mobile Portrait Fix for Stats Grid (Prevents cramping, wrapping & truncation) */
