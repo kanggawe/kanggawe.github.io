@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './Contact.css';
+import '../assets/css/Contact.css';
 
 const contactInfo = [
   { icon: 'bi-geo-alt-fill', title: 'Alamat Kami', lines: ['Jl. Teknologi No. 88', 'Jakarta Selatan, 12345'] },

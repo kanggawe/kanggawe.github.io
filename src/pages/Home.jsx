@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import './Home.css';
+import TechMarquee from '../components/TechMarquee';
+import PartnerSlider from '../components/PartnerSlider';
+import { blogPosts } from '../data/blogData';
+import '../assets/css/Home.css';
 
 const slides = [
   {
@@ -18,6 +21,7 @@ const slides = [
     secondaryBtnLink: '/contact',
     secondaryBtnIcon: 'bi-telephone-fill',
     visualType: 'speedometer',
+    bgImage: '/assets/hero-slide-1.jpg',
   },
   {
     id: 2,
@@ -34,6 +38,7 @@ const slides = [
     secondaryBtnLink: '/services',
     secondaryBtnIcon: 'bi-geo-alt-fill',
     visualType: 'promo',
+    bgImage: '/assets/hero-slide-2.jpg',
   },
   {
     id: 3,
@@ -50,6 +55,7 @@ const slides = [
     secondaryBtnLink: '/services',
     secondaryBtnIcon: 'bi-briefcase-fill',
     visualType: 'corporate',
+    bgImage: '/assets/hero-slide-3.png',
   },
 ];
 
@@ -75,14 +81,7 @@ const whyUs = [
   { icon: 'bi-currency-dollar', title: 'Harga Terjangkau', desc: 'Paket mulai dari Rp 99.000/bulan tanpa biaya tersembunyi dan kontrak mengikat.' },
 ];
 
-const partners = [
-  { name: 'Bank Central Asia', logo: 'bi-bank2' },
-  { name: 'Universitas Indonesia', logo: 'bi-mortarboard-fill' },
-  { name: 'Santika Hotels & Resorts', logo: 'bi-building' },
-  { name: 'Bukalapak Tech Park', logo: 'bi-laptop' },
-  { name: 'Kopi Kenangan Chain', icon: 'bi-cup-hot-fill' },
-  { name: 'Kementerian Kominfo', logo: 'bi-award-fill' },
-];
+
 
 const testimonials = [
   {
@@ -108,40 +107,73 @@ const testimonials = [
   },
 ];
 
-// Marquee rows data for Infrastruktur Teknologi
-const row1Tags = [
-  'Network', 'Server', 'Fiber', 'Router', 'Switch', 'Antenna', 'Satellite', 'Cloud', 'Security', 'Backup', 'Data Center', 'Firewall'
-];
 
-const row2Items = [
-  { type: 'text', text: 'Security' },
-  { type: 'text', text: 'Backup' },
-  { type: 'img', src: '/assets/fiber.png', alt: 'Fiber Optic' },
-  { type: 'img', src: '/assets/server.png', alt: 'Server Room' },
-  { type: 'text', text: 'Network' },
-  { type: 'text', text: 'Server' },
-  { type: 'text', text: 'Fiber' },
-  { type: 'text', text: 'Router' },
-  { type: 'text', text: 'Switch' },
-  { type: 'text', text: 'Antenna' },
-  { type: 'text', text: 'Satellite' },
-  { type: 'text', text: 'Cloud' },
-];
+
+// Typewriter effect that types the full headline sentence smoothly while highlighting keywords
+const HeroTypewriter = ({ prefix = '', highlight = '', suffix = '', speed = 40, delay = 180 }) => {
+  const fullText = `${prefix}${highlight}${suffix}`;
+  const [charCount, setCharCount] = useState(0);
+  const [isTyping, setIsTyping] = useState(true);
+
+  useEffect(() => {
+    setCharCount(0);
+    setIsTyping(true);
+
+    let count = 0;
+    let timerId = null;
+
+    const startTimer = setTimeout(() => {
+      timerId = setInterval(() => {
+        count++;
+        setCharCount(count);
+        if (count >= fullText.length) {
+          setIsTyping(false);
+          clearInterval(timerId);
+        }
+      }, speed);
+    }, delay);
+
+    return () => {
+      clearTimeout(startTimer);
+      if (timerId) clearInterval(timerId);
+    };
+  }, [prefix, highlight, suffix, speed, delay]);
+
+  const prefixLen = prefix.length;
+  const highlightLen = highlight.length;
+
+  const currentPrefix = fullText.slice(0, Math.min(charCount, prefixLen));
+  const currentHighlight = charCount > prefixLen
+    ? fullText.slice(prefixLen, Math.min(charCount, prefixLen + highlightLen))
+    : '';
+  const currentSuffix = charCount > prefixLen + highlightLen
+    ? fullText.slice(prefixLen + highlightLen, charCount)
+    : '';
+
+  return (
+    <span className="typewriter-container">
+      <span>{currentPrefix}</span>
+      {currentHighlight && (
+        <span className="highlight-text">{currentHighlight}</span>
+      )}
+      <span>{currentSuffix}</span>
+      <span className={`typewriter-cursor ${!isTyping ? 'cursor-idle' : ''}`}>|</span>
+    </span>
+  );
+};
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
   const [searchLocation, setSearchLocation] = useState('');
   const [coverageResult, setCoverageResult] = useState(null);
 
-  // Auto-play slider
+  // Auto-play slider every 5 seconds (resets timer upon manual change)
   useEffect(() => {
-    if (isPaused) return;
-    const interval = setInterval(() => {
+    const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5500);
-    return () => clearInterval(interval);
-  }, [isPaused]);
+    }, 5700);
+    return () => clearInterval(timer);
+  }, [currentSlide]);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -163,11 +195,19 @@ const Home = () => {
   return (
     <div className="home">
       {/* ===== HERO SLIDER ===== */}
-      <section
-        className="hero"
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
-      >
+      <section className="hero">
+        {/* Dynamic slide background images with crossfade */}
+        <div className="hero-bg-slider" aria-hidden="true">
+          {slides.map((slide, index) => (
+            <div
+              key={`bg-${slide.id}`}
+              className={`hero-bg-slide ${index === currentSlide ? 'active' : ''}`}
+              style={{ backgroundImage: `url(${slide.bgImage})` }}
+            />
+          ))}
+          <div className="hero-bg-overlay" />
+        </div>
+
         <div className="hero-bg-shapes">
           <div className="shape shape-1"></div>
           <div className="shape shape-2"></div>
@@ -202,9 +242,19 @@ const Home = () => {
                     <i className={`bi ${slide.badgeIcon}`}></i> {slide.badge}
                   </div>
                   <h1 className="hero-title">
-                    {slide.titlePrefix}
-                    <span className="highlight-text">{slide.highlight}</span>
-                    {slide.titleSuffix}
+                    {index === currentSlide ? (
+                      <HeroTypewriter
+                        prefix={slide.titlePrefix}
+                        highlight={slide.highlight}
+                        suffix={slide.titleSuffix}
+                      />
+                    ) : (
+                      <>
+                        {slide.titlePrefix}
+                        <span className="highlight-text">{slide.highlight}</span>
+                        {slide.titleSuffix}
+                      </>
+                    )}
                   </h1>
                   <p className="hero-subtitle">
                     {slide.subtitle}
@@ -376,75 +426,24 @@ const Home = () => {
       </section>
 
       {/* ===== INFRASTRUKTUR TEKNOLOGI MARQUEE SECTION ===== */}
-      <section className="tech-marquee-section">
-        <div className="tech-marquee-header">
-          <h2 className="tech-marquee-title">
-            INFRASTRUK<span className="title-underline">TUR</span> TEKNOLOGI
-          </h2>
-        </div>
-
-        <div className="marquee-wrapper">
-          {/* Row 1 */}
-          <div className="marquee-track track-left">
-            <div className="marquee-content">
-              {row1Tags.map((tag, index) => (
-                <div className="tech-pill" key={`r1-1-${index}`}>
-                  {tag}
-                </div>
-              ))}
-            </div>
-            {/* Duplicated for seamless infinite loop */}
-            <div className="marquee-content" aria-hidden="true">
-              {row1Tags.map((tag, index) => (
-                <div className="tech-pill" key={`r1-2-${index}`}>
-                  {tag}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Row 2 */}
-          <div className="marquee-track track-right">
-            <div className="marquee-content">
-              {row2Items.map((item, index) => (
-                item.type === 'img' ? (
-                  <div className="tech-img-thumb" key={`r2-1-${index}`}>
-                    <img src={item.src} alt={item.alt} />
-                  </div>
-                ) : (
-                  <div className="tech-pill" key={`r2-1-${index}`}>
-                    {item.text}
-                  </div>
-                )
-              ))}
-            </div>
-            {/* Duplicated for seamless infinite loop */}
-            <div className="marquee-content" aria-hidden="true">
-              {row2Items.map((item, index) => (
-                item.type === 'img' ? (
-                  <div className="tech-img-thumb" key={`r2-2-${index}`}>
-                    <img src={item.src} alt={item.alt} />
-                  </div>
-                ) : (
-                  <div className="tech-pill" key={`r2-2-${index}`}>
-                    {item.text}
-                  </div>
-                )
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <TechMarquee />
 
       {/* ===== STATS ===== */}
       <section className="stats-bar">
         <div className="container">
           <div className="stats-grid">
             {stats.map((s, i) => (
-              <div className="stat-item" key={i}>
+              <div className={`stat-item stat-item-${i}`} key={i}>
                 <div className="stat-icon"><i className={`bi ${s.icon}`}></i></div>
-                <div>
-                  <div className="stat-number">{s.number}</div>
+                <div className="stat-info">
+                  <div className="stat-number-wrapper">
+                    <span className="stat-number">{s.number}</span>
+                    {s.number === '99.9%' && (
+                      <span className="stat-live-badge" title="SLA Uptime Terverifikasi">
+                        <span className="live-dot"></span>
+                      </span>
+                    )}
+                  </div>
                   <div className="stat-label">{s.label}</div>
                 </div>
               </div>
@@ -485,24 +484,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ===== MITRA & KLIEN STRATEGIS ===== */}
-      <section className="partners-section">
-        <div className="container">
-          <div className="section-header">
-            <span className="section-tag">Mitra & Klien Korporasi</span>
-            <h2 className="section-title">Dipercaya oleh Ratusan Perusahaan</h2>
-            <p className="section-subtitle">ESANET menjadi pilihan jaringan terpercaya untuk berbagai institusi besar di Indonesia.</p>
-          </div>
-          <div className="partners-grid">
-            {partners.map((p, i) => (
-              <div className="partner-card" key={i}>
-                <i className={`bi ${p.logo || p.icon}`}></i>
-                <span>{p.name}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ===== MITRA & KLIEN STRATEGIS SLIDER ===== */}
+      <PartnerSlider />
 
       {/* ===== KENAPA ESANET ===== */}
       <section className="why-us">
@@ -565,6 +548,55 @@ const Home = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== LATEST BLOG ARTICLES ===== */}
+      <section className="home-blog-section">
+        <div className="container">
+          <div className="section-header">
+            <span className="section-tag">Wawasan &amp; Edukasi</span>
+            <h2 className="section-title">Artikel &amp; Berita Terbaru</h2>
+            <p className="section-subtitle">Pelajari tips internet, teknologi fiber optic, dan kabar terkini dari ESANET.</p>
+          </div>
+          <div className="blog-posts-grid">
+            {blogPosts.slice(0, 3).map((post) => (
+              <article className="blog-card" key={post.id}>
+                <Link to={`/blog/${post.slug}`} className="blog-card-img-link">
+                  <div className="blog-card-img-wrapper">
+                    <img src={post.image} alt={post.title} className="blog-card-img" />
+                    <span className="blog-card-category">{post.category}</span>
+                  </div>
+                </Link>
+                <div className="blog-card-content">
+                  <div className="blog-card-meta">
+                    <span><i className="bi bi-calendar3"></i> {post.date}</span>
+                    <span className="meta-sep">•</span>
+                    <span><i className="bi bi-clock"></i> {post.readTime}</span>
+                  </div>
+                  <h3 className="blog-card-title">
+                    <Link to={`/blog/${post.slug}`}>{post.title}</Link>
+                  </h3>
+                  <p className="blog-card-excerpt">{post.excerpt}</p>
+                  <div className="blog-card-footer">
+                    <div className="card-author">
+                      <i className={`bi ${post.author.avatar}`}></i>
+                      <span>{post.author.name}</span>
+                    </div>
+                    <Link to={`/blog/${post.slug}`} className="card-arrow-link" aria-label={`Baca ${post.title}`}>
+                      <i className="bi bi-arrow-right"></i>
+                    </Link>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+          <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
+            <Link to="/blog" className="btn btn-outline" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+              <span>Lihat Semua Artikel Blog</span>
+              <i className="bi bi-arrow-right"></i>
+            </Link>
           </div>
         </div>
       </section>

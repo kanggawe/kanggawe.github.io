@@ -1,7 +1,8 @@
 import { Outlet, Link, NavLink, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useTheme } from '../contexts/ThemeContext';
-import './RootLayout.css';
+import logoMitraxcon from '../assets/img/logo mitraxcon.png';
+import '../assets/css/RootLayout.css';
 
 const RootLayout = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,22 +27,36 @@ const RootLayout = () => {
       <div className="top-utility-bar">
         <div className="container top-bar-inner">
           <div className="top-bar-left">
-            <span><i className="bi bi-headset"></i> Call Center 24/7: <strong>1500-123</strong></span>
-            <span className="divider">|</span>
-            <span><i className="bi bi-envelope-fill"></i> info@esanet.id</span>
+            <a href="tel:1500123" className="top-info-link">
+              <i className="bi bi-headset"></i>
+              <span>Call Center 24/7: <strong>1500-123</strong></span>
+            </a>
+            <span className="top-divider"></span>
+            <a href="mailto:info@esanet.id" className="top-info-link">
+              <i className="bi bi-envelope-fill"></i>
+              <span>info@esanet.id</span>
+            </a>
           </div>
           <div className="top-bar-right">
-            <span className="net-status">
-              <span className="status-dot"></span> Status Jaringan: <strong>Normal (99.9%)</strong>
-            </span>
-            <span className="divider">|</span>
-            <a href="#" className="top-link"><i className="bi bi-person-fill"></i> Portal Pelanggan</a>
-            <span className="divider">|</span>
+            <div className="net-status-badge">
+              <span className="status-indicator">
+                <span className="status-ping"></span>
+                <span className="status-dot"></span>
+              </span>
+              <span className="status-text">Status Jaringan: <strong>Normal (99.9%)</strong></span>
+            </div>
+            <span className="top-divider"></span>
+            <Link to="/portal" className="top-link portal-link">
+              <i className="bi bi-person-fill-lock"></i>
+              <span>Portal Pelanggan</span>
+            </Link>
+            <span className="top-divider"></span>
             {/* Theme toggle button top bar */}
-            <button 
+            <button
               className="theme-toggle-btn-sm"
               onClick={toggleTheme}
               title={`Ubah ke ${theme === 'light' ? 'Dark' : 'Light'} Mode`}
+              aria-label="Toggle theme mode"
             >
               <i className={`bi ${theme === 'light' ? 'bi-moon-stars-fill' : 'bi-sun-fill'}`}></i>
               <span>{theme === 'light' ? 'Dark' : 'Light'}</span>
@@ -55,36 +70,56 @@ const RootLayout = () => {
         <div className="navbar-inner container">
           {/* Brand */}
           <Link to="/" className="brand">
-            <span className="brand-icon">
-              <i className="bi bi-wifi"></i>
-            </span>
+            <div className="brand-icon-wrapper">
+              <img
+                src={logoMitraxcon}
+                alt="MITRAXCON Logo"
+                className="brand-logo-img"
+              />
+              <div className="brand-icon-glow"></div>
+            </div>
             <div className="brand-text-group">
-              <span className="brand-text">
-                ESA<span className="brand-accent">NET</span>
-              </span>
+              <span className="brand-text">MITRAXCON</span>
               <span className="brand-subtext">PT Esanet Telekomunikasi Indonesia</span>
             </div>
           </Link>
 
           {/* Desktop Nav */}
           <nav className="nav-desktop">
-            <NavLink to="/" end className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>Beranda</NavLink>
-            <NavLink to="/about" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>Tentang Kami</NavLink>
-            <NavLink to="/services" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>Layanan</NavLink>
-            <NavLink to="/contact" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>Kontak</NavLink>
+            <NavLink to="/" end className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
+              Beranda
+            </NavLink>
+            <NavLink to="/about" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
+              Tentang Kami
+            </NavLink>
+            <NavLink to="/services" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
+              Layanan
+            </NavLink>
+            <NavLink to="/blog" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
+              Blog
+            </NavLink>
+            <NavLink to="/contact" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
+              Kontak
+            </NavLink>
+            <NavLink to="/portal" className={({ isActive }) => `nav-item nav-item-portal ${isActive ? 'active' : ''}`}>
+              <i className="bi bi-person-circle"></i>
+              <span>Portal</span>
+            </NavLink>
           </nav>
 
           {/* Theme Switcher & CTA Button Desktop */}
           <div className="nav-cta">
-            <button 
+            <button
               className="theme-toggle-btn"
               onClick={toggleTheme}
               title={`Switch to ${theme === 'light' ? 'Dark' : 'Light'} Mode`}
+              aria-label="Switch theme mode"
             >
               <i className={`bi ${theme === 'light' ? 'bi-moon-stars-fill' : 'bi-sun-fill'}`}></i>
             </button>
-            <Link to="/contact" className="btn btn-accent navbar-btn">
-              <i className="bi bi-headset"></i> Hubungi Kami
+            <Link to="/contact" className="btn-navbar-cta">
+              <span>Hubungi Kami</span>
+              <i className="bi bi-arrow-right-short"></i>
             </Link>
           </div>
 
@@ -103,34 +138,52 @@ const RootLayout = () => {
 
         {/* Mobile Menu */}
         <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
-          <nav>
-            <NavLink to="/" end className={({ isActive }) => `mobile-nav-item ${isActive ? 'active' : ''}`}>
-              <i className="bi bi-house-door"></i> Beranda
-            </NavLink>
-            <NavLink to="/about" className={({ isActive }) => `mobile-nav-item ${isActive ? 'active' : ''}`}>
-              <i className="bi bi-info-circle"></i> Tentang Kami
-            </NavLink>
-            <NavLink to="/services" className={({ isActive }) => `mobile-nav-item ${isActive ? 'active' : ''}`}>
-              <i className="bi bi-grid"></i> Layanan
-            </NavLink>
-            <NavLink to="/contact" className={({ isActive }) => `mobile-nav-item ${isActive ? 'active' : ''}`}>
-              <i className="bi bi-envelope"></i> Kontak
-            </NavLink>
-          </nav>
-          <div className="mobile-cta" style={{display:'flex', gap:'0.75rem'}}>
-            <button 
-              className="theme-toggle-btn"
-              onClick={toggleTheme}
-              style={{padding:'0.75rem 1rem', borderRadius:'var(--radius-full)'}}
-            >
-              <i className={`bi ${theme === 'light' ? 'bi-moon-stars-fill' : 'bi-sun-fill'}`}></i>
-              <span style={{marginLeft:'0.4rem', fontSize:'0.85rem', fontWeight:'600'}}>
-                {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
-              </span>
-            </button>
-            <Link to="/contact" className="btn btn-primary" style={{flex:1, justifyContent:'center'}}>
-              <i className="bi bi-headset"></i> Hubungi Kami
-            </Link>
+          <div className="container mobile-menu-inner">
+            <nav className="mobile-nav-list">
+              <NavLink to="/" end className={({ isActive }) => `mobile-nav-item ${isActive ? 'active' : ''}`}>
+                <span className="mobile-nav-icon"><i className="bi bi-house-door"></i></span>
+                <span className="mobile-nav-title">Beranda</span>
+                <i className="bi bi-chevron-right mobile-arrow"></i>
+              </NavLink>
+              <NavLink to="/about" className={({ isActive }) => `mobile-nav-item ${isActive ? 'active' : ''}`}>
+                <span className="mobile-nav-icon"><i className="bi bi-info-circle"></i></span>
+                <span className="mobile-nav-title">Tentang Kami</span>
+                <i className="bi bi-chevron-right mobile-arrow"></i>
+              </NavLink>
+              <NavLink to="/services" className={({ isActive }) => `mobile-nav-item ${isActive ? 'active' : ''}`}>
+                <span className="mobile-nav-icon"><i className="bi bi-grid"></i></span>
+                <span className="mobile-nav-title">Layanan</span>
+                <i className="bi bi-chevron-right mobile-arrow"></i>
+              </NavLink>
+              <NavLink to="/blog" className={({ isActive }) => `mobile-nav-item ${isActive ? 'active' : ''}`}>
+                <span className="mobile-nav-icon"><i className="bi bi-journal-richtext"></i></span>
+                <span className="mobile-nav-title">Blog &amp; Wawasan</span>
+                <i className="bi bi-chevron-right mobile-arrow"></i>
+              </NavLink>
+              <NavLink to="/contact" className={({ isActive }) => `mobile-nav-item ${isActive ? 'active' : ''}`}>
+                <span className="mobile-nav-icon"><i className="bi bi-envelope"></i></span>
+                <span className="mobile-nav-title">Kontak</span>
+                <i className="bi bi-chevron-right mobile-arrow"></i>
+              </NavLink>
+              <NavLink to="/portal" className={({ isActive }) => `mobile-nav-item mobile-nav-portal ${isActive ? 'active' : ''}`}>
+                <span className="mobile-nav-icon"><i className="bi bi-person-badge-fill"></i></span>
+                <span className="mobile-nav-title">Portal Pelanggan</span>
+                <i className="bi bi-chevron-right mobile-arrow"></i>
+              </NavLink>
+            </nav>
+            <div className="mobile-cta-box">
+              <button
+                className="mobile-theme-toggle"
+                onClick={toggleTheme}
+              >
+                <i className={`bi ${theme === 'light' ? 'bi-moon-stars-fill' : 'bi-sun-fill'}`}></i>
+                <span>Mode Tampilan: <strong>{theme === 'light' ? 'Dark' : 'Light'}</strong></span>
+              </button>
+              <Link to="/contact" className="btn-navbar-cta mobile-btn-block">
+                <span>Hubungi Dukungan 24/7</span>
+                <i className="bi bi-arrow-right-short"></i>
+              </Link>
+            </div>
           </div>
         </div>
       </header>
@@ -147,8 +200,12 @@ const RootLayout = () => {
             {/* Col 1: Brand & Contact */}
             <div className="footer-brand-col">
               <div className="footer-brand">
-                <i className="bi bi-wifi"></i>
-                ESA<span>NET</span>
+                <img
+                  src={logoMitraxcon}
+                  alt="MITRAXCON Logo"
+                  className="footer-logo-img"
+                />
+                <span>MITRAXCON</span>
               </div>
               <p className="footer-company-legal">PT Esanet Telekomunikasi Indonesia</p>
               <p className="footer-tagline">Penyedia Jasa Akses Internet (ISP) Berlisensi Resmi Kominfo RI & Anggota APJII.</p>
@@ -176,7 +233,9 @@ const RootLayout = () => {
                   <li><Link to="/">Beranda</Link></li>
                   <li><Link to="/about">Tentang Kami</Link></li>
                   <li><Link to="/services">Layanan</Link></li>
+                  <li><Link to="/blog">Blog &amp; Wawasan</Link></li>
                   <li><Link to="/contact">Kontak</Link></li>
+                  <li><Link to="/portal">Portal Pelanggan</Link></li>
                 </ul>
               </div>
               <div className="footer-links-group">
@@ -195,13 +254,13 @@ const RootLayout = () => {
             <div className="footer-social-col">
               <h4 className="footer-heading">Ikuti Kami</h4>
               <div className="footer-socials">
-                <a href="#" aria-label="Facebook" className="social-btn"><i className="bi bi-facebook"></i></a>
-                <a href="#" aria-label="Instagram" className="social-btn"><i className="bi bi-instagram"></i></a>
-                <a href="#" aria-label="Twitter" className="social-btn"><i className="bi bi-twitter-x"></i></a>
-                <a href="#" aria-label="YouTube" className="social-btn"><i className="bi bi-youtube"></i></a>
+                <a href="#" aria-label="Facebook" className="social-btn fb"><i className="bi bi-facebook"></i></a>
+                <a href="#" aria-label="Instagram" className="social-btn ig"><i className="bi bi-instagram"></i></a>
+                <a href="#" aria-label="Twitter" className="social-btn x"><i className="bi bi-twitter-x"></i></a>
+                <a href="#" aria-label="YouTube" className="social-btn yt"><i className="bi bi-youtube"></i></a>
               </div>
               <div className="footer-hours">
-                <h4 className="footer-heading" style={{marginTop:'1.5rem'}}>Dukungan Teknis NOC</h4>
+                <h4 className="footer-heading" style={{ marginTop: '1.5rem' }}>Dukungan Teknis NOC</h4>
                 <p><i className="bi bi-clock-fill"></i> 24 Jam / 7 Hari / 365 Hari</p>
                 <p><i className="bi bi-shield-check-fill"></i> Uptime Network 99.9%</p>
               </div>

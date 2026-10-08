@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
-import './About.css';
+import TechMarquee from '../components/TechMarquee';
+import PartnerSlider from '../components/PartnerSlider';
+import '../assets/css/About.css';
 
 const companyDetails = [
   { label: 'Nama Resmi', val: 'PT Esanet Telekomunikasi Indonesia' },
@@ -62,25 +64,7 @@ const certs = [
   { title: 'Anggota APJII & IIX', desc: 'Terhubung langsung ke Indonesia Internet Exchange' },
 ];
 
-// Marquee rows data for Infrastruktur Teknologi
-const row1Tags = [
-  'Network', 'Server', 'Fiber', 'Router', 'Switch', 'Antenna', 'Satellite', 'Cloud', 'Security', 'Backup', 'Data Center', 'Firewall'
-];
 
-const row2Items = [
-  { type: 'text', text: 'Security' },
-  { type: 'text', text: 'Backup' },
-  { type: 'img', src: '/assets/fiber.png', alt: 'Fiber Optic' },
-  { type: 'img', src: '/assets/server.png', alt: 'Server Room' },
-  { type: 'text', text: 'Network' },
-  { type: 'text', text: 'Server' },
-  { type: 'text', text: 'Fiber' },
-  { type: 'text', text: 'Router' },
-  { type: 'text', text: 'Switch' },
-  { type: 'text', text: 'Antenna' },
-  { type: 'text', text: 'Satellite' },
-  { type: 'text', text: 'Cloud' },
-];
 
 const About = () => {
   return (
@@ -148,65 +132,7 @@ const About = () => {
       </section>
 
       {/* ===== INFRASTRUKTUR TEKNOLOGI MARQUEE SECTION ===== */}
-      <section className="tech-marquee-section">
-        <div className="tech-marquee-header">
-          <h2 className="tech-marquee-title">
-            INFRASTRUK<span className="title-underline">TUR</span> TEKNOLOGI
-          </h2>
-        </div>
-
-        <div className="marquee-wrapper">
-          {/* Row 1 */}
-          <div className="marquee-track track-left">
-            <div className="marquee-content">
-              {row1Tags.map((tag, index) => (
-                <div className="tech-pill" key={`r1-1-${index}`}>
-                  {tag}
-                </div>
-              ))}
-            </div>
-            {/* Duplicated for seamless infinite loop */}
-            <div className="marquee-content" aria-hidden="true">
-              {row1Tags.map((tag, index) => (
-                <div className="tech-pill" key={`r1-2-${index}`}>
-                  {tag}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Row 2 */}
-          <div className="marquee-track track-right">
-            <div className="marquee-content">
-              {row2Items.map((item, index) => (
-                item.type === 'img' ? (
-                  <div className="tech-img-thumb" key={`r2-1-${index}`}>
-                    <img src={item.src} alt={item.alt} />
-                  </div>
-                ) : (
-                  <div className="tech-pill" key={`r2-1-${index}`}>
-                    {item.text}
-                  </div>
-                )
-              ))}
-            </div>
-            {/* Duplicated for seamless infinite loop */}
-            <div className="marquee-content" aria-hidden="true">
-              {row2Items.map((item, index) => (
-                item.type === 'img' ? (
-                  <div className="tech-img-thumb" key={`r2-2-${index}`}>
-                    <img src={item.src} alt={item.alt} />
-                  </div>
-                ) : (
-                  <div className="tech-pill" key={`r2-2-${index}`}>
-                    {item.text}
-                  </div>
-                )
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <TechMarquee />
 
       {/* ===== VISI MISI ===== */}
       <section className="vision-mission">
@@ -302,6 +228,9 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      {/* ===== MITRA & KLIEN STRATEGIS SLIDER ===== */}
+      <PartnerSlider />
 
       {/* ===== CTA ===== */}
       <section className="about-cta">

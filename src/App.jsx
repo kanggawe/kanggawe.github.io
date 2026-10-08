@@ -4,7 +4,12 @@ import RootLayout from './layouts/RootLayout';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
+import Blog from './pages/Blog';
+import BlogDetail from './pages/BlogDetail';
 import Contact from './pages/Contact';
+import CustomerPortal from './pages/CustomerPortal';
+import NotFound from './pages/NotFound';
+import Preloader from './components/Preloader';
 
 // Error Boundary Component
 const ErrorBoundary = () => {
@@ -27,8 +32,7 @@ const ErrorBoundary = () => {
         onClick={() => window.location.href = '/'}
         style={{
           padding: '12px 24px',
-          // background: '#0047CC',
-          background: '#d9ff00ff',
+          background: '#0047CC',
           color: 'white',
           border: 'none',
           borderRadius: '8px',
@@ -63,20 +67,41 @@ const router = createBrowserRouter([
         element: <Services />
       },
       {
+        path: 'blog',
+        element: <Blog />
+      },
+      {
+        path: 'blog/:slug',
+        element: <BlogDetail />
+      },
+      {
         path: 'contact',
         element: <Contact />
+      },
+      {
+        path: 'portal',
+        element: <CustomerPortal />
+      },
+      {
+        path: 'portal-pelanggan',
+        element: <CustomerPortal />
+      },
+      {
+        path: '*',
+        element: <NotFound />
       }
     ]
   },
   {
     path: '*',
-    element: <ErrorBoundary />
+    element: <NotFound />
   }
 ]);
 
 function App() {
   return (
     <ThemeProvider>
+      <Preloader />
       <RouterProvider router={router} />
     </ThemeProvider>
   );

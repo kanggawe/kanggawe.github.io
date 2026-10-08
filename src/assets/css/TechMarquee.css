@@ -1,0 +1,375 @@
+/* ============================================
+   TECH MARQUEE - Modern Enterprise Design
+   ============================================ */
+
+.tech-marquee-section {
+  position: relative;
+  padding: 4.5rem 0 5rem;
+  background: var(--bg-body);
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Subtle background radial glow */
+.tech-marquee-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 350px;
+  background: radial-gradient(ellipse at center, rgba(45, 212, 191, 0.08) 0%, rgba(59, 130, 246, 0.03) 50%, transparent 75%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Section Header */
+.tech-marquee-header {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 3rem auto;
+  padding: 0 1rem;
+}
+
+/* Badge Chip */
+.tech-marquee-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.95rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #0d9488;
+  background: rgba(45, 212, 191, 0.12);
+  border: 1px solid rgba(45, 212, 191, 0.25);
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(45, 212, 191, 0.08);
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .tech-marquee-badge {
+  color: #5eead4;
+  background: rgba(45, 212, 191, 0.1);
+  border-color: rgba(45, 212, 191, 0.28);
+}
+
+.tech-badge-dot {
+  width: 7px;
+  height: 7px;
+  background: #14b8a6;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #14b8a6;
+  animation: techPulse 2s infinite ease-in-out;
+}
+
+@keyframes techPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 0.5;
+  }
+}
+
+/* Title */
+.tech-marquee-title {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.85rem;
+}
+
+.tech-title-gradient {
+  background: linear-gradient(135deg, #0d9488 0%, #0284c7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+[data-theme="dark"] .tech-title-gradient {
+  background: linear-gradient(135deg, #2dd4bf 0%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtitle */
+.tech-marquee-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Container & Masked Edges */
+.tech-marquee-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  width: 100%;
+  overflow: hidden;
+  /* Smooth edge fade out using CSS mask */
+  mask-image: linear-gradient(to right, transparent 0%, black 7%, black 93%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 7%, black 93%, transparent 100%);
+}
+
+/* Fallback gradient edge overlays */
+.tech-marquee-container::before,
+.tech-marquee-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 90px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.tech-marquee-container::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-body), transparent);
+}
+
+.tech-marquee-container::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-body), transparent);
+}
+
+/* Marquee Track */
+.tech-marquee-track {
+  display: flex;
+  width: max-content;
+  user-select: none;
+}
+
+.track-left .tech-marquee-group {
+  animation: techScrollLeft 48s linear infinite;
+}
+
+.track-right .tech-marquee-group {
+  animation: techScrollRight 52s linear infinite;
+}
+
+/* Pause on hover */
+.tech-marquee-container:hover .tech-marquee-group {
+  animation-play-state: paused;
+}
+
+.tech-marquee-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-right: 1rem;
+  flex-shrink: 0;
+}
+
+/* ===== TECH PILL CARD ===== */
+.tech-pill-card {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.65rem 1.15rem 0.65rem 0.75rem;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 9999px;
+  box-shadow: 0 3px 12px -2px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  white-space: nowrap;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: default;
+}
+
+[data-theme="dark"] .tech-pill-card {
+  background: rgba(15, 23, 42, 0.82);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.35);
+}
+
+/* Card Hover Elevation */
+.tech-pill-card:hover {
+  transform: translateY(-3px) scale(1.02);
+  background: #ffffff;
+  border-color: rgba(45, 212, 191, 0.45);
+  box-shadow: 0 10px 25px -4px rgba(45, 212, 191, 0.2), 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="dark"] .tech-pill-card:hover {
+  background: rgba(26, 38, 64, 0.95);
+  border-color: rgba(45, 212, 191, 0.45);
+  box-shadow: 0 10px 25px -4px rgba(45, 212, 191, 0.25);
+}
+
+/* Icon Box */
+.tech-pill-icon-box {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  transition: transform 0.28s ease;
+}
+
+.tech-pill-card:hover .tech-pill-icon-box {
+  transform: scale(1.12) rotate(4deg);
+}
+
+/* Icon box theme color variants */
+.accent-teal .tech-pill-icon-box {
+  background: rgba(45, 212, 191, 0.14);
+  color: #0d9488;
+  border: 1px solid rgba(45, 212, 191, 0.3);
+}
+[data-theme="dark"] .accent-teal .tech-pill-icon-box {
+  background: rgba(45, 212, 191, 0.16);
+  color: #2dd4bf;
+  border-color: rgba(45, 212, 191, 0.35);
+}
+
+.accent-blue .tech-pill-icon-box {
+  background: rgba(59, 130, 246, 0.14);
+  color: #2563eb;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+[data-theme="dark"] .accent-blue .tech-pill-icon-box {
+  background: rgba(59, 130, 246, 0.16);
+  color: #60a5fa;
+  border-color: rgba(59, 130, 246, 0.35);
+}
+
+.accent-emerald .tech-pill-icon-box {
+  background: rgba(16, 185, 129, 0.14);
+  color: #059669;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+[data-theme="dark"] .accent-emerald .tech-pill-icon-box {
+  background: rgba(16, 185, 129, 0.16);
+  color: #34d399;
+  border-color: rgba(16, 185, 129, 0.35);
+}
+
+.accent-cyan .tech-pill-icon-box {
+  background: rgba(6, 182, 212, 0.14);
+  color: #0891b2;
+  border: 1px solid rgba(6, 182, 212, 0.3);
+}
+[data-theme="dark"] .accent-cyan .tech-pill-icon-box {
+  background: rgba(6, 182, 212, 0.16);
+  color: #22d3ee;
+  border-color: rgba(6, 182, 212, 0.35);
+}
+
+.accent-indigo .tech-pill-icon-box {
+  background: rgba(99, 102, 241, 0.14);
+  color: #4f46e5;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+}
+[data-theme="dark"] .accent-indigo .tech-pill-icon-box {
+  background: rgba(99, 102, 241, 0.16);
+  color: #818cf8;
+  border-color: rgba(99, 102, 241, 0.35);
+}
+
+/* Info Box */
+.tech-pill-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  text-align: left;
+}
+
+.tech-pill-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.tech-pill-spec {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.725rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  line-height: 1.1;
+}
+
+.spec-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 5px rgba(16, 185, 129, 0.8);
+  flex-shrink: 0;
+}
+
+/* Animations */
+@keyframes techScrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes techScrollRight {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .tech-marquee-section {
+    padding: 3.5rem 0 4rem;
+  }
+
+  .tech-marquee-title {
+    font-size: 1.55rem;
+  }
+
+  .tech-marquee-subtitle {
+    font-size: 0.875rem;
+  }
+
+  .tech-pill-card {
+    padding: 0.55rem 0.95rem 0.55rem 0.65rem;
+    gap: 0.7rem;
+  }
+
+  .tech-pill-icon-box {
+    width: 34px;
+    height: 34px;
+    font-size: 0.95rem;
+  }
+
+  .tech-pill-name {
+    font-size: 0.82rem;
+  }
+
+  .tech-pill-spec {
+    font-size: 0.68rem;
+  }
+}
