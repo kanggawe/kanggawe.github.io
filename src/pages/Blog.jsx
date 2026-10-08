@@ -40,7 +40,7 @@ const Blog = () => {
             </h1>
             <p className="blog-hero-subtitle">
               Pelajari tren teknologi jaringan fiber optic, panduan keamanan siber, tips optimasi WiFi, 
-              dan berita terbaru seputar ekosistem telekomunikasi ESANET.
+              dan berita terbaru seputar ekosistem telekomunikasi MITRAXCON.
             </p>
 
             {/* Search Bar */}
@@ -210,9 +210,9 @@ const Blog = () => {
                 <i className="bi bi-envelope-paper-fill"></i> Buletin Bulanan
               </span>
               <h3>Dapatkan Wawasan Jaringan Terkini Langsung di Inbox Anda</h3>
-              <p>Tips optimasi internet, update produk, dan informasi promo eksklusif dari ESANET.</p>
+              <p>Tips optimasi internet, update produk, dan informasi promo eksklusif dari MITRAXCON.</p>
             </div>
-            <form className="newsletter-form" onSubmit={(e) => { e.preventDefault(); alert('Terima kasih telah berlangganan buletin ESANET!'); }}>
+            <form className="newsletter-form" onSubmit={(e) => { e.preventDefault(); alert('Terima kasih telah berlangganan buletin MITRAXCON!'); }}>
               <input
                 type="email"
                 placeholder="Masukkan alamat email Anda..."

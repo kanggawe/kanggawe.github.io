@@ -37,7 +37,7 @@ const CustomerPortal = () => {
   // Customer Profile State (Integrated with Real Detected IP)
   const [profile, setProfile] = useState({
     name: 'Budi Pratama Santoso',
-    customerId: 'ESA-8829-102',
+    customerId: 'MTX-8829-102',
     package: 'Home Fiber Ultra 100 Mbps',
     price: 385000,
     status: 'Aktif',
@@ -47,15 +47,15 @@ const CustomerPortal = () => {
     ontModel: 'Huawei HG8245H5 Dual-Band GPON',
     opticalPower: '-19.4 dBm (Prima)',
     uptime: '18 Hari, 7 Jam, 22 Menit',
-    wifiSsid24: 'ESANET_Home_Budi',
-    wifiSsid5: 'ESANET_Home_Budi_5G',
+    wifiSsid24: 'MITRAXCON_Home_Budi',
+    wifiSsid5: 'MITRAXCON_Home_Budi_5G',
     wifiPassword: 'WifiSuperCepat2026!'
   });
 
   // Billing State
   const [billingList, setBillingList] = useState([
     {
-      id: 'ESA-INV-202609-082',
+      id: 'MTX-INV-202609-082',
       period: 'September 2026',
       dueDate: '20 September 2026',
       amount: 385000,
@@ -63,7 +63,7 @@ const CustomerPortal = () => {
       paymentDate: '-'
     },
     {
-      id: 'ESA-INV-202608-077',
+      id: 'MTX-INV-202608-077',
       period: 'Agustus 2026',
       dueDate: '20 Agustus 2026',
       amount: 385000,
@@ -71,7 +71,7 @@ const CustomerPortal = () => {
       paymentDate: '18 Agustus 2026 (BCA Virtual Account)'
     },
     {
-      id: 'ESA-INV-202607-063',
+      id: 'MTX-INV-202607-063',
       period: 'Juli 2026',
       dueDate: '20 Juli 2026',
       amount: 385000,
@@ -91,8 +91,8 @@ const CustomerPortal = () => {
 
   // WiFi Settings Form
   const [wifiForm, setWifiForm] = useState({
-    ssid24: 'ESANET_Home_Budi',
-    ssid5: 'ESANET_Home_Budi_5G',
+    ssid24: 'MITRAXCON_Home_Budi',
+    ssid5: 'MITRAXCON_Home_Budi_5G',
     password: 'WifiSuperCepat2026!'
   });
   const [showWifiSuccess, setShowWifiSuccess] = useState(false);
@@ -142,7 +142,7 @@ const CustomerPortal = () => {
         if (data && data.success) {
           setRealNetwork({
             ip: data.ip,
-            isp: data.connection?.isp || data.connection?.org || 'ESANET Telecom Infrastructure',
+            isp: data.connection?.isp || data.connection?.org || 'MITRAXCON Telecom Infrastructure',
             city: data.city || 'Jakarta',
             region: data.region || 'Jawa Barat',
             country: data.country || 'Indonesia',
@@ -180,7 +180,7 @@ const CustomerPortal = () => {
 
   // SEO Page Title
   useEffect(() => {
-    document.title = 'Portal Pelanggan - ESANET Self-Care';
+    document.title = 'Portal Pelanggan - MITRAXCON Self-Care';
     window.scrollTo(0, 0);
   }, [isLoggedIn, activeTab]);
 
@@ -199,16 +199,16 @@ const CustomerPortal = () => {
     }
     setLoginError('');
     setIsLoggedIn(true);
-    triggerToast(`Selamat datang di Portal Pelanggan ESANET, ${profile.name}!`);
+    triggerToast(`Selamat datang di Portal Pelanggan MITRAXCON, ${profile.name}!`);
   };
 
   // Demo Login Quick Button
   const handleDemoLogin = () => {
     setIsLoggedIn(true);
-    setLoginId('ESA-8829-102');
+    setLoginId('MTX-8829-102');
     setLoginPassword('password123');
     setLoginError('');
-    triggerToast('Anda masuk ke sesi Portal Pelanggan ESANET.');
+    triggerToast('Anda masuk ke sesi Portal Pelanggan MITRAXCON.');
   };
 
   // Handle Logout
@@ -227,7 +227,7 @@ const CustomerPortal = () => {
       customerId: quickBillId.toUpperCase(),
       name: 'Budi Pratama Santoso',
       packageName: 'Home Fiber Ultra 100 Mbps',
-      invoiceNumber: 'ESA-INV-202609-082',
+      invoiceNumber: 'MTX-INV-202609-082',
       period: 'September 2026',
       dueDate: '20 September 2026',
       amount: 385000,
@@ -292,14 +292,14 @@ const CustomerPortal = () => {
     setTimeout(() => {
       setBillingList(
         billingList.map((bill) =>
-          bill.id === 'ESA-INV-202609-082'
+          bill.id === 'MTX-INV-202609-082'
             ? { ...bill, status: 'Lunas', paymentDate: `Hari ini, ${new Date().toLocaleDateString('id-ID')}` }
             : bill
         )
       );
       setShowPayModal(false);
       setPaymentSuccess(false);
-      triggerToast('Pembayaran berhasil diverifikasi! Terima kasih telah menggunakan ESANET.');
+      triggerToast('Pembayaran berhasil diverifikasi! Terima kasih telah menggunakan MITRAXCON.');
     }, 1800);
   };
 
@@ -354,10 +354,10 @@ const CustomerPortal = () => {
             <div className="container">
               <div className="portal-auth-badge">
                 <i className="bi bi-shield-lock-fill"></i>
-                <span>ESANET Self-Care Hub</span>
+                <span>MITRAXCON Self-Care Hub</span>
               </div>
               <h1 className="portal-auth-title">
-                Portal Pelanggan <span className="text-gradient">ESANET</span>
+                Portal Pelanggan <span className="text-gradient">MITRAXCON</span>
               </h1>
               <p className="portal-auth-subtitle">
                 Akses mudah kelola akun, cek rincian tagihan, kontrol router WiFi rumah, dan uji kecepatan jaringan real-time.
@@ -428,7 +428,7 @@ const CustomerPortal = () => {
                             <input
                               type="text"
                               id="loginId"
-                              placeholder="Contoh: ESA-8829-102 atau nama@email.com"
+                              placeholder="Contoh: MTX-8829-102 atau nama@email.com"
                               value={loginId}
                               onChange={(e) => setLoginId(e.target.value)}
                             />
@@ -493,6 +493,11 @@ const CustomerPortal = () => {
                         <i className="bi bi-lightning-charge-fill"></i>
                         <span>Coba Demo Akun Pelanggan (1-Klik)</span>
                       </button>
+
+                      <div className="auth-security-note">
+                        <i className="bi bi-shield-check"></i>
+                        <span>Enkripsi TLS 256-bit berstandar enterprise &amp; perlindungan privasi data.</span>
+                      </div>
                     </div>
                   )}
 
@@ -512,7 +517,7 @@ const CustomerPortal = () => {
                             <input
                               type="text"
                               id="quickBillId"
-                              placeholder="Masukkan Nomor Pelanggan (cth: ESA-8829-102)"
+                              placeholder="Masukkan Nomor Pelanggan (cth: MTX-8829-102)"
                               value={quickBillId}
                               onChange={(e) => setQuickBillId(e.target.value)}
                             />
@@ -640,7 +645,7 @@ const CustomerPortal = () => {
               {/* Right Column: Feature Highlights & Quick Support */}
               <div className="portal-features-col">
                 <div className="portal-feature-box">
-                  <h3>Keunggulan Portal Pelanggan ESANET</h3>
+                  <h3>Keunggulan Portal Pelanggan MITRAXCON</h3>
                   <p>Semua kendali layanan broadband & fiber optik Anda dalam satu genggaman cepat dan aman.</p>
 
                   <ul className="portal-feature-list">
@@ -688,7 +693,7 @@ const CustomerPortal = () => {
                         <i className="bi bi-headset"></i> 1500-123
                       </a>
                       <a
-                        href="https://wa.me/6281234567890?text=Halo%20ESANET,%20saya%20butuh%20bantuan%20Portal%20Pelanggan"
+                        href="https://wa.me/6281234567890?text=Halo%20MITRAXCON,%20saya%20butuh%20bantuan%20Portal%20Pelanggan"
                         target="_blank"
                         rel="noreferrer"
                         className="btn-help-item wa-item"
@@ -995,7 +1000,7 @@ const CustomerPortal = () => {
                         <span className="bill-tag">Tagihan Periode September 2026</span>
                         <h2>Rp {profile.price.toLocaleString('id-ID')}</h2>
                         <p className="bill-detail-line">
-                          Nomor Invoice: <strong>ESA-INV-202609-082</strong> • Jatuh Tempo: <span className="text-danger">20 September 2026</span>
+                          Nomor Invoice: <strong>MTX-INV-202609-082</strong> • Jatuh Tempo: <span className="text-danger">20 September 2026</span>
                         </p>
                         <p className="bill-package-name">
                           Layanan: <strong>{profile.package}</strong> (Pajak PPN 11% sudah termasuk)
@@ -1247,7 +1252,7 @@ const CustomerPortal = () => {
                       <div className="speedtest-iframe-responsive">
                         <iframe
                           src="https://openspeedtest.com/speedtest"
-                          title="ESANET Real Network Speed Test"
+                          title="MITRAXCON Real Network Speed Test"
                           className="speedtest-live-frame"
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
                         ></iframe>
@@ -1440,7 +1445,7 @@ const CustomerPortal = () => {
             <div className="portal-modal-backdrop" onClick={() => setShowPayModal(false)}>
               <div className="portal-modal" onClick={(e) => e.stopPropagation()}>
                 <div className="modal-head">
-                  <h3>Bayar Tagihan ESANET</h3>
+                  <h3>Bayar Tagihan MITRAXCON</h3>
                   <button
                     type="button"
                     className="modal-close"
@@ -1454,7 +1459,7 @@ const CustomerPortal = () => {
                   <div className="modal-summary-box">
                     <div className="m-row">
                       <span>Invoice</span>
-                      <strong>ESA-INV-202609-082</strong>
+                      <strong>MTX-INV-202609-082</strong>
                     </div>
                     <div className="m-row">
                       <span>Total Tagihan</span>

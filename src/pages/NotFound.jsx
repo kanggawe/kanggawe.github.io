@@ -46,7 +46,7 @@ const NotFound = () => {
           </h1>
 
           <p className="notfound-desc">
-            Alamat URL yang Anda tuju tidak terdaftar di server jaringan ESANET. 
+            Alamat URL yang Anda tuju tidak terdaftar di server jaringan MITRAXCON. 
             Mungkin tautan telah kadaluarsa, salah ketik, atau halaman telah dipindahkan ke alamat baru.
           </p>
 
@@ -76,7 +76,7 @@ const NotFound = () => {
               <span>Halaman Sebelumnya</span>
             </button>
             <a
-              href="https://wa.me/6281234567890?text=Halo%20ESANET,%20saya%20menemukan%20halaman%20error%20404"
+              href="https://wa.me/6281234567890?text=Halo%20MITRAXCON,%20saya%20menemukan%20halaman%20error%20404"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-notfound-wa"
@@ -97,7 +97,7 @@ const NotFound = () => {
                 </div>
                 <div className="dest-text">
                   <strong>Beranda</strong>
-                  <span>Halaman Utama ESANET</span>
+                  <span>Halaman Utama MITRAXCON</span>
                 </div>
               </Link>
               <Link to="/services" className="destination-card">

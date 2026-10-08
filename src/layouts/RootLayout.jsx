@@ -32,9 +32,9 @@ const RootLayout = () => {
               <span>Call Center 24/7: <strong>1500-123</strong></span>
             </a>
             <span className="top-divider"></span>
-            <a href="mailto:info@esanet.id" className="top-info-link">
+            <a href="mailto:info@mitraxcon.id" className="top-info-link">
               <i className="bi bi-envelope-fill"></i>
-              <span>info@esanet.id</span>
+              <span>info@mitraxcon.id</span>
             </a>
           </div>
           <div className="top-bar-right">
@@ -66,7 +66,7 @@ const RootLayout = () => {
       </div>
 
       {/* ===== NAVBAR ===== */}
-      <header className={`navbar-esanet ${scrolled ? 'scrolled' : ''}`}>
+      <header className={`navbar-mitraxcon ${scrolled ? 'scrolled' : ''}`}>
         <div className="navbar-inner container">
           {/* Brand */}
           <Link to="/" className="brand">
@@ -80,7 +80,7 @@ const RootLayout = () => {
             </div>
             <div className="brand-text-group">
               <span className="brand-text">MITRAXCON</span>
-              <span className="brand-subtext">PT Esanet Telekomunikasi Indonesia</span>
+              <span className="brand-subtext">PT Mitraxcon Telekomunikasi Indonesia</span>
             </div>
           </Link>
 
@@ -207,7 +207,7 @@ const RootLayout = () => {
                 />
                 <span>MITRAXCON</span>
               </div>
-              <p className="footer-company-legal">PT Esanet Telekomunikasi Indonesia</p>
+              <p className="footer-company-legal">PT Mitraxcon Telekomunikasi Indonesia</p>
               <p className="footer-tagline">Penyedia Jasa Akses Internet (ISP) Berlisensi Resmi Kominfo RI & Anggota APJII.</p>
               <div className="footer-contacts">
                 <div className="footer-contact-item">
@@ -216,7 +216,7 @@ const RootLayout = () => {
                 </div>
                 <div className="footer-contact-item">
                   <i className="bi bi-envelope-fill"></i>
-                  <span>info@esanet.id</span>
+                  <span>info@mitraxcon.id</span>
                 </div>
                 <div className="footer-contact-item">
                   <i className="bi bi-telephone-fill"></i>
@@ -269,7 +269,7 @@ const RootLayout = () => {
 
           {/* Bottom bar */}
           <div className="footer-bottom">
-            <p>© {new Date().getFullYear()} PT Esanet Telekomunikasi Indonesia. Hak Cipta Dilindungi Undang-Undang.</p>
+            <p>© {new Date().getFullYear()} PT Mitraxcon Telekomunikasi Indonesia. Hak Cipta Dilindungi Undang-Undang.</p>
             <p>Terdaftar & Diawasi oleh Kominfo RI | Anggota APJII</p>
           </div>
         </div>

@@ -4,7 +4,7 @@ import PartnerSlider from '../components/PartnerSlider';
 import '../assets/css/About.css';
 
 const companyDetails = [
-  { label: 'Nama Resmi', val: 'PT Esanet Telekomunikasi Indonesia' },
+  { label: 'Nama Resmi', val: 'PT Mitraxcon Telekomunikasi Indonesia' },
   { label: 'Izin Penyelenggara ISP', val: 'Kominfo RI No. 1284/TEL.02.02/2012' },
   { label: 'Keanggotaan Resmi', val: 'Anggota APJII (Asosiasi Penyelenggara Jasa Internet Indonesia)' },
   { label: 'Sertifikasi Mutu', val: 'ISO 9001:2015 (Quality) & ISO 27001:2013 (Security)' },
@@ -17,7 +17,7 @@ const leadership = [
     role: 'Chief Executive Officer',
     experience: '18+ Tahun di Industri Telekomunikasi',
     icon: 'bi-person-badge-fill',
-    bio: 'Memimpin ekspansi strategis ESANET hingga menjadi salah satu penyedia layanan internet fiber terdepan di Indonesia.',
+    bio: 'Memimpin ekspansi strategis MITRAXCON hingga menjadi salah satu penyedia layanan internet fiber terdepan di Indonesia.',
   },
   {
     name: 'Budi Santoso, S.T.',
@@ -43,7 +43,7 @@ const leadership = [
 ];
 
 const milestones = [
-  { year: '2010', title: 'Pendirian Perusahaan', desc: 'PT Esanet Telekomunikasi Indonesia resmi didirikan dengan fokus layanan internet broadband.' },
+  { year: '2010', title: 'Pendirian Perusahaan', desc: 'PT Mitraxcon Telekomunikasi Indonesia resmi didirikan dengan fokus layanan internet broadband.' },
   { year: '2014', title: 'Izin Resmi Kominfo & APJII', desc: 'Memperoleh izin resmi ISP dari Kominfo RI dan resmi bergabung menjadi anggota APJII.' },
   { year: '2017', title: 'Pembangunan Backbone Fiber', desc: 'Membangun jaringan fiber optic mandiri sepanjang 3.000 KM mencakup wilayah Jabodetabek & Jawa Barat.' },
   { year: '2020', title: 'Sertifikasi ISO 27001 & Tier-3', desc: 'Mendapatkan sertifikasi ISO 27001 untuk standar keamanan informasi & peresmian Data Center Tier-3.' },
@@ -78,7 +78,7 @@ const About = () => {
         <div className="container">
           <div className="about-hero-content">
             <span className="section-tag" style={{ background: 'rgba(255,255,255,0.15)', color: '#fff' }}>Company Profile</span>
-            <h1>PT Esanet Telekomunikasi <span style={{ color: 'var(--accent)' }}>Indonesia</span></h1>
+            <h1>PT Mitraxcon Telekomunikasi <span style={{ color: 'var(--accent)' }}>Indonesia</span></h1>
             <p>
               Penyedia layanan jasa akses internet (ISP) terpercaya di Indonesia yang berkomitmen menghadirkan konektivitas fiber optic berkecepatan tinggi, aman, dan dapat diandalkan untuk masyarakat dan dunia usaha.
             </p>
@@ -94,7 +94,7 @@ const About = () => {
               <span className="section-tag">Legalitas Perusahaan</span>
               <h2 className="section-title" style={{ textAlign: 'left' }}>Profil Resmi & Legalitas</h2>
               <p className="legal-desc">
-                ESANET beroperasi penuh berdasarkan regulasi pemerintah Republik Indonesia dan terdaftar resmi di Kementerian Komunikasi dan Digital (Kominfo) serta Asosiasi Penyelenggara Jasa Internet Indonesia (APJII).
+                MITRAXCON beroperasi penuh berdasarkan regulasi pemerintah Republik Indonesia dan terdaftar resmi di Kementerian Komunikasi dan Digital (Kominfo) serta Asosiasi Penyelenggara Jasa Internet Indonesia (APJII).
               </p>
               <div className="legal-list">
                 {companyDetails.map((d, i) => (
@@ -210,7 +210,7 @@ const About = () => {
         <div className="container">
           <div className="section-header">
             <span className="section-tag">Rekam Jejak</span>
-            <h2 className="section-title">Milestone Perjalanan ESANET</h2>
+            <h2 className="section-title">Milestone Perjalanan MITRAXCON</h2>
             <p className="section-subtitle">Perjalanan 14 tahun membangun fondasi jaringan internet untuk bangsa.</p>
           </div>
           <div className="timeline">
@@ -236,7 +236,7 @@ const About = () => {
       <section className="about-cta">
         <div className="container">
           <div className="about-cta-content">
-            <h2>Ingin Bermitra dengan ESANET?</h2>
+            <h2>Ingin Bermitra dengan MITRAXCON?</h2>
             <p>Konsultasikan kebutuhan jaringan internet bisnis atau perumahan Anda bersama tim spesialis kami.</p>
             <div className="about-cta-actions">
               <Link to="/contact" className="btn btn-accent">

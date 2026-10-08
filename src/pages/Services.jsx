@@ -94,7 +94,7 @@ const Services = () => {
           <div className="services-hero-content">
             <span className="section-tag" style={{ background: 'rgba(255,255,255,0.15)', color: '#fff' }}>Layanan Kami</span>
             <h1>Solusi Internet untuk <span style={{ color: 'var(--accent)' }}>Setiap Kebutuhan</span></h1>
-            <p>Dari rumah pribadi hingga perusahaan besar, ESANET menyediakan layanan internet lengkap dengan teknologi fiber optic terdepan.</p>
+            <p>Dari rumah pribadi hingga perusahaan besar, MITRAXCON menyediakan layanan internet lengkap dengan teknologi fiber optic terdepan.</p>
           </div>
         </div>
       </section>

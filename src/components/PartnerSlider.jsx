@@ -32,7 +32,7 @@ const PartnerSlider = () => {
             Dipercaya oleh Ratusan <span className="partner-title-gradient">Perusahaan &amp; Institusi</span>
           </h2>
           <p className="partner-slider-subtitle">
-            ESANET menjadi mitra konektivitas utama untuk perbankan, perhotelan, data center, dan institusi pendidikan di Indonesia.
+            MITRAXCON menjadi mitra konektivitas utama untuk perbankan, perhotelan, data center, dan institusi pendidikan di Indonesia.
           </p>
         </div>
       </div>

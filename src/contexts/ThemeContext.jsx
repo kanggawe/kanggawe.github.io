@@ -13,12 +13,12 @@ export const useTheme = () => {
 
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('esanet_theme') || 'light';
+    return localStorage.getItem('mitraxcon_theme') || 'light';
   });
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('esanet_theme', theme);
+    localStorage.setItem('mitraxcon_theme', theme);
   }, [theme]);
 
   const toggleTheme = () => {

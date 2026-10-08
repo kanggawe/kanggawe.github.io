@@ -3,7 +3,7 @@ import '../assets/css/Contact.css';
 
 const contactInfo = [
   { icon: 'bi-geo-alt-fill', title: 'Alamat Kami', lines: ['Jl. Teknologi No. 88', 'Jakarta Selatan, 12345'] },
-  { icon: 'bi-envelope-fill', title: 'Email', lines: ['info@esanet.id', 'support@esanet.id'] },
+  { icon: 'bi-envelope-fill', title: 'Email', lines: ['info@mitraxcon.id', 'support@mitraxcon.id'] },
   { icon: 'bi-telephone-fill', title: 'Telepon', lines: ['0800-1234-5678 (Gratis)', '(021) 1234-5678'] },
   { icon: 'bi-clock-fill', title: 'Jam Operasional', lines: ['Senin - Jumat: 08.00 - 20.00', 'Sabtu: 09.00 - 17.00'] },
 ];
@@ -47,7 +47,7 @@ const Contact = () => {
           <div className="contact-hero-content">
             <span className="section-tag" style={{ background: 'rgba(255,255,255,0.15)', color: '#fff' }}>Hubungi Kami</span>
             <h1>Siap Membantu <span style={{ color: 'var(--accent)' }}>Anda</span></h1>
-            <p>Tim kami siap menjawab pertanyaan dan membantu Anda mendapatkan layanan internet terbaik dari ESANET.</p>
+            <p>Tim kami siap menjawab pertanyaan dan membantu Anda mendapatkan layanan internet terbaik dari MITRAXCON.</p>
           </div>
         </div>
       </section>

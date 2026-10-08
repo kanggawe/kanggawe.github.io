@@ -166,11 +166,13 @@ const BlogDetail = () => {
 
             {/* Navigation between articles */}
             <div className="article-bottom-nav">
-              <Link to="/blog" className="btn btn-outline">
-                <i className="bi bi-arrow-left"></i> Kembali ke Daftar Artikel
+              <Link to="/blog" className="btn article-btn-back">
+                <i className="bi bi-arrow-left"></i>
+                <span>Kembali ke Daftar Artikel</span>
               </Link>
-              <Link to="/contact" className="btn btn-primary">
-                <i className="bi bi-headset"></i> Konsultasi Jaringan
+              <Link to="/contact" className="btn article-btn-contact">
+                <i className="bi bi-headset"></i>
+                <span>Konsultasi Jaringan</span>
               </Link>
             </div>
           </main>
@@ -179,7 +181,7 @@ const BlogDetail = () => {
           <aside className="article-sidebar">
             <div className="sidebar-widget promo-widget">
               <div className="promo-widget-badge">
-                <i className="bi bi-stars"></i> Promo ESANET
+                <i className="bi bi-stars"></i> Promo MITRAXCON
               </div>
               <h3>Pasang Internet Fiber Optic Hari Ini</h3>
               <p>Dapatkan diskon langganan hingga 50% dan gratis biaya pasang untuk rumah &amp; bisnis Anda.</p>

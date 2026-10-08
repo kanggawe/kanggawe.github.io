@@ -1,4 +1,4 @@
-// Data artikel blog ESANET
+// Data artikel blog MITRAXCON
 export const blogPosts = [
   {
     id: 1,
@@ -7,7 +7,7 @@ export const blogPosts = [
     category: 'Infrastruktur & Fiber',
     author: {
       name: 'Budi Santoso, S.T.',
-      role: 'Chief Technology Officer ESANET',
+      role: 'Chief Technology Officer MITRAXCON',
       avatar: 'bi-person-circle',
     },
     date: '28 Agustus 2026',
@@ -39,8 +39,8 @@ export const blogPosts = [
       },
       {
         type: 'quote',
-        text: '"Teknologi 100% Full Fiber ESANET dirancang tanpa kompromi untuk memastikan latensi sub-5ms dan jaminan konektivitas tanpa degradasi jarak."',
-        author: 'Budi Santoso, CTO ESANET'
+        text: '"Teknologi 100% Full Fiber MITRAXCON dirancang tanpa kompromi untuk memastikan latensi sub-5ms dan jaminan konektivitas tanpa degradasi jarak."',
+        author: 'Budi Santoso, CTO MITRAXCON'
       },
       {
         type: 'heading',
@@ -56,7 +56,7 @@ export const blogPosts = [
       },
       {
         type: 'paragraph',
-        text: 'Investasi pada jaringan 100% True Fiber Optic seperti yang dihadirkan oleh ESANET bukan sekadar tentang angka kecepatan unduh, melainkan tentang kestabilan latensi rendah (*low ping*) untuk video conference jernih, cloud backup lancar, dan pengalaman gaming bebas lag.'
+        text: 'Investasi pada jaringan 100% True Fiber Optic seperti yang dihadirkan oleh MITRAXCON bukan sekadar tentang angka kecepatan unduh, melainkan tentang kestabilan latensi rendah (*low ping*) untuk video conference jernih, cloud backup lancar, dan pengalaman gaming bebas lag.'
       }
     ]
   },
@@ -108,7 +108,7 @@ export const blogPosts = [
       {
         type: 'quote',
         text: '"Posisikan antena router: satu antena tegak lurus (vertikal) dan satu antena mendatar (horizontal) agar menangkap polarisasi perangkat smartphone maupun laptop secara optimal."',
-        author: 'Tips Tim Teknisi ESANET'
+        author: 'Tips Tim Teknisi MITRAXCON'
       },
       {
         type: 'heading',
@@ -116,14 +116,14 @@ export const blogPosts = [
       },
       {
         type: 'paragraph',
-        text: 'Router Dual-Band dari ESANET menyediakan dua kanal sinyal: 2.4 GHz (jangkauan luas, kecepatan standar) dan 5 GHz (kecepatan ultra tinggi hingga ratusan Mbps, minim interferensi tetangga). Sambungkan TV pintar dan konsol game ke frekuensi 5 GHz untuk streaming 4K tanpa buffering.'
+        text: 'Router Dual-Band dari MITRAXCON menyediakan dua kanal sinyal: 2.4 GHz (jangkauan luas, kecepatan standar) dan 5 GHz (kecepatan ultra tinggi hingga ratusan Mbps, minim interferensi tetangga). Sambungkan TV pintar dan konsol game ke frekuensi 5 GHz untuk streaming 4K tanpa buffering.'
       }
     ]
   },
   {
     id: 3,
     slug: 'mengenal-serangan-ddos-dan-solusi-mitigasi',
-    title: 'Mengenal Serangan DDoS pada Jaringan Bisnis dan Cara ESANET Menangkalnya',
+    title: 'Mengenal Serangan DDoS pada Jaringan Bisnis dan Cara MITRAXCON Menangkalnya',
     category: 'Keamanan Siber',
     author: {
       name: 'Farhan Maulana',
@@ -134,7 +134,7 @@ export const blogPosts = [
     readTime: '6 min baca',
     image: '/assets/server.png',
     featured: false,
-    excerpt: 'Serangan siber tipe DDoS kini makin masif menyasar korporasi dan institusi. Pelajari cara kerja mitigasi otomatis dan proteksi Anti-DDoS hingga 1.2 Tbps dari ESANET.',
+    excerpt: 'Serangan siber tipe DDoS kini makin masif menyasar korporasi dan institusi. Pelajari cara kerja mitigasi otomatis dan proteksi Anti-DDoS hingga 1.2 Tbps dari MITRAXCON.',
     tags: ['Cyber Security', 'Anti-DDoS', 'Firewall', 'Enterprise'],
     content: [
       {
@@ -151,11 +151,11 @@ export const blogPosts = [
       },
       {
         type: 'heading',
-        text: 'Arsitektur Pertahanan Anti-DDoS ESANET'
+        text: 'Arsitektur Pertahanan Anti-DDoS MITRAXCON'
       },
       {
         type: 'paragraph',
-        text: 'ESANET menerapkan perlindungan terdistribusi berbasis Scrubbing Center langsung di tingkat upstream. Arsitektur ini memiliki kapasitas pembersihan hingga 1.2 Tbps yang mampu mendeteksi anomali traffic Layer 3, Layer 4 (SYN Flood, UDP Flood), hingga Layer 7 (HTTP Flood) dalam hitungan detik sebelum paket berbahaya sempat menyentuh server Anda.'
+        text: 'MITRAXCON menerapkan perlindungan terdistribusi berbasis Scrubbing Center langsung di tingkat upstream. Arsitektur ini memiliki kapasitas pembersihan hingga 1.2 Tbps yang mampu mendeteksi anomali traffic Layer 3, Layer 4 (SYN Flood, UDP Flood), hingga Layer 7 (HTTP Flood) dalam hitungan detik sebelum paket berbahaya sempat menyentuh server Anda.'
       },
       {
         type: 'quote',
@@ -179,7 +179,7 @@ export const blogPosts = [
     category: 'Teknologi Bisnis',
     author: {
       name: 'Ir. Hendra Wijaya, M.T.',
-      role: 'Chief Executive Officer ESANET',
+      role: 'Chief Executive Officer MITRAXCON',
       avatar: 'bi-person-circle',
     },
     date: '08 Agustus 2026',
@@ -207,17 +207,17 @@ export const blogPosts = [
       },
       {
         type: 'paragraph',
-        text: 'Pada layanan Dedicated Internet ESANET, Anda mendapatkan rasio bandwidth 1:1 murni (unggah sama cepat dengan unduh), IP Publik Statis, jalur transmisi prioritas tanpa terpengaruh jam sibuk tetangga, serta jaminan waktu respons penanganan teknis (MTTR - Mean Time to Recovery) di bawah 15 menit oleh tim NOC berdedikasi.'
+        text: 'Pada layanan Dedicated Internet MITRAXCON, Anda mendapatkan rasio bandwidth 1:1 murni (unggah sama cepat dengan unduh), IP Publik Statis, jalur transmisi prioritas tanpa terpengaruh jam sibuk tetangga, serta jaminan waktu respons penanganan teknis (MTTR - Mean Time to Recovery) di bawah 15 menit oleh tim NOC berdedikasi.'
       }
     ]
   },
   {
     id: 5,
-    slug: 'ekspansi-jaringan-fiber-100g-esanet',
-    title: 'ESANET Resmi Operasikan Backbone Fiber 100G untuk Tingkatkan Kapasitas Nasional',
-    category: 'Berita ESANET',
+    slug: 'ekspansi-jaringan-fiber-100g-mitraxcon',
+    title: 'MITRAXCON Resmi Operasikan Backbone Fiber 100G untuk Tingkatkan Kapasitas Nasional',
+    category: 'Berita MITRAXCON',
     author: {
-      name: 'Tim Humas ESANET',
+      name: 'Tim Humas MITRAXCON',
       role: 'Corporate Communications',
       avatar: 'bi-person-circle',
     },
@@ -226,11 +226,11 @@ export const blogPosts = [
     image: '/assets/hero-slide-1.jpg',
     featured: false,
     excerpt: 'Peningkatan kapasitas jaringan inti (core backbone) hingga 100 Gbps kini menghubungkan kota-kota strategis di Jawa, Bali, dan Sumatera untuk latensi super rendah.',
-    tags: ['Berita ESANET', 'Backbone 100G', 'Ekspansi', 'Infrastruktur'],
+    tags: ['Berita MITRAXCON', 'Backbone 100G', 'Ekspansi', 'Infrastruktur'],
     content: [
       {
         type: 'paragraph',
-        text: 'PT Esanet Telekomunikasi Indonesia resmi mengumumkan penyelesaian fase modernisasi infrastruktur jaringan inti (*core network*) dengan implementasi link backbone 100 Gbps DWDM (Dense Wavelength Division Multiplexing).'
+        text: 'PT Mitraxcon Telekomunikasi Indonesia resmi mengumumkan penyelesaian fase modernisasi infrastruktur jaringan inti (*core network*) dengan implementasi link backbone 100 Gbps DWDM (Dense Wavelength Division Multiplexing).'
       },
       {
         type: 'heading',
@@ -238,7 +238,7 @@ export const blogPosts = [
       },
       {
         type: 'paragraph',
-        text: 'Seiring meningkatnya adopsi kecerdasan buatan (AI), migrasi sistem perbankan ke multi-cloud, dan konsumsi video streaming 4K/8K, kebutuhan bandwidth domestik di Indonesia melonjak lebih dari 45% dalam setahun terakhir. Upgrade backbone 100G ini memastikan pelanggan ESANET terbebas dari bottleneck di level transmisi antarkota.'
+        text: 'Seiring meningkatnya adopsi kecerdasan buatan (AI), migrasi sistem perbankan ke multi-cloud, dan konsumsi video streaming 4K/8K, kebutuhan bandwidth domestik di Indonesia melonjak lebih dari 45% dalam setahun terakhir. Upgrade backbone 100G ini memastikan pelanggan MITRAXCON terbebas dari bottleneck di level transmisi antarkota.'
       },
       {
         type: 'heading',
@@ -297,5 +297,5 @@ export const blogCategories = [
   'Tips & Tutorial',
   'Keamanan Siber',
   'Teknologi Bisnis',
-  'Berita ESANET'
+  'Berita MITRAXCON'
 ];

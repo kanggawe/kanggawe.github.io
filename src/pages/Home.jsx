@@ -13,7 +13,7 @@ const slides = [
     titlePrefix: 'Internet ',
     highlight: 'Cepat & Andal',
     titleSuffix: ' untuk Semua',
-    subtitle: 'ESANET menghadirkan koneksi internet fiber optic berkecepatan tinggi hingga 1 Gbps untuk rumah dan bisnis Anda. Nikmati browsing, streaming, dan gaming tanpa hambatan.',
+    subtitle: 'MITRAXCON menghadirkan koneksi internet fiber optic berkecepatan tinggi hingga 1 Gbps untuk rumah dan bisnis Anda. Nikmati browsing, streaming, dan gaming tanpa hambatan.',
     primaryBtnText: 'Lihat Paket',
     primaryBtnLink: '/services',
     primaryBtnIcon: 'bi-grid-fill',
@@ -88,56 +88,76 @@ const testimonials = [
     name: 'Budi Kurniawan',
     role: 'Pelanggan Home Broadband (Jakarta)',
     rating: 5,
-    comment: 'Pindah ke ESANET 1 tahun lalu dan sama sekali tidak pernah kejar-kejaran latensi pas main game atau WFH. Support teknis di WhatsApp juga langsung merespons!',
+    comment: 'Pindah ke MITRAXCON 1 tahun lalu dan sama sekali tidak pernah kejar-kejaran latensi pas main game atau WFH. Support teknis di WhatsApp juga langsung merespons!',
     avatar: 'bi-person-fill',
   },
   {
     name: 'Siska Febriani',
     role: 'Owner Cafe Kopi & Resto (Bandung)',
     rating: 5,
-    comment: 'Layanan WiFi Hotspot dari ESANET sangat stabil walau diakses 50+ pengunjung kafe secara bersamaan. Portal login-nya juga keren ada branding logo toko kami.',
+    comment: 'Layanan WiFi Hotspot dari MITRAXCON sangat stabil walau diakses 50+ pengunjung kafe secara bersamaan. Portal login-nya juga keren ada branding logo toko kami.',
     avatar: 'bi-person-fill',
   },
   {
     name: 'Rahmat Hidayat',
     role: 'IT Manager PT Synergy Indonesia',
     rating: 5,
-    comment: 'Memakai Dedicated Internet ESANET untuk kantor cabang. SLA 99.9% bukan cuma janji, uptime beneran stabil dan ada laporan bulanan dari tim NOC.',
+    comment: 'Memakai Dedicated Internet MITRAXCON untuk kantor cabang. SLA 99.9% bukan cuma janji, uptime beneran stabil dan ada laporan bulanan dari tim NOC.',
     avatar: 'bi-person-fill',
   },
 ];
 
 
 
-// Typewriter effect that types the full headline sentence smoothly while highlighting keywords
-const HeroTypewriter = ({ prefix = '', highlight = '', suffix = '', speed = 40, delay = 180 }) => {
+// Typewriter effect dengan animasi ketik maju dan hapus mundur + animated cursor
+const HeroTypewriter = ({
+  prefix = '',
+  highlight = '',
+  suffix = '',
+  speed = 50,
+  deleteSpeed = 30,
+  pauseDelay = 1500,
+}) => {
   const fullText = `${prefix}${highlight}${suffix}`;
   const [charCount, setCharCount] = useState(0);
-  const [isTyping, setIsTyping] = useState(true);
+  const [isDeleting, setIsDeleting] = useState(false);
 
+  // Reset saat slide berpindah
   useEffect(() => {
     setCharCount(0);
-    setIsTyping(true);
+    setIsDeleting(false);
+  }, [prefix, highlight, suffix]);
 
-    let count = 0;
-    let timerId = null;
+  useEffect(() => {
+    let timer;
 
-    const startTimer = setTimeout(() => {
-      timerId = setInterval(() => {
-        count++;
-        setCharCount(count);
-        if (count >= fullText.length) {
-          setIsTyping(false);
-          clearInterval(timerId);
-        }
-      }, speed);
-    }, delay);
+    if (!isDeleting) {
+      // Animasi mengetik maju
+      if (charCount < fullText.length) {
+        timer = setTimeout(() => {
+          setCharCount((prev) => prev + 1);
+        }, speed);
+      } else {
+        // Selesai mengetik: jeda sejenak lalu mulai animasi hapus
+        timer = setTimeout(() => {
+          setIsDeleting(true);
+        }, pauseDelay);
+      }
+    } else {
+      // Animasi hapus (mundur)
+      if (charCount > 0) {
+        timer = setTimeout(() => {
+          setCharCount((prev) => prev - 1);
+        }, deleteSpeed);
+      } else {
+        // Selesai menghapus: jeda sejenak lalu ketik ulang
+        setIsDeleting(false);
+        timer = setTimeout(() => {}, 300);
+      }
+    }
 
-    return () => {
-      clearTimeout(startTimer);
-      if (timerId) clearInterval(timerId);
-    };
-  }, [prefix, highlight, suffix, speed, delay]);
+    return () => clearTimeout(timer);
+  }, [charCount, isDeleting, fullText.length, speed, deleteSpeed, pauseDelay]);
 
   const prefixLen = prefix.length;
   const highlightLen = highlight.length;
@@ -151,13 +171,13 @@ const HeroTypewriter = ({ prefix = '', highlight = '', suffix = '', speed = 40, 
     : '';
 
   return (
-    <span className="typewriter-container">
+    <span className="typewriter-headline">
       <span>{currentPrefix}</span>
       {currentHighlight && (
         <span className="highlight-text">{currentHighlight}</span>
       )}
       <span>{currentSuffix}</span>
-      <span className={`typewriter-cursor ${!isTyping ? 'cursor-idle' : ''}`}>|</span>
+      <span className="typewriter-cursor cursor-line anim-pulse" aria-hidden="true"></span>
     </span>
   );
 };
@@ -167,7 +187,7 @@ const Home = () => {
   const [searchLocation, setSearchLocation] = useState('');
   const [coverageResult, setCoverageResult] = useState(null);
 
-  // Auto-play slider every 5 seconds (resets timer upon manual change)
+  // Auto-play slider every 5.7 seconds (resets timer upon manual change)
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -386,7 +406,7 @@ const Home = () => {
             <div className="checker-text">
               <i className="bi bi-geo-alt-fill checker-icon"></i>
               <div>
-                <h3>Cek Jangkauan Fiber ESANET di Area Anda</h3>
+                <h3>Cek Jangkauan Fiber MITRAXCON di Area Anda</h3>
                 <p>Masukkan nama kota, kecamatan, atau kelurahan Anda</p>
               </div>
             </div>
@@ -414,7 +434,7 @@ const Home = () => {
             <div className="coverage-alert success">
               <i className="bi bi-check-circle-fill"></i>
               <div>
-                <strong>Selamat! Jaringan Fiber ESANET sudah tersedia di lokasi "{searchLocation}".</strong>
+                <strong>Selamat! Jaringan Fiber MITRAXCON sudah tersedia di lokasi "{searchLocation}".</strong>
                 <p>Silakan hubungi tim kami untuk jadwal pemasangan gratis hari ini.</p>
               </div>
               <Link to="/contact" className="btn btn-primary" style={{ marginLeft: 'auto' }}>
@@ -487,14 +507,14 @@ const Home = () => {
       {/* ===== MITRA & KLIEN STRATEGIS SLIDER ===== */}
       <PartnerSlider />
 
-      {/* ===== KENAPA ESANET ===== */}
+      {/* ===== KENAPA MITRAXCON ===== */}
       <section className="why-us">
         <div className="container">
           <div className="why-us-inner">
             <div className="why-us-left">
               <span className="section-tag">Keunggulan Kami</span>
               <h2 className="section-title" style={{ textAlign: 'left', maxWidth: '420px' }}>
-                Kenapa Memilih ESANET?
+                Kenapa Memilih MITRAXCON?
               </h2>
               <p className="section-subtitle" style={{ textAlign: 'left', margin: '0' }}>
                 Kami berkomitmen memberikan pengalaman internet terbaik dengan teknologi fiber optic terkini dan dukungan penuh.
@@ -525,7 +545,7 @@ const Home = () => {
         <div className="container">
           <div className="section-header">
             <span className="section-tag">Testimoni Pelanggan</span>
-            <h2 className="section-title">Apa Kata Mereka Tentang ESANET?</h2>
+            <h2 className="section-title">Apa Kata Mereka Tentang MITRAXCON?</h2>
             <p className="section-subtitle">Pengalaman nyata dari pelanggan rumah tangga hingga tim IT korporasi.</p>
           </div>
           <div className="testimonials-grid">
@@ -558,7 +578,7 @@ const Home = () => {
           <div className="section-header">
             <span className="section-tag">Wawasan &amp; Edukasi</span>
             <h2 className="section-title">Artikel &amp; Berita Terbaru</h2>
-            <p className="section-subtitle">Pelajari tips internet, teknologi fiber optic, dan kabar terkini dari ESANET.</p>
+            <p className="section-subtitle">Pelajari tips internet, teknologi fiber optic, dan kabar terkini dari MITRAXCON.</p>
           </div>
           <div className="blog-posts-grid">
             {blogPosts.slice(0, 3).map((post) => (
@@ -593,7 +613,7 @@ const Home = () => {
             ))}
           </div>
           <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
-            <Link to="/blog" className="btn btn-outline" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+            <Link to="/blog" className="btn btn-outline-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
               <span>Lihat Semua Artikel Blog</span>
               <i className="bi bi-arrow-right"></i>
             </Link>

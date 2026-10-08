@@ -1,5 +1,5 @@
 /* ============================================================
-   ESANET Customer Portal (Portal Pelanggan) Styles
+   MITRAXCON Customer Portal (Portal Pelanggan) Styles
    ============================================================ */
 
 .portal-page {
@@ -123,8 +123,11 @@
 }
 
 /* Clean spacing for the main content without negative margin clipping */
+.container.portal-auth-main,
 .portal-auth-main {
-  padding: 40px 0 80px;
+  max-width: 1200px;
+  padding: 3.5rem 1.5rem 5.5rem !important;
+  margin: 0 auto;
 }
 
 .portal-auth-grid {
@@ -369,6 +372,25 @@
 
 .btn-portal-demo:hover {
   background: rgba(45, 212, 191, 0.2);
+}
+
+.auth-security-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.auth-security-note i {
+  color: #10b981;
+  font-size: 1.1rem;
+  flex-shrink: 0;
 }
 
 .demo-login-divider {
@@ -662,7 +684,19 @@
   display: flex;
   gap: 16px;
   align-items: flex-start;
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(45, 212, 191, 0.25);
+  transition: var(--transition);
+}
+
+.portal-helpdesk-card:hover {
+  border-color: rgba(45, 212, 191, 0.45);
+  box-shadow: 0 14px 38px rgba(7, 21, 48, 0.25);
+}
+
+[data-theme="dark"] .portal-helpdesk-card {
+  background: linear-gradient(135deg, #0b1d3a 0%, #10264c 100%);
+  border: 1px solid rgba(56, 189, 248, 0.25);
 }
 
 .helpdesk-icon {
@@ -675,6 +709,7 @@
   align-items: center;
   justify-content: center;
   font-size: 1.4rem;
+  flex-shrink: 0;
 }
 
 .helpdesk-content h4 {
@@ -687,6 +722,7 @@
   color: #94a3b8;
   font-size: 0.88rem;
   margin-bottom: 16px;
+  line-height: 1.5;
 }
 
 .helpdesk-links {
@@ -699,27 +735,35 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 8px 14px;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.12);
   color: #ffffff;
   text-decoration: none;
   font-size: 0.85rem;
   font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   transition: var(--transition);
 }
 
 .btn-help-item:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.22);
+  transform: translateY(-1px);
 }
 
 .btn-help-item.wa-item {
   background: #25d366;
   color: #ffffff;
+  border: 1px solid #25d366;
+  box-shadow: 0 2px 10px rgba(37, 211, 102, 0.3);
 }
 
 .btn-help-item.wa-item:hover {
-  filter: brightness(1.1);
+  background: #20ba59;
+  border-color: #20ba59;
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.45);
 }
 
 .portal-alert-danger {
