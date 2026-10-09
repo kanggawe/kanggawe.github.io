@@ -30,10 +30,10 @@
   position: absolute;
   inset: 0;
   background-size: cover;
-  background-position: center;
+  background-position: right center;
   opacity: 0;
-  transform: scale(1.05);
-  transition: opacity 1.3s cubic-bezier(0.4, 0, 0.2, 1), transform 6s ease-out;
+  transform: scale(1.02);
+  transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), transform 5s ease-out;
   pointer-events: none;
 }
 
@@ -45,7 +45,9 @@
 .hero-bg-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(6, 17, 40, 0.88) 0%, rgba(0, 35, 110, 0.78) 50%, rgba(0, 71, 204, 0.70) 100%);
+  background:
+    linear-gradient(90deg, rgba(6, 17, 40, 0.95) 0%, rgba(6, 17, 40, 0.82) 42%, rgba(6, 17, 40, 0.32) 75%, rgba(6, 17, 40, 0.10) 100%),
+    linear-gradient(to top, rgba(7, 21, 48, 0.85) 0%, transparent 16%);
   pointer-events: none;
   z-index: 1;
 }
@@ -62,8 +64,8 @@
 .shape {
   position: absolute;
   border-radius: 50%;
-  opacity: 0.14;
-  filter: blur(10px);
+  opacity: 0.05;
+  filter: blur(16px);
 }
 
 .shape-1 {
@@ -1165,104 +1167,233 @@
   white-space: nowrap;
 }
 
-/* ===== SERVICES PREVIEW ===== */
+/* ===== SERVICES PREVIEW (HOMEPAGE) ===== */
 .services-preview {
-  padding: 5rem 0;
-  background: var(--bg-light);
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: 3.5rem;
-}
-
-.services-grid-home {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin-bottom: 3rem;
-}
-
-.service-card-home {
-  background: var(--bg-white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 2rem;
-  transition: var(--transition);
+  padding: 5.5rem 0 6rem;
+  background: radial-gradient(circle at 50% 0%, rgba(0, 210, 255, 0.04) 0%, var(--bg-light) 65%);
   position: relative;
   overflow: hidden;
 }
 
-.service-card-home::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--primary), var(--accent));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: var(--transition);
+/* ===== SERVICES SPLIT HEADER ===== */
+.services-split-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 3rem;
+  margin-bottom: 3.5rem;
 }
 
-.service-card-home:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-6px);
-  border-color: transparent;
+.services-split-header .ssh-left {
+  flex: 1.2;
 }
 
-.service-card-home:hover::before {
-  transform: scaleX(1);
+.services-split-header .section-tag {
+  display: inline-flex;
+  margin-bottom: 0.85rem;
 }
 
+.services-split-header .section-title {
+  text-align: left;
+  margin: 0;
+  font-size: 2.6rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: var(--text-dark);
+  line-height: 1.15;
+}
+
+.services-split-header .ssh-right {
+  flex: 1;
+  max-width: 500px;
+}
+
+.services-split-header .section-subtitle {
+  text-align: left;
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .services-split-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+  .services-split-header .section-title {
+    font-size: 2.1rem;
+  }
+}
+
+/* ===== SERVICES BENTO GRID (5 LAYANAN RESMI TANPA HOVER DEPENDENCY) ===== */
+.services-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+/* Row 1: 2 Kartu Utama (Masing-masing 50% / span 3) */
+.bento-card-lg {
+  grid-column: span 3;
+}
+
+/* Row 2: 3 Kartu Spesifik (Masing-masing 33.3% / span 2) */
+.bento-card-sm {
+  grid-column: span 2;
+}
+
+/* Card Base - Clean & Minimal (Aksen garis atas dibuang) */
+.service-card-home {
+  background: var(--bg-white);
+  border: 1.5px solid rgba(0, 71, 204, 0.1);
+  border-radius: 22px;
+  padding: 2.25rem 2rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 10px 30px -8px rgba(0, 71, 204, 0.06);
+}
+
+[data-theme="dark"] .service-card-home {
+  background: radial-gradient(circle at 85% 15%, rgba(0, 210, 255, 0.05) 0%, rgba(15, 23, 42, 0.95) 55%, rgba(9, 14, 26, 0.98) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 14px 38px -8px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.08);
+}
+
+/* Card Top Row */
+.service-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Permanent Jewel Emblem Icon */
 .service-card-icon {
-  width: 56px;
-  height: 56px;
-  background: linear-gradient(135deg, rgba(0,71,204,0.1), rgba(0,200,255,0.1));
-  border-radius: 14px;
+  width: 54px;
+  height: 54px;
+  background: linear-gradient(135deg, #0052cc 0%, #00d2ff 100%);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.6rem;
-  color: var(--primary);
-  margin-bottom: 1.25rem;
-  transition: var(--transition);
+  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(0, 71, 204, 0.28);
 }
 
-.service-card-home:hover .service-card-icon {
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  color: #fff;
+/* Badges - Permanently Styled */
+.service-card-badge {
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
+.service-card-badge.badge-popular {
+  background: linear-gradient(135deg, #f97316, #ef4444);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.35);
+}
+
+.service-card-badge.badge-enterprise {
+  background: linear-gradient(135deg, #0284c7, #06b6d4);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(6, 182, 212, 0.35);
+}
+
+.service-card-badge.badge-default {
+  background: rgba(0, 210, 255, 0.1);
+  color: #0077b6;
+  border: 1px solid rgba(0, 210, 255, 0.25);
+}
+
+[data-theme="dark"] .service-card-badge.badge-default {
+  color: #38bdf8;
+  background: rgba(0, 210, 255, 0.12);
+}
+
+/* Card Body */
 .service-card-home h3 {
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-size: 1.25rem;
+  font-weight: 800;
   color: var(--text-dark);
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.65rem;
+  letter-spacing: -0.015em;
 }
 
 .service-card-home p {
-  font-size: 0.9rem;
+  font-size: 0.93rem;
   color: var(--text-muted);
   line-height: 1.65;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.75rem;
 }
 
+/* Bottom Link - Permanently Clear & Visible */
 .service-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  font-size: 0.875rem;
-  font-weight: 600;
+  gap: 0.5rem;
+  font-size: 0.92rem;
+  font-weight: 700;
   color: var(--primary);
   text-decoration: none;
-  transition: var(--transition);
+  width: fit-content;
+  margin-top: auto;
 }
 
-.service-link:hover {
-  gap: 0.7rem;
-  color: var(--accent);
+[data-theme="dark"] .service-link {
+  color: #38bdf8;
+}
+
+.service-link i {
+  font-size: 0.95rem;
+}
+
+/* Responsive Rules for Bento Grid */
+@media (max-width: 992px) {
+  .services-bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+  .bento-card-lg {
+    grid-column: span 1;
+  }
+  .bento-card-sm {
+    grid-column: span 1;
+  }
+  .bento-card-sm:last-child {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .services-bento-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  .bento-card-lg,
+  .bento-card-sm,
+  .bento-card-sm:last-child {
+    grid-column: span 1;
+  }
+  .service-card-home {
+    padding: 1.75rem 1.4rem;
+    border-radius: 18px;
+  }
 }
 
 .services-cta {
@@ -1477,12 +1608,21 @@
 
 @media (max-width: 850px) {
   .slider-arrow { display: none; }
+  .hero-bg-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(6, 17, 40, 0.88) 0%,
+      rgba(6, 17, 40, 0.78) 50%,
+      rgba(6, 17, 40, 0.95) 100%
+    );
+  }
   .hero-content { grid-template-columns: 1fr; text-align: center; gap: 2.25rem; }
   .hero-title { min-height: 2.4em; }
   .hero-subtitle { margin-left: auto; margin-right: auto; }
   .hero-actions { justify-content: center; }
   .hero-trust { justify-content: center; }
-  .hero-visual { display: flex; width: 100%; }
+  .hero-visual { display: flex; width: 100%; justify-content: center; }
+  .hero-visual:empty { display: none; }
 }
 
 @media (max-width: 768px) {

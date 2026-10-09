@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Preview Preloader - MITRAXCON (6 Pilihan Desain)</title>
+  <title>MITRAXCON - New Ultra-Premium Preloader Showroom (2025/2026 Edition)</title>
   <!-- Google Fonts: Inter & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700;800&family=Orbitron:wght@700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
 
   <style>
@@ -16,11 +16,9 @@
       --accent: #00d2ff;
       --teal: #14b8a6;
       --teal-glow: #2dd4bf;
-      --dark-bg: #070e1b;
-      --dark-surface: #0f1c30;
-      --card-border: rgba(45, 212, 191, 0.2);
-      --text-white: #ffffff;
-      --text-muted: #94a3b8;
+      --bg-dark: #030712;
+      --surface-dark: #0b1324;
+      --border-glow: rgba(0, 210, 255, 0.25);
     }
 
     * {
@@ -31,1551 +29,1521 @@
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #040811;
+      background: #02050e;
       color: #e2e8f0;
       min-height: 100vh;
       overflow-x: hidden;
     }
 
-    /* Top Control Bar */
-    .preview-header {
+    /* Top Navigation / Controls Bar */
+    .showroom-header {
       position: sticky;
       top: 0;
       z-index: 999;
-      background: rgba(11, 20, 38, 0.92);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 14px 24px;
+      background: rgba(3, 7, 18, 0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 16px 28px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 14px;
-      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.5);
+      gap: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.7);
     }
 
-    .header-branding {
+    .brand-group {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
     }
 
-    .brand-badge {
+    .brand-pill {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: linear-gradient(135deg, rgba(0, 71, 204, 0.35), rgba(0, 210, 255, 0.25));
+      background: linear-gradient(135deg, rgba(0, 71, 204, 0.3), rgba(0, 210, 255, 0.2));
       border: 1px solid rgba(0, 210, 255, 0.4);
       border-radius: 999px;
-      padding: 6px 14px;
-      font-size: 0.82rem;
+      padding: 5px 12px;
+      font-size: 0.75rem;
       font-weight: 700;
       color: #38bdf8;
       letter-spacing: 0.5px;
+      text-transform: uppercase;
     }
 
-    .preview-title {
+    .showroom-title {
       font-size: 1.15rem;
       font-weight: 800;
       color: #ffffff;
       letter-spacing: -0.02em;
     }
 
-    .preview-subtitle {
+    .showroom-subtitle {
       font-size: 0.8rem;
-      color: var(--text-muted);
+      color: #94a3b8;
     }
 
-    .header-actions {
+    .header-controls {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
       flex-wrap: wrap;
     }
 
     .btn {
       appearance: none;
       border: none;
-      padding: 8px 14px;
-      border-radius: 8px;
-      font-size: 0.82rem;
+      padding: 9px 16px;
+      border-radius: 10px;
+      font-size: 0.85rem;
       font-weight: 600;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      gap: 8px;
+      transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
-    .btn-tab {
-      background: rgba(255, 255, 255, 0.05);
-      color: #cbd5e1;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+    .btn-action {
+      background: rgba(255, 255, 255, 0.06);
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.12);
     }
-    .btn-tab:hover {
+    .btn-action:hover {
       background: rgba(255, 255, 255, 0.12);
-      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.25);
       transform: translateY(-1px);
-    }
-    .btn-tab.active {
-      background: linear-gradient(135deg, #0047cc, #00a2ff);
-      color: #ffffff;
-      border-color: rgba(56, 189, 248, 0.5);
-      box-shadow: 0 0 16px rgba(0, 162, 255, 0.4);
     }
 
-    .btn-trigger {
-      background: linear-gradient(135deg, #0d9488, #14b8a6);
+    .btn-launch {
+      background: linear-gradient(135deg, #0052cc 0%, #00d2ff 100%);
       color: #ffffff;
-      font-weight: 700;
-      box-shadow: 0 4px 14px rgba(20, 184, 166, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 18px rgba(0, 210, 255, 0.35);
     }
-    .btn-trigger:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 6px 20px rgba(20, 184, 166, 0.55);
+    .btn-launch:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(0, 210, 255, 0.55);
     }
 
     /* Container */
-    .preview-container {
-      max-width: 1240px;
+    .container {
+      max-width: 1320px;
       margin: 0 auto;
       padding: 24px 20px 80px;
     }
 
-    .info-banner {
-      background: linear-gradient(135deg, rgba(8, 20, 38, 0.85), rgba(15, 34, 60, 0.7));
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      border-radius: 14px;
-      padding: 16px 22px;
+    /* Philosophy Banner */
+    .design-note {
+      background: radial-gradient(circle at 10% 50%, rgba(0, 71, 204, 0.15) 0%, rgba(3, 7, 18, 0.7) 100%);
+      border: 1px solid rgba(0, 210, 255, 0.2);
+      border-radius: 16px;
+      padding: 20px 24px;
       margin-bottom: 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
       flex-wrap: wrap;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      gap: 16px;
     }
 
-    .info-content h2 {
-      font-size: 1.05rem;
+    .design-note h2 {
+      font-size: 1.1rem;
       font-weight: 700;
-      color: #38bdf8;
+      color: #f8fafc;
       margin-bottom: 4px;
       display: flex;
       align-items: center;
       gap: 8px;
     }
 
-    .info-content p {
-      font-size: 0.85rem;
+    .design-note p {
+      font-size: 0.875rem;
       color: #94a3b8;
+      max-width: 780px;
       line-height: 1.5;
     }
 
-    /* Sub Tabs for Grouping */
-    .variant-pills-bar {
+    /* Concept Selector Tabs */
+    .tab-pills {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      margin-bottom: 24px;
+      scrollbar-width: thin;
+    }
+
+    .tab-pill {
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 12px 18px;
+      color: #94a3b8;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
       display: flex;
       align-items: center;
       gap: 10px;
-      margin-bottom: 16px;
-      overflow-x: auto;
-      padding-bottom: 6px;
+      white-space: nowrap;
+      transition: all 0.25s ease;
     }
 
-    .pill-title {
-      font-size: 0.8rem;
-      color: #94a3b8;
+    .tab-pill:hover {
+      background: rgba(30, 41, 59, 0.9);
+      color: #f1f5f9;
+      border-color: rgba(0, 210, 255, 0.3);
+    }
+
+    .tab-pill.active {
+      background: linear-gradient(135deg, rgba(0, 71, 204, 0.35), rgba(20, 184, 166, 0.25));
+      border: 1px solid #00d2ff;
+      color: #ffffff;
+      box-shadow: 0 0 20px rgba(0, 210, 255, 0.25);
+    }
+
+    .tab-badge {
+      font-size: 0.7rem;
+      background: rgba(0, 210, 255, 0.2);
+      color: #38bdf8;
+      padding: 2px 7px;
+      border-radius: 6px;
       font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      white-space: nowrap;
     }
 
     /* Stage Canvas */
-    .stage-wrapper {
-      position: relative;
-      background: radial-gradient(circle at 50% 30%, #0d1e38 0%, #060b16 70%, #03060c 100%);
-      border: 1px solid rgba(56, 189, 248, 0.2);
+    .stage-card {
+      background: #000208;
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 20px;
-      height: 600px;
+      height: 540px;
+      position: relative;
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), inset 0 0 90px rgba(0, 71, 204, 0.12);
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9), inset 0 0 80px rgba(0, 71, 204, 0.12);
     }
 
-    /* Cyber Grid Background */
-    .cyber-grid {
+    /* Ambient Background Layers */
+    .ambient-aurora {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 210, 255, 0.15) 0%, rgba(0, 71, 204, 0.08) 45%, transparent 70%);
+      filter: blur(60px);
+      pointer-events: none;
+      animation: auroraBreath 6s ease-in-out infinite alternate;
+    }
+
+    @keyframes auroraBreath {
+      0% { transform: scale(0.9) translate(-10px, -10px); opacity: 0.7; }
+      100% { transform: scale(1.15) translate(15px, 15px); opacity: 1; }
+    }
+
+    .subtle-grid {
       position: absolute;
       inset: 0;
-      background-size: 40px 40px;
       background-image: 
-        linear-gradient(to right, rgba(56, 189, 248, 0.04) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(56, 189, 248, 0.04) 1px, transparent 1px);
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 40px 40px;
       pointer-events: none;
+      mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
+      -webkit-mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
     }
 
-    .ambient-glow {
-      position: absolute;
-      width: 480px;
-      height: 480px;
-      background: radial-gradient(circle, rgba(0, 162, 255, 0.16) 0%, rgba(20, 184, 166, 0.1) 45%, transparent 70%);
-      filter: blur(50px);
-      border-radius: 50%;
-      pointer-events: none;
-      animation: ambientPulse 4s ease-in-out infinite alternate;
-    }
-
-    @keyframes ambientPulse {
-      0% { transform: scale(0.9) translate(-10px, -10px); opacity: 0.6; }
-      100% { transform: scale(1.15) translate(10px, 10px); opacity: 1; }
-    }
-
-    /* ========================================================
-       PRELOADER STYLE 1: "Fiber Pulse & Orbit"
-       ======================================================== */
-    .preloader-variant-1 {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      z-index: 10;
-      max-width: 420px;
-      width: 100%;
-      padding: 20px;
-    }
-
-    .logo-orbit-container {
-      position: relative;
-      width: 176px;
-      height: 176px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 34px;
-    }
-
-    .orbit-ring {
-      position: absolute;
-      inset: 6px;
-      border-radius: 50%;
-      border: 2px dashed rgba(56, 189, 248, 0.35);
-      animation: spinOrbit 14s linear infinite;
-    }
-
-    .orbit-ring-reverse {
-      position: absolute;
-      inset: -6px;
-      border-radius: 50%;
-      border: 1px solid rgba(45, 212, 191, 0.2);
-      animation: spinOrbitRev 18s linear infinite;
-    }
-
-    .orbit-dot {
-      position: absolute;
-      top: -4px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #00d2ff;
-      box-shadow: 0 0 14px #00d2ff, 0 0 24px #00d2ff;
-    }
-
-    @keyframes spinOrbit {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    @keyframes spinOrbitRev {
-      0% { transform: rotate(360deg); }
-      100% { transform: rotate(0deg); }
-    }
-
-    .emblem-box {
-      width: 120px;
-      height: 120px;
-      background: linear-gradient(145deg, #0a192f, #071324);
-      border-radius: 30px;
-      border: 2px solid rgba(45, 212, 191, 0.6);
-      box-shadow: 
-        0 10px 30px rgba(0, 0, 0, 0.6),
-        0 0 35px rgba(20, 184, 166, 0.35),
-        inset 0 0 20px rgba(0, 210, 255, 0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      animation: floatEmblem 3s ease-in-out infinite alternate;
-    }
-
-    @keyframes floatEmblem {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(-8px); }
-    }
-
-    .emblem-svg {
-      width: 78px;
-      height: 78px;
-      filter: drop-shadow(0 0 10px rgba(45, 212, 191, 0.7));
-    }
-
-    .wave-path {
-      stroke-dasharray: 200;
-      stroke-dashoffset: 200;
-      animation: waveDraw 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-    }
-    .wave-path-1 { animation-delay: 0s; }
-    .wave-path-2 { animation-delay: 0.2s; }
-    .wave-path-3 { animation-delay: 0.4s; }
-
-    @keyframes waveDraw {
-      0% { stroke-dashoffset: 200; opacity: 0.2; }
-      50% { stroke-dashoffset: 0; opacity: 1; }
-      100% { stroke-dashoffset: -200; opacity: 0.2; }
-    }
-
-    .core-dot-pulse {
-      animation: dotPulse 1.2s ease-in-out infinite alternate;
-      transform-origin: center;
-    }
-
-    @keyframes dotPulse {
-      0% { transform: scale(0.85); opacity: 0.7; }
-      100% { transform: scale(1.25); opacity: 1; filter: drop-shadow(0 0 12px #2dd4bf); }
-    }
-
-    .brand-title {
-      font-size: 1.85rem;
-      font-weight: 900;
-      letter-spacing: 2px;
-      background: linear-gradient(135deg, #ffffff 30%, #38bdf8 80%, #2dd4bf 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 4px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .brand-tagline {
-      font-size: 0.8rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #94a3b8;
-      font-weight: 600;
-      margin-bottom: 22px;
-    }
-
-    .progress-bar-container {
-      width: 100%;
-      background: rgba(15, 28, 48, 0.8);
-      border: 1px solid rgba(56, 189, 248, 0.3);
-      padding: 4px;
-      border-radius: 999px;
-      box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 71, 204, 0.2);
-      margin-bottom: 14px;
-      position: relative;
-    }
-
-    .progress-bar-fill {
-      height: 8px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, #0047cc, #00d2ff 60%, #2dd4bf 100%);
-      box-shadow: 0 0 16px rgba(0, 210, 255, 0.9);
-      position: relative;
-      transition: width 0.15s ease-out;
-      overflow: hidden;
-    }
-
-    .progress-bar-fill::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -50%;
-      width: 50%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.9), transparent);
-      animation: laserSweep 1.4s ease-in-out infinite;
-    }
-
-    @keyframes laserSweep {
-      0% { left: -50%; }
-      100% { left: 150%; }
-    }
-
-    .telemetry-row {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.78rem;
-      color: #94a3b8;
-    }
-
-    .status-msg {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      color: #38bdf8;
-      font-weight: 500;
-    }
-
-    .percentage-text {
-      font-weight: 700;
-      color: #2dd4bf;
-      text-shadow: 0 0 10px rgba(45, 212, 191, 0.6);
-    }
-
-    /* ========================================================
-       PRELOADER STYLE 2: "Cyber Radar"
-       ======================================================== */
-    .preloader-variant-2 {
+    /* =========================================================================
+       CONCEPT 1: "Obsidian & Liquid Shimmer" (Apple / Vercel Luxury Clean)
+       ========================================================================= */
+    .concept-view {
       display: none;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      width: 100%;
+      max-width: 500px;
+      padding: 24px;
       position: relative;
       z-index: 10;
-      max-width: 440px;
-      width: 100%;
-      padding: 20px;
+      text-align: center;
     }
 
-    .radar-circle-wrap {
+    .concept-view.active {
+      display: flex;
+    }
+
+    /* C1 Elements */
+    .c1-logo-wrapper {
       position: relative;
-      width: 170px;
-      height: 170px;
-      border-radius: 50%;
-      border: 1px solid rgba(56, 189, 248, 0.35);
-      background: radial-gradient(circle, rgba(14, 165, 233, 0.1) 0%, rgba(7, 14, 27, 0.9) 70%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
       margin-bottom: 24px;
-      box-shadow: 0 0 35px rgba(14, 165, 233, 0.25);
-    }
-
-    .radar-ring-inner {
-      position: absolute;
-      width: 105px;
-      height: 105px;
-      border-radius: 50%;
-      border: 1px dashed rgba(45, 212, 191, 0.4);
-    }
-
-    .radar-ring-core {
-      position: absolute;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: rgba(0, 71, 204, 0.35);
-      border: 1px solid rgba(0, 210, 255, 0.8);
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+
+    .c1-logo-halo {
+      position: absolute;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 210, 255, 0.35) 0%, rgba(20, 184, 166, 0) 70%);
+      filter: blur(20px);
+      animation: pulseHalo 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes pulseHalo {
+      0% { transform: scale(0.95); opacity: 0.5; }
+      100% { transform: scale(1.15); opacity: 0.9; }
+    }
+
+    .c1-logo-img {
+      position: relative;
+      z-index: 2;
+      width: 88px;
+      height: 88px;
+      object-fit: contain;
+      filter: drop-shadow(0 8px 24px rgba(0, 210, 255, 0.45));
+      animation: logoFloat 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes logoFloat {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-6px); }
+    }
+
+    /* Metallic Shimmer Text */
+    .c1-brand-title {
+      font-size: 1.85rem;
+      font-weight: 900;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+      background: linear-gradient(
+        110deg,
+        #7dd3fc 0%,
+        #ffffff 35%,
+        #38bdf8 50%,
+        #ffffff 65%,
+        #7dd3fc 100%
+      );
+      background-size: 200% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: textShine 3s linear infinite;
+    }
+
+    @keyframes textShine {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    .c1-tagline {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(148, 163, 184, 0.7);
+      margin-bottom: 34px;
+    }
+
+    /* Ultra-sleek hairline loader */
+    .c1-track {
+      width: 280px;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 999px;
+      position: relative;
+      overflow: visible;
+      margin-bottom: 16px;
+    }
+
+    .c1-fill {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      background: linear-gradient(90deg, #0047cc, #00d2ff, #2dd4bf);
+      border-radius: 999px;
+      width: 0%;
+      transition: width 0.15s ease-out;
+      box-shadow: 0 0 10px rgba(0, 210, 255, 0.8);
+    }
+
+    .c1-photon {
+      position: absolute;
+      right: -3px;
+      top: -3px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 0 12px #00d2ff, 0 0 20px #2dd4bf;
+    }
+
+    .c1-counter {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #94a3b8;
+      letter-spacing: 1px;
+    }
+
+    .c1-counter span {
       color: #38bdf8;
-      font-size: 1.2rem;
+      font-weight: 700;
     }
 
-    .radar-sweep {
+    /* =========================================================================
+       CONCEPT 2: "Fiber Optic Beam & Photon Pulse" (High-Speed ISP Cinematic)
+       ========================================================================= */
+    .c2-beam-stage {
+      position: relative;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .c2-horizontal-fiber {
+      position: relative;
+      width: 100%;
+      max-width: 440px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0, 210, 255, 0.2) 20%, rgba(0, 210, 255, 0.2) 80%, transparent);
+      margin: 32px 0 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .c2-laser-beam {
       position: absolute;
-      inset: 0;
-      border-radius: 50%;
-      background: conic-gradient(from 0deg, transparent 0deg, transparent 270deg, rgba(45, 212, 191, 0.35) 360deg);
-      animation: sweepRadar 2s linear infinite;
+      height: 2px;
+      width: 120px;
+      background: linear-gradient(90deg, transparent, #00d2ff, #ffffff);
+      box-shadow: 0 0 14px #00d2ff, 0 0 30px #2dd4bf;
+      animation: laserSweep 1.8s ease-in-out infinite;
     }
 
-    @keyframes sweepRadar {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+    @keyframes laserSweep {
+      0% { transform: translateX(-160px); opacity: 0; }
+      20% { opacity: 1; }
+      80% { opacity: 1; }
+      100% { transform: translateX(160px); opacity: 0; }
     }
 
-    .ping-beacon {
-      position: absolute;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: #2dd4bf;
-      box-shadow: 0 0 14px #2dd4bf;
-      top: 36px;
-      right: 48px;
-      animation: pingBeacon 1.8s ease-out infinite;
+    .c2-logo-emblem {
+      width: 96px;
+      height: 96px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 28px rgba(0, 210, 255, 0.65));
+      margin-bottom: 12px;
     }
 
-    @keyframes pingBeacon {
-      0% { transform: scale(0.6); opacity: 1; }
-      100% { transform: scale(2.4); opacity: 0; }
-    }
-
-    .radar-stats-grid {
+    .c2-metrics-cluster {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
       gap: 12px;
       width: 100%;
-      margin-bottom: 18px;
+      max-width: 420px;
+      margin-top: 24px;
     }
 
-    .radar-stat-box {
-      background: rgba(15, 28, 48, 0.6);
+    .c2-metric-box {
+      background: rgba(15, 23, 42, 0.7);
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 10px;
       padding: 10px 8px;
       text-align: center;
     }
 
-    .radar-stat-label {
-      font-size: 0.68rem;
-      color: #94a3b8;
+    .c2-metric-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: #64748b;
+      letter-spacing: 0.8px;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 2px;
+      display: block;
+      margin-bottom: 3px;
     }
 
-    .radar-stat-val {
+    .c2-metric-val {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: #38bdf8;
-    }
-
-    /* ========================================================
-       PRELOADER STYLE 3: "Frosted Glass Spinner"
-       ======================================================== */
-    .preloader-variant-3 {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      z-index: 10;
-      background: rgba(15, 28, 48, 0.55);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-radius: 24px;
-      padding: 36px 44px;
-      max-width: 380px;
-      width: 100%;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
-    }
-
-    .glass-spinner-wrap {
-      position: relative;
-      width: 84px;
-      height: 84px;
-      margin-bottom: 22px;
-    }
-
-    .glass-spinner {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      border: 3px solid rgba(255, 255, 255, 0.08);
-      border-top-color: #00d2ff;
-      border-right-color: #2dd4bf;
-      animation: spinOrbit 0.9s cubic-bezier(0.5, 0.1, 0.5, 0.9) infinite;
-    }
-
-    .glass-logo-center {
-      position: absolute;
-      inset: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #081426;
-      border-radius: 50%;
-      color: #38bdf8;
-      font-size: 1.4rem;
-    }
-
-    /* ========================================================
-       PRELOADER STYLE 4: "Speedometer / Tachometer Speedtest" (NEW!)
-       ======================================================== */
-    .preloader-variant-4 {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      z-index: 10;
-      max-width: 460px;
-      width: 100%;
-      padding: 20px;
-    }
-
-    .gauge-wrapper {
-      position: relative;
-      width: 250px;
-      height: 155px;
-      margin-bottom: 20px;
-    }
-
-    .gauge-svg {
-      width: 100%;
-      height: 100%;
-      overflow: visible;
-    }
-
-    .gauge-bg-arc {
-      fill: none;
-      stroke: rgba(255, 255, 255, 0.08);
-      stroke-width: 14;
-      stroke-linecap: round;
-    }
-
-    .gauge-fill-arc {
-      fill: none;
-      stroke: url(#gaugeGradient);
-      stroke-width: 14;
-      stroke-linecap: round;
-      stroke-dasharray: 380;
-      stroke-dashoffset: 380;
-      transition: stroke-dashoffset 0.1s linear;
-      filter: drop-shadow(0 0 10px rgba(0, 210, 255, 0.8));
-    }
-
-    .gauge-needle-hub {
-      position: absolute;
-      bottom: 10px;
-      left: 50%;
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      background: #ffffff;
-      transform: translate(-50%, 50%);
-      box-shadow: 0 0 15px #00d2ff;
-      z-index: 2;
-    }
-
-    .gauge-needle {
-      position: absolute;
-      bottom: 10px;
-      left: 50%;
-      width: 4px;
-      height: 95px;
-      background: linear-gradient(to top, #ffffff, #00d2ff 70%, #ff3b30);
-      transform-origin: 50% 100%;
-      transform: translateX(-50%) rotate(-120deg);
-      border-radius: 4px;
-      box-shadow: 0 0 10px rgba(255, 59, 48, 0.8);
-      transition: transform 0.1s linear;
-      z-index: 1;
-    }
-
-    .gauge-speed-display {
-      text-align: center;
-      margin-top: -15px;
-      margin-bottom: 15px;
-    }
-
-    .gauge-number {
-      font-family: 'Orbitron', monospace;
-      font-size: 2.8rem;
-      font-weight: 900;
-      color: #ffffff;
-      text-shadow: 0 0 20px rgba(0, 210, 255, 0.8);
-      letter-spacing: -1px;
-    }
-
-    .gauge-unit {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: #38bdf8;
-      letter-spacing: 1px;
-      margin-left: 4px;
-    }
-
-    .speedtest-metrics {
-      display: flex;
-      gap: 16px;
-      margin-bottom: 20px;
-      background: rgba(15, 28, 48, 0.6);
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      border-radius: 12px;
-      padding: 10px 20px;
-    }
-
-    .metric-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .metric-lbl {
-      font-size: 0.68rem;
-      color: #94a3b8;
-      text-transform: uppercase;
-    }
-
-    .metric-val {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.88rem;
-      font-weight: 700;
-      color: #2dd4bf;
-    }
-
-    /* ========================================================
-       PRELOADER STYLE 5: "Neon Liquid Wave Tank" (NEW!)
-       ======================================================== */
-    .preloader-variant-5 {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      z-index: 10;
-      max-width: 420px;
-      width: 100%;
-      padding: 20px;
-    }
-
-    .liquid-vessel {
-      position: relative;
-      width: 150px;
-      height: 150px;
-      border-radius: 40px;
-      border: 3px solid rgba(56, 189, 248, 0.4);
-      background: #081426;
-      overflow: hidden;
-      box-shadow: 
-        0 15px 35px rgba(0, 0, 0, 0.6),
-        0 0 30px rgba(0, 71, 204, 0.3),
-        inset 0 0 20px rgba(0, 0, 0, 0.8);
-      margin-bottom: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .liquid-wave {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 25%;
-      background: linear-gradient(180deg, rgba(0, 210, 255, 0.85) 0%, rgba(0, 71, 204, 0.95) 100%);
-      transition: height 0.15s ease-out;
-      box-shadow: 0 -4px 20px rgba(0, 210, 255, 0.8);
-    }
-
-    .liquid-wave::before {
-      content: '';
-      position: absolute;
-      top: -12px;
-      left: 0;
-      width: 200%;
-      height: 24px;
-      background: radial-gradient(ellipse at center, rgba(45, 212, 191, 0.9) 0%, rgba(0, 210, 255, 0) 70%);
-      animation: waveSlosh 2s ease-in-out infinite alternate;
-    }
-
-    @keyframes waveSlosh {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-40px); }
-    }
-
-    .vessel-icon-overlay {
-      position: relative;
-      z-index: 5;
-      font-size: 3.5rem;
-      color: #ffffff;
-      text-shadow: 0 0 15px rgba(0, 210, 255, 0.8);
-      pointer-events: none;
-    }
-
-    .liquid-percentage-badge {
-      font-family: 'Orbitron', monospace;
-      font-size: 1.5rem;
-      font-weight: 900;
-      color: #2dd4bf;
-      text-shadow: 0 0 15px rgba(45, 212, 191, 0.8);
-      margin-bottom: 6px;
-    }
-
-    /* ========================================================
-       PRELOADER STYLE 6: "Hyperdrive Warp Tunnel" (NEW!)
-       ======================================================== */
-    .preloader-variant-6 {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      z-index: 10;
-      max-width: 440px;
-      width: 100%;
-      padding: 20px;
-    }
-
-    .warp-portal-box {
-      position: relative;
-      width: 170px;
-      height: 170px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 24px;
-    }
-
-    .warp-ray {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      border: 2px solid transparent;
-      border-top-color: #00d2ff;
-      border-bottom-color: #2dd4bf;
-      animation: warpZoom 1.4s cubic-bezier(0.1, 0.9, 0.2, 1) infinite;
-    }
-
-    .warp-ray-2 {
-      animation-delay: 0.35s;
-      border-left-color: #38bdf8;
-    }
-
-    .warp-ray-3 {
-      animation-delay: 0.7s;
-      border-right-color: #0047cc;
-    }
-
-    .warp-ray-4 {
-      animation-delay: 1.05s;
-    }
-
-    @keyframes warpZoom {
-      0% {
-        transform: scale(0.2) rotate(0deg);
-        opacity: 0;
-        border-width: 1px;
-      }
-      50% {
-        opacity: 1;
-        border-width: 3px;
-        box-shadow: 0 0 20px rgba(0, 210, 255, 0.6);
-      }
-      100% {
-        transform: scale(1.6) rotate(180deg);
-        opacity: 0;
-        border-width: 6px;
-      }
-    }
-
-    .warp-center-core {
-      position: relative;
-      z-index: 4;
-      width: 72px;
-      height: 72px;
-      border-radius: 20px;
-      background: radial-gradient(circle, #00d2ff 0%, #0047cc 70%, #081426 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 0 35px #00d2ff, 0 0 60px rgba(0, 71, 204, 0.6);
-      animation: warpCorePulse 1.2s ease-in-out infinite alternate;
-    }
-
-    @keyframes warpCorePulse {
-      0% { transform: scale(0.92); box-shadow: 0 0 25px #00d2ff; }
-      100% { transform: scale(1.08); box-shadow: 0 0 45px #2dd4bf; }
-    }
-
-    /* Fullscreen Overlay Mode */
-    .fullscreen-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: #070e1b;
-      z-index: 9999;
-      align-items: center;
-      justify-content: center;
-      transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.6s ease;
-    }
-
-    .fullscreen-overlay.active {
-      display: flex;
-    }
-
-    .fullscreen-overlay.fade-out {
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    .overlay-close-btn {
-      position: absolute;
-      top: 24px;
-      right: 28px;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: #fff;
-      padding: 8px 16px;
-      border-radius: 8px;
       font-size: 0.85rem;
-      font-weight: 600;
-      cursor: pointer;
-      z-index: 10001;
+      font-weight: 700;
+      color: #38bdf8;
+    }
+
+    /* =========================================================================
+       CONCEPT 3: "Dual Curtain Shutter" (Cinematic Studio Reveal)
+       ========================================================================= */
+    .c3-curtain-container {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      z-index: 20;
+      pointer-events: none;
+    }
+
+    .c3-panel-top,
+    .c3-panel-bottom {
+      flex: 1;
+      background: #040813;
+      border-color: rgba(0, 210, 255, 0.25);
+      transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1);
+      position: relative;
+    }
+
+    .c3-panel-top {
+      border-bottom: 1px solid rgba(0, 210, 255, 0.3);
+    }
+    .c3-panel-bottom {
+      border-top: 1px solid rgba(0, 210, 255, 0.3);
+    }
+
+    .c3-open .c3-panel-top {
+      transform: translateY(-100%);
+    }
+    .c3-open .c3-panel-bottom {
+      transform: translateY(100%);
+    }
+
+    .c3-center-hub {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 25;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .c3-open .c3-center-hub {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.9);
+    }
+
+    .c3-badge-brand {
+      background: rgba(2, 6, 23, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(0, 210, 255, 0.35);
+      padding: 16px 36px;
+      border-radius: 999px;
       display: flex;
       align-items: center;
-      gap: 6px;
-    }
-    .overlay-close-btn:hover {
-      background: rgba(255, 255, 255, 0.2);
-    }
-
-    /* Comparison & Specification Cards */
-    .specs-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 20px;
-      margin-top: 34px;
+      gap: 16px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 71, 204, 0.3);
+      margin-bottom: 20px;
     }
 
-    .spec-card {
-      background: #0c172a;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 16px;
-      padding: 24px;
-      cursor: pointer;
-      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    .c3-brand-logo {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
     }
 
-    .spec-card:hover {
-      border-color: rgba(56, 189, 248, 0.4);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    .c3-brand-text {
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      color: #ffffff;
     }
 
-    .spec-card.highlight {
-      border-color: rgba(45, 212, 191, 0.5);
-      background: linear-gradient(145deg, #0d1e38, #081426);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    .c3-progress-line {
+      width: 220px;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 999px;
+      overflow: hidden;
+      position: relative;
     }
 
-    .card-badge {
-      display: inline-block;
-      padding: 4px 10px;
-      border-radius: 6px;
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      margin-bottom: 12px;
+    .c3-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #00d2ff, #2dd4bf);
+      width: 0%;
+      transition: width 0.15s ease-out;
+      box-shadow: 0 0 8px #00d2ff;
     }
-    .badge-primary { background: rgba(0, 71, 204, 0.3); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
-    .badge-teal { background: rgba(20, 184, 166, 0.2); color: #2dd4bf; border: 1px solid rgba(45, 212, 191, 0.3); }
-    .badge-amber { background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
-    .badge-purple { background: rgba(147, 51, 234, 0.2); color: #c084fc; border: 1px solid rgba(192, 132, 252, 0.3); }
-    .badge-rose { background: rgba(244, 63, 94, 0.2); color: #fda4af; border: 1px solid rgba(244, 63, 94, 0.3); }
 
-    .spec-card h3 {
-      font-size: 1.15rem;
-      font-weight: 700;
+    /* Behind Curtain Background Preview */
+    .c3-website-preview {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 50% 40%, #0d1e38 0%, #060b16 70%);
       color: #fff;
+      text-align: center;
+      padding: 40px;
+    }
+
+    /* =========================================================================
+       CONCEPT 4: "Supersonic 1000 Mbps Turbo Counter" (Data & Performance)
+       ========================================================================= */
+    .c4-turbo-hud {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 10;
+    }
+
+    .c4-speed-display {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
       margin-bottom: 8px;
     }
 
-    .spec-card p {
-      font-size: 0.85rem;
-      color: #94a3b8;
-      line-height: 1.6;
-      margin-bottom: 16px;
+    .c4-number {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 4.8rem;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      background: linear-gradient(180deg, #ffffff 30%, #38bdf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 25px rgba(0, 210, 255, 0.45));
     }
 
-    .spec-features {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      font-size: 0.82rem;
-      color: #cbd5e1;
+    .c4-unit {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #2dd4bf;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
     }
 
-    .spec-features li {
+    .c4-mode-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.35em;
+      color: #64748b;
+      text-transform: uppercase;
+      margin-bottom: 28px;
       display: flex;
       align-items: center;
       gap: 8px;
     }
 
-    .spec-features li i {
-      color: #2dd4bf;
+    .c4-mode-label::before,
+    .c4-mode-label::after {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: rgba(0, 210, 255, 0.3);
     }
 
-    /* Simulation Website Section */
-    .dummy-website {
-      margin-top: 40px;
+    /* Audio / Frequency Equalizer Wave */
+    .c4-wave-bars {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      height: 38px;
+      margin-bottom: 24px;
+    }
+
+    .c4-wave-bar {
+      width: 4px;
+      background: linear-gradient(180deg, #00d2ff, #0047cc);
+      border-radius: 999px;
+      height: 6px;
+      transition: height 0.15s ease;
+      box-shadow: 0 0 6px rgba(0, 210, 255, 0.4);
+    }
+
+    .c4-logo-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #94a3b8;
+      letter-spacing: 0.15em;
+    }
+
+    .c4-mini-logo {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+    }
+
+    /* =========================================================================
+       CONCEPT 5: "Prism Glass Monolith" (Futuristic Floating Card)
+       ========================================================================= */
+    .c5-glass-card {
+      width: 320px;
+      padding: 32px 28px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), inset 0 0 25px rgba(0, 210, 255, 0.08);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.4s ease, border-color 0.4s ease;
+    }
+
+    .c5-glass-card::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: 24px;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(0, 210, 255, 0.5), transparent 40%, rgba(45, 212, 191, 0.5));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    .c5-glass-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .c5-logo {
+      width: 72px;
+      height: 72px;
+      object-fit: contain;
+      margin-bottom: 16px;
+      filter: drop-shadow(0 6px 20px rgba(0, 210, 255, 0.5));
+    }
+
+    .c5-card-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: 0.15em;
+      margin-bottom: 4px;
+    }
+
+    .c5-card-sub {
+      font-size: 0.75rem;
+      color: #64748b;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .c5-ring-pill {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(15, 23, 42, 0.6);
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .c5-pill-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #2dd4bf;
+      box-shadow: 0 0 10px #2dd4bf;
+      animation: dotBlink 1.4s ease-in-out infinite;
+    }
+
+    @keyframes dotBlink {
+      0%, 100% { opacity: 0.4; transform: scale(0.85); }
+      50% { opacity: 1; transform: scale(1.15); }
+    }
+
+    .c5-pill-text {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #cbd5e1;
+    }
+
+    /* Concept Detail & Comparison Grid */
+    .concept-breakdown {
+      margin-top: 36px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .breakdown-card {
       background: #090e1a;
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 16px;
-      padding: 30px;
-      text-align: center;
+      padding: 22px;
+      transition: all 0.25s ease;
+      cursor: pointer;
     }
 
-    .dummy-hero-title {
-      font-size: 1.8rem;
+    .breakdown-card:hover {
+      border-color: rgba(0, 210, 255, 0.4);
+      background: #0d1526;
+      transform: translateY(-2px);
+    }
+
+    .breakdown-card.selected {
+      border-color: #00d2ff;
+      background: linear-gradient(135deg, rgba(0, 71, 204, 0.15), rgba(15, 23, 42, 0.8));
+      box-shadow: 0 0 25px rgba(0, 210, 255, 0.15);
+    }
+
+    .bc-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .bc-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: rgba(0, 210, 255, 0.15);
+      color: #38bdf8;
+      font-size: 0.8rem;
       font-weight: 800;
-      color: #fff;
-      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .dummy-hero-desc {
-      font-size: 0.95rem;
+    .bc-status {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #2dd4bf;
+      background: rgba(45, 212, 191, 0.15);
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    .bc-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .bc-desc {
+      font-size: 0.82rem;
       color: #94a3b8;
-      max-width: 600px;
-      margin: 0 auto 20px;
+      line-height: 1.5;
+      margin-bottom: 16px;
     }
 
-    /* Responsive adjustments */
+    .bc-traits {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .trait-badge {
+      font-size: 0.7rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #cbd5e1;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    /* Fullscreen Modal Simulation */
+    .fs-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 999999;
+      background: #02050e;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .fs-overlay.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .fs-close-hint {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* Behind Website Mock for Fullscreen */
+    .fs-mock-site {
+      position: absolute;
+      inset: 0;
+      background: #040814;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+      z-index: 1;
+    }
+
+    .fs-mock-site h1 {
+      font-size: 2.8rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      color: #fff;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, #fff 0%, #38bdf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .fs-mock-site p {
+      font-size: 1.1rem;
+      color: #94a3b8;
+      max-width: 620px;
+      margin-bottom: 24px;
+    }
+
+    /* Responsive */
     @media (max-width: 768px) {
-      .preview-header {
+      .showroom-header {
         flex-direction: column;
         align-items: stretch;
       }
-      .header-actions {
+      .header-controls {
         justify-content: flex-start;
       }
-      .stage-wrapper {
-        height: 520px;
+      .stage-card {
+        height: 480px;
+      }
+      .c4-number {
+        font-size: 3.5rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- ================= TOP CONTROLLER ================= -->
-  <header class="preview-header">
-    <div class="header-branding">
-      <span class="brand-badge"><i class="bi bi-broadcast-pin"></i> 6 PILIHAN DESAIN</span>
+  <!-- Top Controller Header -->
+  <header class="showroom-header">
+    <div class="brand-group">
+      <span class="brand-pill"><i class="bi bi-gem"></i> Next-Gen 2026</span>
       <div>
-        <h1 class="preview-title">MITRAXCON Preloader Showroom</h1>
-        <p class="preview-subtitle">Pilih gaya preloader yang paling cocok untuk website MITRAXCON</p>
+        <h1 class="showroom-title">MITRAXCON Preloader Studio</h1>
+        <p class="showroom-subtitle">5 Konsep Baru: Mewah, Bersih, Cepat & Bebas Spinner Murahan</p>
       </div>
     </div>
 
-    <div class="header-actions">
-      <!-- Quick Action Buttons -->
-      <button class="btn btn-tab" onclick="replaySimulation()">
+    <div class="header-controls">
+      <button class="btn btn-action" onclick="replayActiveSimulation()">
         <i class="bi bi-arrow-clockwise"></i> Replay (0-100%)
       </button>
-      <button class="btn btn-trigger" onclick="testFullscreenModal()">
+      <button class="btn btn-action" onclick="toggleSpeed()">
+        <i class="bi bi-speedometer2"></i> <span id="speedTxt">Speed: Snappy (1.6s)</span>
+      </button>
+      <button class="btn btn-launch" onclick="launchFullscreenTest()">
         <i class="bi bi-arrows-fullscreen"></i> Test Fullscreen Reveal
       </button>
     </div>
   </header>
 
-  <!-- ================= MAIN CONTAINER ================= -->
-  <main class="preview-container">
+  <!-- Main Container -->
+  <main class="container">
 
-    <!-- Information Notification Banner -->
-    <div class="info-banner">
-      <div class="info-content">
-        <h2><i class="bi bi-palette-fill"></i> Koleksi 6 Konsep Preloader</h2>
+    <!-- Design Rationale -->
+    <div class="design-note">
+      <div>
+        <h2><i class="bi bi-stars" style="color: #38bdf8;"></i> Filosofi Desain Baru</h2>
         <p>
-          Klik tombol opsi 1 sampai 6 di bawah ini untuk melihat langsung animasi loading-nya secara real-time. Anda juga bisa mencoba transisi fullscreen untuk melihat saat website terbuka!
+          Meninggalkan animasi putaran/lingkaran biasa dan teks sci-fi yang ramai. 5 konsep baru ini mengadopsi standar Apple, Vercel & Stripe: minimalis obsidian, kilauan logam (metallic shimmer), laser fiber optic, dan transisi curtain shutter yang mulus.
         </p>
       </div>
       <div>
-        <button class="btn btn-tab" onclick="toggleAutoSpeed()">
-          <i class="bi bi-speedometer2"></i> <span id="speedLabel">Kecepatan: Normal (2.5s)</span>
-        </button>
+        <span style="font-size: 0.8rem; font-weight: 700; color: #38bdf8; background: rgba(0, 210, 255, 0.1); padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(0, 210, 255, 0.3);">
+          Direkomendasikan: Opsi 1 atau Opsi 3
+        </span>
       </div>
     </div>
 
-    <!-- Variant Selector Navigation Pills -->
-    <div class="variant-pills-bar">
-      <span class="pill-title">Pilih Opsi:</span>
-      <button class="btn btn-tab active" id="btnOpt1" onclick="switchVariant(1)">
-        <i class="bi bi-stars"></i> 1. Fiber Orbit (Brand)
+    <!-- Tab Selector -->
+    <div class="tab-pills" id="tabPills">
+      <button class="tab-pill active" onclick="selectConcept(1)" id="pill1">
+        <span class="tab-badge">01</span>
+        <span>Obsidian Shimmer (Apple/Vercel)</span>
       </button>
-      <button class="btn btn-tab" id="btnOpt4" onclick="switchVariant(4)">
-        <i class="bi bi-speedometer"></i> 2. Speedtest Gauge (1000 Mbps)
+      <button class="tab-pill" onclick="selectConcept(2)" id="pill2">
+        <span class="tab-badge">02</span>
+        <span>Fiber Laser Pulse (Speed Network)</span>
       </button>
-      <button class="btn btn-tab" id="btnOpt2" onclick="switchVariant(2)">
-        <i class="bi bi-radar"></i> 3. Cyber Radar Sonar
+      <button class="tab-pill" onclick="selectConcept(3)" id="pill3">
+        <span class="tab-badge">03</span>
+        <span>Curtain Shutter (Awwwards Studio)</span>
       </button>
-      <button class="btn btn-tab" id="btnOpt5" onclick="switchVariant(5)">
-        <i class="bi bi-water"></i> 4. Neon Liquid Wave
+      <button class="tab-pill" onclick="selectConcept(4)" id="pill4">
+        <span class="tab-badge">04</span>
+        <span>1000 Mbps Turbo Counter</span>
       </button>
-      <button class="btn btn-tab" id="btnOpt6" onclick="switchVariant(6)">
-        <i class="bi bi-fast-forward-circle"></i> 5. Hyperdrive Warp
-      </button>
-      <button class="btn btn-tab" id="btnOpt3" onclick="switchVariant(3)">
-        <i class="bi bi-circle-half"></i> 6. Frosted Glass Minimal
+      <button class="tab-pill" onclick="selectConcept(5)" id="pill5">
+        <span class="tab-badge">05</span>
+        <span>Prism Glass Monolith</span>
       </button>
     </div>
 
-    <!-- Stage Simulation Canvas -->
-    <div class="stage-wrapper" id="stageWrapper">
-      <div class="cyber-grid"></div>
-      <div class="ambient-glow"></div>
+    <!-- Active Stage Canvas -->
+    <div class="stage-card" id="stageCard">
+      <div class="ambient-aurora"></div>
+      <div class="subtle-grid"></div>
 
-      <!-- ================= OPTION 1: Fiber Pulse & Orbit (Brand Official) ================= -->
-      <div class="preloader-variant-1" id="variant1">
-        <div class="logo-orbit-container">
-          <div class="orbit-ring"><span class="orbit-dot"></span></div>
-          <div class="orbit-ring-reverse"></div>
-          <div class="emblem-box">
-            <svg class="emblem-svg" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="sig1" x1="0%" y1="100%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#14b8a6" />
-                  <stop offset="50%" stop-color="#2dd4bf" />
-                  <stop offset="100%" stop-color="#38bdf8" />
-                </linearGradient>
-              </defs>
-              <path class="wave-path wave-path-1" d="M 120 185 A 195 195 0 0 1 392 185" stroke="url(#sig1)" stroke-width="40" stroke-linecap="round" />
-              <path class="wave-path wave-path-2" d="M 166 245 A 130 130 0 0 1 346 245" stroke="url(#sig1)" stroke-width="36" stroke-linecap="round" />
-              <path class="wave-path wave-path-3" d="M 212 305 A 65 65 0 0 1 300 305" stroke="url(#sig1)" stroke-width="34" stroke-linecap="round" />
-              <circle class="core-dot-pulse" cx="256" cy="370" r="30" fill="#2dd4bf" />
-            </svg>
+      <!-- ================= CONCEPT 1 ================= -->
+      <div class="concept-view active" id="concept1">
+        <div class="c1-logo-wrapper">
+          <div class="c1-logo-halo"></div>
+          <img src="public/assets/logo-mitraxcon.png" onerror="this.src='src/assets/img/logo mitraxcon.png'" alt="MITRAXCON" class="c1-logo-img" />
+        </div>
+        <h2 class="c1-brand-title">MITRAXCON</h2>
+        <p class="c1-tagline">PT Mitraxcon Synergy Utama</p>
+        
+        <div class="c1-track">
+          <div class="c1-fill" id="c1Fill">
+            <span class="c1-photon"></span>
           </div>
         </div>
-
-        <h2 class="brand-title">MITRAXCON</h2>
-        <p class="brand-tagline">High-Speed Fiber Network</p>
-
-        <div class="progress-bar-container">
-          <div class="progress-bar-fill" id="barFill1" style="width: 25%;"></div>
-        </div>
-
-        <div class="telemetry-row">
-          <span class="status-msg" id="statusMsg1">
-            <i class="bi bi-arrow-repeat"></i> Inisialisasi Fiber Optic...
-          </span>
-          <span class="percentage-text" id="percentText1">25%</span>
+        <div class="c1-counter">
+          Connecting <span id="c1Num">0%</span>
         </div>
       </div>
 
-      <!-- ================= OPTION 4: Speedometer / Tachometer Speedtest ================= -->
-      <div class="preloader-variant-4" id="variant4">
-        <div style="font-size: 0.82rem; font-weight:700; color:#38bdf8; text-transform:uppercase; letter-spacing:1px; margin-bottom:12px;">
-          <i class="bi bi-speedometer2"></i> Speedtest Simulation
-        </div>
+      <!-- ================= CONCEPT 2 ================= -->
+      <div class="concept-view" id="concept2">
+        <div class="c2-beam-stage">
+          <img src="public/assets/logo-mitraxcon.png" onerror="this.src='src/assets/img/logo mitraxcon.png'" alt="MITRAXCON" class="c2-logo-emblem" />
+          <h2 style="font-size: 1.4rem; font-weight: 800; letter-spacing: 0.2em; color: #fff; margin-bottom: 2px;">MITRAXCON</h2>
+          <span style="font-size: 0.7rem; font-weight: 600; color: #38bdf8; letter-spacing: 0.25em; text-transform: uppercase;">Direct Fiber Optical Route</span>
 
-        <div class="gauge-wrapper">
-          <svg class="gauge-svg" viewBox="0 0 200 130">
-            <defs>
-              <linearGradient id="gaugeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#0047cc" />
-                <stop offset="50%" stop-color="#00d2ff" />
-                <stop offset="85%" stop-color="#2dd4bf" />
-                <stop offset="100%" stop-color="#ff3b30" />
-              </linearGradient>
-            </defs>
-            <!-- Background Arc (Radius 80, Arc from 150 deg to 390 deg) -->
-            <path class="gauge-bg-arc" d="M 25 110 A 80 80 0 1 1 175 110" />
-            <!-- Fill Arc -->
-            <path class="gauge-fill-arc" id="gaugeArc" d="M 25 110 A 80 80 0 1 1 175 110" />
-          </svg>
-          <!-- Needle -->
-          <div class="gauge-needle" id="gaugeNeedle"></div>
-          <div class="gauge-needle-hub"></div>
-        </div>
-
-        <div class="gauge-speed-display">
-          <span class="gauge-number" id="gaugeSpeedNum">250</span>
-          <span class="gauge-unit">Mbps</span>
-        </div>
-
-        <div class="speedtest-metrics">
-          <div class="metric-item">
-            <span class="metric-lbl">Ping</span>
-            <span class="metric-val">1 ms</span>
+          <div class="c2-horizontal-fiber">
+            <div class="c2-laser-beam"></div>
           </div>
-          <div class="metric-item">
-            <span class="metric-lbl">Jitter</span>
-            <span class="metric-val">0.2 ms</span>
-          </div>
-          <div class="metric-item">
-            <span class="metric-lbl">Bandwidth</span>
-            <span class="metric-val">1 Gbps</span>
-          </div>
-        </div>
 
-        <div class="telemetry-row" style="max-width: 320px;">
-          <span class="status-msg" id="statusMsg4">
-            <i class="bi bi-lightning-charge-fill"></i> Menguji Kecepatan Jalur...
-          </span>
-          <span class="percentage-text" id="percentText4">25%</span>
+          <div class="c1-track" style="width: 320px;">
+            <div class="c1-fill" id="c2Fill" style="background: linear-gradient(90deg, #00d2ff, #ffffff);">
+              <span class="c1-photon"></span>
+            </div>
+          </div>
+
+          <div class="c2-metrics-cluster">
+            <div class="c2-metric-box">
+              <span class="c2-metric-label">Latency</span>
+              <span class="c2-metric-val">1.2 ms</span>
+            </div>
+            <div class="c2-metric-box">
+              <span class="c2-metric-label">Bandwidth</span>
+              <span class="c2-metric-val" id="c2Bandwidth">10 Gbps</span>
+            </div>
+            <div class="c2-metric-box">
+              <span class="c2-metric-label">Integrity</span>
+              <span class="c2-metric-val" id="c2Percent">0%</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- ================= OPTION 2: Cyber Radar & Ping Telemetry ================= -->
-      <div class="preloader-variant-2" id="variant2">
-        <div class="radar-circle-wrap">
-          <div class="radar-ring-inner"></div>
-          <div class="radar-sweep"></div>
-          <div class="ping-beacon"></div>
-          <div class="radar-ring-core">
-            <i class="bi bi-router"></i>
-          </div>
+      <!-- ================= CONCEPT 3 ================= -->
+      <div class="concept-view" id="concept3" style="max-width: 100%; height: 100%; position: absolute; inset: 0;">
+        <!-- Behind website preview -->
+        <div class="c3-website-preview">
+          <h3 style="font-size: 2rem; font-weight: 900; margin-bottom: 8px;">Selamat Datang di MITRAXCON</h3>
+          <p style="color: #94a3b8; max-width: 480px;">Koneksi Internet Fiber Optik Tanpa Kompromi untuk Rumah & Korporasi.</p>
         </div>
 
-        <div class="radar-stats-grid">
-          <div class="radar-stat-box">
-            <div class="radar-stat-label">Latency</div>
-            <div class="radar-stat-val" id="radarLatency">1 ms</div>
+        <!-- Split shutter curtain -->
+        <div class="c3-curtain-container" id="c3Curtain">
+          <div class="c3-panel-top"></div>
+          <div class="c3-panel-bottom"></div>
+          
+          <div class="c3-center-hub">
+            <div class="c3-badge-brand">
+              <img src="public/assets/logo-mitraxcon.png" onerror="this.src='src/assets/img/logo mitraxcon.png'" alt="MITRAXCON" class="c3-brand-logo" />
+              <span class="c3-brand-text">MITRAXCON</span>
+            </div>
+            <div class="c3-progress-line">
+              <div class="c3-progress-fill" id="c3Fill"></div>
+            </div>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: #94a3b8; margin-top: 10px;" id="c3Num">0%</span>
           </div>
-          <div class="radar-stat-box">
-            <div class="radar-stat-label">Bandwidth</div>
-            <div class="radar-stat-val">1000 Mbps</div>
-          </div>
-          <div class="radar-stat-box">
-            <div class="radar-stat-label">Status</div>
-            <div class="radar-stat-val" style="color: #2dd4bf;">Active</div>
-          </div>
-        </div>
-
-        <div class="progress-bar-container">
-          <div class="progress-bar-fill" id="barFill2" style="width: 25%;"></div>
-        </div>
-
-        <div class="telemetry-row">
-          <span class="status-msg" id="statusMsg2">
-            <i class="bi bi-activity"></i> Sinkronisasi Frekuensi...
-          </span>
-          <span class="percentage-text" id="percentText2">25%</span>
         </div>
       </div>
 
-      <!-- ================= OPTION 5: Neon Liquid Wave Tank ================= -->
-      <div class="preloader-variant-5" id="variant5">
-        <div class="liquid-vessel">
-          <div class="liquid-wave" id="liquidWaveEl"></div>
-          <div class="vessel-icon-overlay">
-            <i class="bi bi-wifi"></i>
+      <!-- ================= CONCEPT 4 ================= -->
+      <div class="concept-view" id="concept4">
+        <div class="c4-turbo-hud">
+          <div class="c4-speed-display">
+            <span class="c4-number" id="c4SpeedNum">0</span>
+            <span class="c4-unit">Mbps</span>
           </div>
-        </div>
+          <div class="c4-mode-label">Ultra Broadband Link</div>
 
-        <div class="liquid-percentage-badge" id="percentText5">25%</div>
-        <h3 style="color:#ffffff; font-size:1.15rem; font-weight:800; letter-spacing:1px; margin-bottom:4px;">MITRAXCON FIBER</h3>
-        <p style="color:#94a3b8; font-size:0.8rem; margin-bottom:16px;" id="statusMsg5">Mengisi Buffer Konten...</p>
+          <div class="c4-wave-bars" id="c4WaveBars">
+            <!-- Dynamic Wave Bars -->
+          </div>
 
-        <div class="progress-bar-container" style="max-width: 300px;">
-          <div class="progress-bar-fill" id="barFill5" style="width: 25%;"></div>
+          <div class="c4-logo-row">
+            <img src="public/assets/logo-mitraxcon.png" onerror="this.src='src/assets/img/logo mitraxcon.png'" alt="MITRAXCON" class="c4-mini-logo" />
+            <span>MITRAXCON FIBER NETWORK</span>
+          </div>
         </div>
       </div>
 
-      <!-- ================= OPTION 6: Hyperdrive Warp Tunnel ================= -->
-      <div class="preloader-variant-6" id="variant6">
-        <div class="warp-portal-box">
-          <div class="warp-ray warp-ray-1"></div>
-          <div class="warp-ray warp-ray-2"></div>
-          <div class="warp-ray warp-ray-3"></div>
-          <div class="warp-ray warp-ray-4"></div>
-          <div class="warp-center-core">
-            <i class="bi bi-broadcast" style="font-size:2rem; color:#fff;"></i>
+      <!-- ================= CONCEPT 5 ================= -->
+      <div class="concept-view" id="concept5">
+        <div class="c5-glass-card">
+          <img src="public/assets/logo-mitraxcon.png" onerror="this.src='src/assets/img/logo mitraxcon.png'" alt="MITRAXCON" class="c5-logo" />
+          <h2 class="c5-card-title">MITRAXCON</h2>
+          <p class="c5-card-sub">Next-Gen Connectivity</p>
+
+          <div class="c1-track" style="width: 220px; margin-bottom: 20px;">
+            <div class="c1-fill" id="c5Fill">
+              <span class="c1-photon"></span>
+            </div>
           </div>
-        </div>
 
-        <h2 style="font-family:'Orbitron', monospace; font-size:1.6rem; font-weight:900; color:#fff; letter-spacing:2px; margin-bottom:4px; text-shadow:0 0 20px #00d2ff;">
-          HYPER-SPEED
-        </h2>
-        <p style="color:#38bdf8; font-size:0.8rem; letter-spacing:2px; text-transform:uppercase; margin-bottom:20px;">
-          Terhubung ke Jaringan MITRAXCON
-        </p>
-
-        <div class="progress-bar-container">
-          <div class="progress-bar-fill" id="barFill6" style="width: 25%;"></div>
-        </div>
-
-        <div class="telemetry-row">
-          <span class="status-msg" id="statusMsg6">
-            <i class="bi bi-fast-forward-fill"></i> Mengakselerasi Kecepatan...
-          </span>
-          <span class="percentage-text" id="percentText6">25%</span>
-        </div>
-      </div>
-
-      <!-- ================= OPTION 3: Frosted Glass Spinner ================= -->
-      <div class="preloader-variant-3" id="variant3">
-        <div class="glass-spinner-wrap">
-          <div class="glass-spinner"></div>
-          <div class="glass-logo-center">
-            <i class="bi bi-wifi"></i>
+          <div class="c5-ring-pill">
+            <span class="c5-pill-dot"></span>
+            <span class="c5-pill-text" id="c5Status">Sinkronisasi Jaringan... <b id="c5Num" style="color: #2dd4bf;">0%</b></span>
           </div>
-        </div>
-
-        <h3 style="color:#fff; font-size:1.2rem; margin-bottom: 4px; font-weight:700;">MITRAXCON</h3>
-        <p style="color:#94a3b8; font-size:0.8rem; margin-bottom: 18px;">Menyiapkan Layanan...</p>
-
-        <div class="progress-bar-container" style="margin-bottom: 12px;">
-          <div class="progress-bar-fill" id="barFill3" style="width: 25%;"></div>
-        </div>
-
-        <div class="telemetry-row">
-          <span class="status-msg" id="statusMsg3" style="font-size: 0.72rem;">Memuat modul...</span>
-          <span class="percentage-text" id="percentText3">25%</span>
         </div>
       </div>
 
     </div>
 
-    <!-- ================= SPECIFICATIONS & COMPARISON (6 CARDS) ================= -->
-    <div class="specs-grid">
+    <!-- Detailed Comparison Cards -->
+    <div class="concept-breakdown">
+      
       <!-- Card 1 -->
-      <div class="spec-card highlight" onclick="switchVariant(1)">
-        <span class="card-badge badge-teal">Opsi 1 • Rekomendasi Resmi</span>
-        <h3>1. Fiber Pulse & Orbit</h3>
-        <p>Memakai logo resmi wifi MITRAXCON dengan orbit kosmik ganda, laser sweep bar, dan telemetri inisialisasi jaringan fiber.</p>
-        <ul class="spec-features">
-          <li><i class="bi bi-check-circle-fill"></i> Sesuai 100% brand identity MITRAXCON</li>
-          <li><i class="bi bi-check-circle-fill"></i> Animasi stroke wifi dinamis</li>
-        </ul>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="spec-card" onclick="switchVariant(4)">
-        <span class="card-badge badge-amber">Opsi 2 • Tema ISP Speedtest</span>
-        <h3>2. Speedtest Tachometer</h3>
-        <p>Jarum speedometer analog yang melesat dari 0 hingga 1000 Mbps dengan odometer digital glow, ping 1ms, dan jitter 0.2ms.</p>
-        <ul class="spec-features">
-          <li><i class="bi bi-check-circle-fill"></i> Sangat identik dengan ISP & Internet Cepat</li>
-          <li><i class="bi bi-check-circle-fill"></i> Efek jarum dial bergerak dinamis</li>
-        </ul>
+      <div class="breakdown-card selected" onclick="selectConcept(1)" id="bCard1">
+        <div class="bc-header">
+          <span class="bc-num">01</span>
+          <span class="bc-status"><i class="bi bi-star-fill"></i> Best Choice</span>
+        </div>
+        <h3 class="bc-title">Obsidian Liquid Shimmer</h3>
+        <p class="bc-desc">
+          Gaya mewah Apple & Vercel. Hitam pekat, logo melayang dengan kilau cahaya metallic halus, dan garis hairline ultra-tipis. Sangat berkelas dan tidak melelahkan mata.
+        </p>
+        <div class="bc-traits">
+          <span class="trait-badge">Minimalist</span>
+          <span class="trait-badge">Metallic Sheen</span>
+          <span class="trait-badge">Zero Clutter</span>
+        </div>
       </div>
 
       <!-- Card 2 -->
-      <div class="spec-card" onclick="switchVariant(2)">
-        <span class="card-badge badge-primary">Opsi 3 • Tech Radar</span>
-        <h3>3. Cyber Radar Sonar</h3>
-        <p>Pemindaian sonar radar 360° yang berputar terus-menerus, titik beacon ping berdenyut, dan kartu live latency.</p>
-        <ul class="spec-features">
-          <li><i class="bi bi-check-circle-fill"></i> Nuansa teknologi monitoring NOC canggih</li>
-          <li><i class="bi bi-check-circle-fill"></i> Tampilan panel kartu statistik</li>
-        </ul>
-      </div>
-
-      <!-- Card 5 -->
-      <div class="spec-card" onclick="switchVariant(5)">
-        <span class="card-badge badge-teal">Opsi 4 • Modern Creative</span>
-        <h3>4. Neon Liquid Wave</h3>
-        <p>Wadah squircle transparan dengan ombak cairan neon biru-cyan yang terisi naik dari bawah 0% hingga 100% penuh.</p>
-        <ul class="spec-features">
-          <li><i class="bi bi-check-circle-fill"></i> Efek liquid fluid unik & memukau</li>
-          <li><i class="bi bi-check-circle-fill"></i> Ikon wifi tetap berada di tengah</li>
-        </ul>
-      </div>
-
-      <!-- Card 6 -->
-      <div class="spec-card" onclick="switchVariant(6)">
-        <span class="card-badge badge-rose">Opsi 5 • Sci-Fi Hyperdrive</span>
-        <h3>5. Hyperdrive Warp Tunnel</h3>
-        <p>Lorong warp speed kecepatan cahaya fiber optik dengan cincin energi zoom outward dan core logo bercahaya kuat.</p>
-        <ul class="spec-features">
-          <li><i class="bi bi-check-circle-fill"></i> Memberikan kesan kecepatan ekstrem</li>
-          <li><i class="bi bi-check-circle-fill"></i> Animasi 3D tunnel perspective</li>
-        </ul>
+      <div class="breakdown-card" onclick="selectConcept(2)" id="bCard2">
+        <div class="bc-header">
+          <span class="bc-num">02</span>
+          <span class="bc-status">Cinematic</span>
+        </div>
+        <h3 class="bc-title">Fiber Laser Pulse</h3>
+        <p class="bc-desc">
+          Fokus pada identitas Fiber Optic berkecepatan tinggi. Garis laser photon cyan melesat di tengah emblem dengan indikator metrik latensi 1.2ms.
+        </p>
+        <div class="bc-traits">
+          <span class="trait-badge">ISP Identity</span>
+          <span class="trait-badge">Photon Beam</span>
+          <span class="trait-badge">Low Latency</span>
+        </div>
       </div>
 
       <!-- Card 3 -->
-      <div class="spec-card" onclick="switchVariant(3)">
-        <span class="card-badge badge-purple">Opsi 6 • Minimalist</span>
-        <h3>6. Frosted Glass Minimal</h3>
-        <p>Desain glassmorphism elegan, ringan, bersih, dengan dual-tone rotating ring spinner.</p>
-        <ul class="spec-features">
-          <li><i class="bi bi-check-circle-fill"></i> Sangat clean & modern</li>
-          <li><i class="bi bi-check-circle-fill"></i> Paling ringan dan cepat</li>
-        </ul>
+      <div class="breakdown-card" onclick="selectConcept(3)" id="bCard3">
+        <div class="bc-header">
+          <span class="bc-num">03</span>
+          <span class="bc-status"><i class="bi bi-award"></i> Awwwards</span>
+        </div>
+        <h3 class="bc-title">Curtain Shutter Reveal</h3>
+        <p class="bc-desc">
+          Dua panel gelap terbelah ke atas dan bawah dengan transisi elastis saat 100%, langsung mengungkap halaman website di baliknya. Sangat dramatis!
+        </p>
+        <div class="bc-traits">
+          <span class="trait-badge">Split Shutter</span>
+          <span class="trait-badge">Cinematic Unveil</span>
+          <span class="trait-badge">Architectural</span>
+        </div>
       </div>
-    </div>
 
-    <!-- ================= SIMULATION HOMEPAGE ================= -->
-    <div class="dummy-website">
-      <div style="display: inline-flex; align-items: center; gap: 8px; color: #38bdf8; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">
-        <i class="bi bi-check2-circle"></i> Simulasi Halaman Web
+      <!-- Card 4 -->
+      <div class="breakdown-card" onclick="selectConcept(4)" id="bCard4">
+        <div class="bc-header">
+          <span class="bc-num">04</span>
+          <span class="bc-status">High Energy</span>
+        </div>
+        <h3 class="bc-title">1000 Mbps Turbo Counter</h3>
+        <p class="bc-desc">
+          Angka counter raksasa bergaya Speedtest yang melesat dari 0 hingga 1.000 Mbps disertai gelombang frekuensi equalizer neon. Langsung menunjukkan kekuatan bandwidth.
+        </p>
+        <div class="bc-traits">
+          <span class="trait-badge">Digital Odometer</span>
+          <span class="trait-badge">Soundwave</span>
+          <span class="trait-badge">1 Gbps Ready</span>
+        </div>
       </div>
-      <h2 class="dummy-hero-title">Internet Cepat & Handal Tanpa Batas</h2>
-      <p class="dummy-hero-desc">
-        Halaman web MITRAXCON akan otomatis muncul seketika setelah preloader mencapai 100% dan memudar (fade-out) secara halus.
-      </p>
-      <button class="btn btn-trigger" onclick="testFullscreenModal()">
-        <i class="bi bi-play-circle-fill"></i> Uji Coba Transisi Penuh (Fullscreen)
-      </button>
+
+      <!-- Card 5 -->
+      <div class="breakdown-card" onclick="selectConcept(5)" id="bCard5">
+        <div class="bc-header">
+          <span class="bc-num">05</span>
+          <span class="bc-status">Futuristic</span>
+        </div>
+        <h3 class="bc-title">Prism Glass Monolith</h3>
+        <p class="bc-desc">
+          Kartu kaca frosted 3D mengambang dengan border gradient holografik halus dan status bar modern berbentuk kapsul. Elegan dan futuristik.
+        </p>
+        <div class="bc-traits">
+          <span class="trait-badge">Glassmorphism</span>
+          <span class="trait-badge">3D Floating</span>
+          <span class="trait-badge">Holo Border</span>
+        </div>
+      </div>
+
     </div>
 
   </main>
 
-  <!-- ================= FULLSCREEN SIMULATOR MODAL ================= -->
-  <div class="fullscreen-overlay" id="fullscreenOverlay">
-    <button class="overlay-close-btn" onclick="closeFullscreen()">
-      <i class="bi bi-x-lg"></i> Tutup Preview (ESC)
+  <!-- ================= FULLSCREEN TEST MODAL ================= -->
+  <div class="fs-overlay" id="fsOverlay">
+    <button class="fs-close-hint" onclick="closeFullscreenTest()">
+      <i class="bi bi-x-lg"></i> Tutup Demo (ESC)
     </button>
-    <div id="overlayContent">
-      <!-- Cloned active variant will be inserted here -->
+
+    <!-- Mock Website in Background -->
+    <div class="fs-mock-site">
+      <h1>PT MITRAXCON SYNERGY UTAMA</h1>
+      <p>Koneksi Internet Fiber Optik Tanpa Hambatan untuk Rumah Tangga & Bisnis Enterprise di Seluruh Indonesia.</p>
+      <div style="display: flex; gap: 12px;">
+        <button class="btn btn-launch" style="padding: 12px 24px; font-size: 0.95rem;">Jelajahi Layanan</button>
+        <button class="btn btn-action" style="padding: 12px 24px; font-size: 0.95rem;">Hubungi Kami</button>
+      </div>
+    </div>
+
+    <!-- Active Fullscreen Preloader Container -->
+    <div id="fsPreloaderMount" style="position: absolute; inset: 0; z-index: 10; display: flex; align-items: center; justify-content: center; background: #030712; transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);">
+      <!-- Injected dynamically based on selected concept -->
     </div>
   </div>
 
-  <!-- ================= JAVASCRIPT LOGIC ================= -->
   <script>
-    let currentVariant = 1;
+    // State
+    let activeConcept = 1;
     let progress = 0;
-    let timer = null;
-    let speedMode = 1; // 1: normal, 2: fast, 3: cinematic slow
+    let animTimer = null;
+    let durationMs = 1600; // Snappy default
 
-    const statusTexts = [
-      "Menginisialisasi Fiber Gateway...",
-      "Menghubungkan ke Node MITRAXCON...",
-      "Mengoptimalkan Bandwidth Jalur...",
-      "Memeriksa Integritas Koneksi...",
-      "Koneksi Berhasil! Memuat Tampilan..."
-    ];
-
-    function switchVariant(num) {
-      currentVariant = num;
-
-      // Update button tabs
-      const pillIds = [1, 2, 3, 4, 5, 6];
-      pillIds.forEach(id => {
-        const btn = document.getElementById('btnOpt' + id);
-        if (btn) btn.classList.toggle('active', id === num);
-        const variantEl = document.getElementById('variant' + id);
-        if (variantEl) variantEl.style.display = id === num ? 'flex' : 'none';
-      });
-
-      // Update active highlight card
-      const cards = document.querySelectorAll('.spec-card');
-      cards.forEach((c, idx) => {
-        // card index mapping
-        c.classList.remove('highlight');
-      });
-
-      replaySimulation();
+    // Wave bars generator for concept 4
+    const waveContainer = document.getElementById('c4WaveBars');
+    const barCount = 28;
+    for (let i = 0; i < barCount; i++) {
+      const bar = document.createElement('div');
+      bar.className = 'c4-wave-bar';
+      waveContainer.appendChild(bar);
     }
 
-    function toggleAutoSpeed() {
-      speedMode = (speedMode % 3) + 1;
-      const label = document.getElementById('speedLabel');
-      if (speedMode === 1) label.innerText = "Kecepatan: Normal (2.5s)";
-      else if (speedMode === 2) label.innerText = "Kecepatan: Cepat (1.2s)";
-      else label.innerText = "Kecepatan: Slow-Mo (4.5s)";
-      replaySimulation();
-    }
-
-    function replaySimulation() {
-      if (timer) clearInterval(timer);
-      progress = 0;
-      updateUI(0);
-
-      const stepTime = speedMode === 1 ? 25 : (speedMode === 2 ? 12 : 45);
-
-      timer = setInterval(() => {
-        progress += 1;
-        if (progress > 100) {
-          progress = 100;
-          clearInterval(timer);
-          setTimeout(() => {
-            if (!document.getElementById('fullscreenOverlay').classList.contains('active')) {
-              replaySimulation();
-            } else {
-              const overlay = document.getElementById('fullscreenOverlay');
-              overlay.classList.add('fade-out');
-              setTimeout(() => {
-                overlay.classList.remove('active');
-                overlay.classList.remove('fade-out');
-              }, 700);
-            }
-          }, 600);
-        }
-        updateUI(progress);
-      }, stepTime);
-    }
-
-    function updateUI(val) {
-      // Bar fills for all variants
-      [1, 2, 3, 5, 6].forEach(id => {
-        const bar = document.getElementById('barFill' + id);
-        if (bar) bar.style.width = val + '%';
-        const pt = document.getElementById('percentText' + id);
-        if (pt) pt.innerText = val + '%';
-      });
-
-      // Status messages
-      let msgIdx = 0;
-      if (val < 20) msgIdx = 0;
-      else if (val < 50) msgIdx = 1;
-      else if (val < 75) msgIdx = 2;
-      else if (val < 95) msgIdx = 3;
-      else msgIdx = 4;
-
-      const st1 = document.getElementById('statusMsg1');
-      if (st1) st1.innerHTML = `<i class="bi bi-arrow-repeat"></i> ${statusTexts[msgIdx]}`;
-      const st2 = document.getElementById('statusMsg2');
-      if (st2) st2.innerHTML = `<i class="bi bi-activity"></i> ${statusTexts[msgIdx]}`;
-      const st3 = document.getElementById('statusMsg3');
-      if (st3) st3.innerText = statusTexts[msgIdx];
-      const st5 = document.getElementById('statusMsg5');
-      if (st5) st5.innerText = statusTexts[msgIdx];
-      const st6 = document.getElementById('statusMsg6');
-      if (st6) st6.innerHTML = `<i class="bi bi-fast-forward-fill"></i> ${statusTexts[msgIdx]}`;
-
-      // Variant 4: Speedometer calculations
-      const gaugeArc = document.getElementById('gaugeArc');
-      const gaugeNeedle = document.getElementById('gaugeNeedle');
-      const gaugeNum = document.getElementById('gaugeSpeedNum');
-      const pt4 = document.getElementById('percentText4');
-      if (pt4) pt4.innerText = val + '%';
-
-      if (gaugeArc && gaugeNeedle && gaugeNum) {
-        // Arc offset: max 380 (empty) to ~120 (full)
-        const maxOffset = 380;
-        const targetOffset = maxOffset - (val / 100) * 260;
-        gaugeArc.style.strokeDashoffset = targetOffset;
-
-        // Needle rotation: from -120deg (0%) to +120deg (100%)
-        const needleAngle = -120 + (val / 100) * 240;
-        gaugeNeedle.style.transform = `translateX(-50%) rotate(${needleAngle}deg)`;
-
-        // Calculate Mbps (0 -> 1000 Mbps)
-        const currentMbps = Math.round(val * 10);
-        gaugeNum.innerText = currentMbps;
-      }
-
-      // Variant 5: Liquid Wave height
-      const liquidWave = document.getElementById('liquidWaveEl');
-      if (liquidWave) {
-        liquidWave.style.height = val + '%';
-      }
-
-      // Radar latency jitter
-      const radarPing = document.getElementById('radarLatency');
-      if (radarPing && val % 10 === 0) {
-        radarPing.innerText = (Math.floor(Math.random() * 2) + 1) + ' ms';
-      }
-    }
-
-    function testFullscreenModal() {
-      const overlay = document.getElementById('fullscreenOverlay');
-      const overlayContent = document.getElementById('overlayContent');
+    // Switch Concept
+    function selectConcept(id) {
+      activeConcept = id;
       
-      overlayContent.innerHTML = '';
-      const activeEl = document.getElementById('variant' + currentVariant);
-      const clone = activeEl.cloneNode(true);
-      clone.style.display = 'flex';
-      overlayContent.appendChild(clone);
+      // Update Tab Pills
+      document.querySelectorAll('.tab-pill').forEach((pill, idx) => {
+        pill.classList.toggle('active', idx + 1 === id);
+      });
 
-      overlay.classList.remove('fade-out');
+      // Update Breakdown Cards
+      document.querySelectorAll('.breakdown-card').forEach((card, idx) => {
+        card.classList.toggle('selected', idx + 1 === id);
+      });
+
+      // Show Active Concept View
+      for (let i = 1; i <= 5; i++) {
+        const view = document.getElementById(`concept${i}`);
+        if (view) {
+          view.classList.toggle('active', i === id);
+        }
+      }
+
+      // Replay
+      replayActiveSimulation();
+    }
+
+    // Toggle Speed
+    function toggleSpeed() {
+      const label = document.getElementById('speedTxt');
+      if (durationMs === 1600) {
+        durationMs = 2600;
+        label.innerText = 'Speed: Normal (2.6s)';
+      } else if (durationMs === 2600) {
+        durationMs = 900;
+        label.innerText = 'Speed: Ultra Fast (0.9s)';
+      } else {
+        durationMs = 1600;
+        label.innerText = 'Speed: Snappy (1.6s)';
+      }
+      replayActiveSimulation();
+    }
+
+    // Animation runner
+    function replayActiveSimulation() {
+      if (animTimer) clearInterval(animTimer);
+      progress = 0;
+
+      // Reset Concept 3 shutter if opened
+      const curtain = document.getElementById('c3Curtain');
+      if (curtain) curtain.classList.remove('c3-open');
+
+      const intervalTime = 25;
+      const step = 100 / (durationMs / intervalTime);
+
+      animTimer = setInterval(() => {
+        progress += step;
+        if (progress >= 100) {
+          progress = 100;
+          clearInterval(animTimer);
+          onProgressComplete();
+        }
+        updateVisuals(progress);
+      }, intervalTime);
+    }
+
+    function updateVisuals(p) {
+      const rounded = Math.floor(p);
+
+      // C1
+      const c1Fill = document.getElementById('c1Fill');
+      const c1Num = document.getElementById('c1Num');
+      if (c1Fill && c1Num) {
+        c1Fill.style.width = `${p}%`;
+        c1Num.innerText = `${rounded}%`;
+      }
+
+      // C2
+      const c2Fill = document.getElementById('c2Fill');
+      const c2Percent = document.getElementById('c2Percent');
+      if (c2Fill && c2Percent) {
+        c2Fill.style.width = `${p}%`;
+        c2Percent.innerText = `${rounded}%`;
+      }
+
+      // C3
+      const c3Fill = document.getElementById('c3Fill');
+      const c3Num = document.getElementById('c3Num');
+      if (c3Fill && c3Num) {
+        c3Fill.style.width = `${p}%`;
+        c3Num.innerText = `${rounded}%`;
+      }
+
+      // C4 (Speedometer 0 - 1000 Mbps)
+      const c4SpeedNum = document.getElementById('c4SpeedNum');
+      if (c4SpeedNum) {
+        const mbpsVal = Math.floor(p * 10);
+        c4SpeedNum.innerText = mbpsVal.toLocaleString();
+
+        // Animate wave bars according to speed
+        const bars = document.querySelectorAll('.c4-wave-bar');
+        bars.forEach((bar, idx) => {
+          const ratio = (idx / barCount);
+          const intensity = Math.sin((p / 15) + (idx * 0.4)) * 0.5 + 0.5;
+          const height = 4 + (intensity * (p * 0.32));
+          bar.style.height = `${Math.min(height, 36)}px`;
+        });
+      }
+
+      // C5
+      const c5Fill = document.getElementById('c5Fill');
+      const c5Num = document.getElementById('c5Num');
+      if (c5Fill && c5Num) {
+        c5Fill.style.width = `${p}%`;
+        c5Num.innerText = `${rounded}%`;
+      }
+    }
+
+    function onProgressComplete() {
+      if (activeConcept === 3) {
+        // Trigger curtain opening
+        setTimeout(() => {
+          const curtain = document.getElementById('c3Curtain');
+          if (curtain) curtain.classList.add('c3-open');
+        }, 200);
+      }
+    }
+
+    // Launch Fullscreen Test
+    function launchFullscreenTest() {
+      const overlay = document.getElementById('fsOverlay');
+      const mount = document.getElementById('fsPreloaderMount');
       overlay.classList.add('active');
+      mount.style.opacity = '1';
+      mount.style.transform = 'scale(1)';
+      mount.style.pointerEvents = 'auto';
 
-      replaySimulation();
+      // Clone active concept content into fullscreen mount
+      mount.innerHTML = '';
+
+      if (activeConcept === 1) {
+        mount.innerHTML = `
+          <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+            <div class="c1-logo-wrapper">
+              <div class="c1-logo-halo"></div>
+              <img src="public/assets/logo-mitraxcon.png" onerror="this.src='src/assets/img/logo mitraxcon.png'" alt="MITRAXCON" class="c1-logo-img" style="width: 110px; height: 110px;" />
+            </div>
+            <h2 class="c1-brand-title" style="font-size: 2.4rem;">MITRAXCON</h2>
+            <p class="c1-tagline" style="font-size: 0.85rem; margin-bottom: 40px;">PT Mitraxcon Synergy Utama</p>
+            <div class="c1-track" style="width: 340px;">
+              <div class="c1-fill" id="fsC1Fill"><span class="c1-photon"></span></div>
+            </div>
+            <div class="c1-counter" style="font-size: 0.95rem;">Connecting <span id="fsC1Num">0%</span></div>
+          </div>
+        `;
+      } else if (activeConcept === 3) {
+        mount.innerHTML = `
+          <div class="c3-curtain-container" id="fsCurtain" style="pointer-events: auto;">
+            <div class="c3-panel-top"></div>
+            <div class="c3-panel-bottom"></div>
+            <div class="c3-center-hub">
+              <div class="c3-badge-brand" style="padding: 20px 48px;">
+                <img src="public/assets/logo-mitraxcon.png" onerror="this.src='src/assets/img/logo mitraxcon.png'" alt="MITRAXCON" class="c3-brand-logo" style="width: 54px; height: 54px;" />
+                <span class="c3-brand-text" style="font-size: 1.6rem;">MITRAXCON</span>
+              </div>
+              <div class="c3-progress-line" style="width: 280px; height: 4px;">
+                <div class="c3-progress-fill" id="fsC3Fill"></div>
+              </div>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; color: #94a3b8; margin-top: 14px;" id="fsC3Num">0%</span>
+            </div>
+          </div>
+        `;
+      } else if (activeConcept === 4) {
+        mount.innerHTML = `
+          <div class="c4-turbo-hud">
+            <div class="c4-speed-display">
+              <span class="c4-number" id="fsC4Num" style="font-size: 6rem;">0</span>
+              <span class="c4-unit" style="font-size: 1.8rem;">Mbps</span>
+            </div>
+            <div class="c4-mode-label" style="font-size: 0.85rem;">ULTRA BROADBAND FIBER LINK</div>
+            <div class="c4-logo-row" style="margin-top: 24px;">
+              <img src="public/assets/logo-mitraxcon.png" onerror="this.src='src/assets/img/logo mitraxcon.png'" alt="MITRAXCON" class="c4-mini-logo" style="width: 32px; height: 32px;" />
+              <span style="font-size: 1rem;">MITRAXCON FIBER NETWORK</span>
+            </div>
+          </div>
+        `;
+      } else if (activeConcept === 2) {
+        mount.innerHTML = `
+          <div class="c2-beam-stage">
+            <img src="public/assets/logo-mitraxcon.png" onerror="this.src='src/assets/img/logo mitraxcon.png'" alt="MITRAXCON" class="c2-logo-emblem" style="width: 120px; height: 120px;" />
+            <h2 style="font-size: 1.8rem; font-weight: 800; letter-spacing: 0.2em; color: #fff; margin-bottom: 4px;">MITRAXCON</h2>
+            <span style="font-size: 0.8rem; font-weight: 600; color: #38bdf8; letter-spacing: 0.25em;">High-Speed Dedicated Link</span>
+            <div class="c2-horizontal-fiber" style="max-width: 500px; margin: 36px 0;">
+              <div class="c2-laser-beam" style="width: 160px;"></div>
+            </div>
+            <div class="c1-track" style="width: 360px;">
+              <div class="c1-fill" id="fsC2Fill"><span class="c1-photon"></span></div>
+            </div>
+            <div style="font-family: 'JetBrains Mono', monospace; margin-top: 16px; color: #38bdf8; font-weight: 700;" id="fsC2Num">0%</div>
+          </div>
+        `;
+      } else {
+        mount.innerHTML = `
+          <div class="c5-glass-card" style="width: 360px; padding: 40px 32px;">
+            <img src="public/assets/logo-mitraxcon.png" onerror="this.src='src/assets/img/logo mitraxcon.png'" alt="MITRAXCON" class="c5-logo" style="width: 86px; height: 86px;" />
+            <h2 class="c5-card-title" style="font-size: 1.6rem;">MITRAXCON</h2>
+            <p class="c5-card-sub" style="font-size: 0.85rem; margin-bottom: 30px;">PT Mitraxcon Synergy Utama</p>
+            <div class="c1-track" style="width: 260px; margin-bottom: 24px;">
+              <div class="c1-fill" id="fsC5Fill"><span class="c1-photon"></span></div>
+            </div>
+            <div class="c5-ring-pill" style="padding: 8px 18px;">
+              <span class="c5-pill-dot"></span>
+              <span class="c5-pill-text">Memuat Sistem... <b id="fsC5Num" style="color: #2dd4bf;">0%</b></span>
+            </div>
+          </div>
+        `;
+      }
+
+      // Run fullscreen animation
+      let fsProgress = 0;
+      const fsTimer = setInterval(() => {
+        fsProgress += (100 / (durationMs / 25));
+        if (fsProgress >= 100) {
+          fsProgress = 100;
+          clearInterval(fsTimer);
+
+          // Animate transition reveal into mock website
+          setTimeout(() => {
+            if (activeConcept === 3) {
+              const curtain = document.getElementById('fsCurtain');
+              if (curtain) curtain.classList.add('c3-open');
+              setTimeout(() => {
+                mount.style.pointerEvents = 'none';
+              }, 900);
+            } else {
+              mount.style.opacity = '0';
+              mount.style.transform = 'scale(1.08)';
+              mount.style.pointerEvents = 'none';
+            }
+          }, 250);
+        }
+
+        // Update Fullscreen visual
+        const r = Math.floor(fsProgress);
+        const f1 = document.getElementById('fsC1Fill');
+        const n1 = document.getElementById('fsC1Num');
+        if (f1 && n1) { f1.style.width = `${fsProgress}%`; n1.innerText = `${r}%`; }
+
+        const f2 = document.getElementById('fsC2Fill');
+        const n2 = document.getElementById('fsC2Num');
+        if (f2 && n2) { f2.style.width = `${fsProgress}%`; n2.innerText = `${r}%`; }
+
+        const f3 = document.getElementById('fsC3Fill');
+        const n3 = document.getElementById('fsC3Num');
+        if (f3 && n3) { f3.style.width = `${fsProgress}%`; n3.innerText = `${r}%`; }
+
+        const n4 = document.getElementById('fsC4Num');
+        if (n4) { n4.innerText = Math.floor(fsProgress * 10).toLocaleString(); }
+
+        const f5 = document.getElementById('fsC5Fill');
+        const n5 = document.getElementById('fsC5Num');
+        if (f5 && n5) { f5.style.width = `${fsProgress}%`; n5.innerText = `${r}%`; }
+
+      }, 25);
     }
 
-    function closeFullscreen() {
-      const overlay = document.getElementById('fullscreenOverlay');
+    function closeFullscreenTest() {
+      const overlay = document.getElementById('fsOverlay');
       overlay.classList.remove('active');
-      overlay.classList.remove('fade-out');
     }
 
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeFullscreen();
+    // Escape key closes fullscreen
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeFullscreenTest();
     });
 
-    window.onload = () => {
-      replaySimulation();
-    };
+    // Start initial simulation
+    replayActiveSimulation();
   </script>
 </body>
 </html>

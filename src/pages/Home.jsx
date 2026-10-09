@@ -3,7 +3,14 @@ import { Link } from 'react-router-dom';
 import TechMarquee from '../components/TechMarquee';
 import PartnerSlider from '../components/PartnerSlider';
 import { blogPosts } from '../data/blogData';
+import heroSlide1 from '../assets/img/hero-slide-1.jpg';
+import heroSlide2 from '../assets/img/hero-slide-2.jpg';
+import heroSlide3 from '../assets/img/hero-slide-3.png';
+import banner1 from '../assets/img/banner-1.png';
+import banner2 from '../assets/img/banner-2.png';
+import banner3 from '../assets/img/banner-3.png';
 import '../assets/css/Home.css';
+import '../assets/css/Blog.css';
 
 const slides = [
   {
@@ -21,7 +28,7 @@ const slides = [
     secondaryBtnLink: '/contact',
     secondaryBtnIcon: 'bi-telephone-fill',
     visualType: 'speedometer',
-    bgImage: '/assets/hero-slide-1.jpg',
+    bgImage: heroSlide1,
   },
   {
     id: 2,
@@ -38,7 +45,7 @@ const slides = [
     secondaryBtnLink: '/services',
     secondaryBtnIcon: 'bi-geo-alt-fill',
     visualType: 'promo',
-    bgImage: '/assets/hero-slide-2.jpg',
+    bgImage: heroSlide2,
   },
   {
     id: 3,
@@ -55,16 +62,107 @@ const slides = [
     secondaryBtnLink: '/services',
     secondaryBtnIcon: 'bi-briefcase-fill',
     visualType: 'corporate',
-    bgImage: '/assets/hero-slide-3.png',
+    bgImage: heroSlide3,
+  },
+  {
+    id: 4,
+    badge: 'Internet Hemat & Koneksi Aman #1',
+    badgeIcon: 'bi-shield-check',
+    titlePrefix: 'Internet ',
+    highlight: 'Cepat & Hemat',
+    titleSuffix: ' untuk Generasi Digital',
+    subtitle: 'MITRAXCON menghadirkan koneksi internet fiber optic berkecepatan tinggi yang stabil dan aman untuk pelajar, generasi muda, dan keluarga. Bebas berkreasi dan belajar daring tanpa hambatan.',
+    primaryBtnText: 'Lihat Paket',
+    primaryBtnLink: '/services',
+    primaryBtnIcon: 'bi-grid-fill',
+    secondaryBtnText: 'Hubungi Kami',
+    secondaryBtnLink: '/contact',
+    secondaryBtnIcon: 'bi-telephone-fill',
+    visualType: 'banner',
+    bgImage: banner1,
+  },
+  {
+    id: 5,
+    badge: 'Home Broadband Pedesaan 🌾',
+    badgeIcon: 'bi-house-heart-fill',
+    titlePrefix: 'Koneksi ',
+    highlight: 'Unlimited Menembus',
+    titleSuffix: ' Pelosok Desa',
+    subtitle: 'Internet broadband desa dengan kecepatan tinggi, unlimited upload & download tanpa kuota FUP. Memberdayakan produktivitas warga dan kemajuan ekonomi lokal.',
+    primaryBtnText: 'Cek Paket Desa',
+    primaryBtnLink: '/services',
+    primaryBtnIcon: 'bi-rocket-takeoff-fill',
+    secondaryBtnText: 'Cek Area Jangkauan',
+    secondaryBtnLink: '/services',
+    secondaryBtnIcon: 'bi-geo-alt-fill',
+    visualType: 'banner',
+    bgImage: banner2,
+  },
+  {
+    id: 6,
+    badge: 'Pesisir & Maritim Nusantara 🌊',
+    badgeIcon: 'bi-water',
+    titlePrefix: 'Akses ',
+    highlight: 'Cepat Bebas FUP',
+    titleSuffix: ' Wilayah Pesisir',
+    subtitle: 'Jaringan andal dan stabil untuk masyarakat pesisir & nelayan nusantara. Nikmati akses tanpa batas untuk mempermudah komunikasi dan informasi maritim.',
+    primaryBtnText: 'Layanan Pesisir',
+    primaryBtnLink: '/services',
+    primaryBtnIcon: 'bi-compass-fill',
+    secondaryBtnText: 'Konsultasi Sales',
+    secondaryBtnLink: '/contact',
+    secondaryBtnIcon: 'bi-headset',
+    visualType: 'banner',
+    bgImage: banner3,
   },
 ];
 
 const services = [
-  { icon: 'bi-house-fill', title: 'Home Broadband', desc: 'Internet rumah super cepat hingga 1 Gbps dengan harga terjangkau dan koneksi stabil.' },
-  { icon: 'bi-building-fill', title: 'Business Internet', desc: 'Solusi internet bisnis dengan SLA terjamin, IP Publik, dan dukungan teknis prioritas.' },
-  { icon: 'bi-router-fill', title: 'WiFi Hotspot', desc: 'Sistem manajemen hotspot untuk kafe, hotel, dan area publik dengan dashboard lengkap.' },
-  { icon: 'bi-hdd-network-fill', title: 'Dedicated Internet', desc: 'Bandwidth dedicated simetris untuk kebutuhan data center dan enterprise.' },
-  { icon: 'bi-camera-video-fill', title: 'Cloud CCTV', desc: 'Rekam dan pantau CCTV dari mana saja melalui cloud dengan penyimpanan aman.' },
+  {
+    icon: 'bi-house-fill',
+    title: 'Home Broadband',
+    badge: 'Hingga 100 Mbps',
+    badgeType: 'default',
+    desc: 'Internet rumah super cepat berbasis fiber optic murni. Streaming 4K lancar, gaming online minim lag, dan WFH multi-perangkat tanpa gangguan.',
+    link: '/services',
+    size: 'lg',
+  },
+  {
+    icon: 'bi-building-fill',
+    title: 'Business Internet',
+    badge: '🔥 Terpopuler',
+    badgeType: 'popular',
+    desc: 'Solusi internet korporat dengan alokasi dedicated bandwidth 1:1 simetris, SLA uptime 99.9%, dan IP Publik Statis untuk operasional bisnis.',
+    link: '/services',
+    size: 'lg',
+  },
+  {
+    icon: 'bi-router-fill',
+    title: 'WiFi Hotspot',
+    badge: 'Multi-SSID',
+    badgeType: 'default',
+    desc: 'Sistem manajemen hotspot untuk kafe, hotel, dan area publik dengan voucher kustom dan dashboard monitoring real-time.',
+    link: '/services',
+    size: 'sm',
+  },
+  {
+    icon: 'bi-hdd-network-fill',
+    title: 'Dedicated Internet',
+    badge: 'Enterprise 1:1',
+    badgeType: 'enterprise',
+    desc: 'Koneksi dedicated simetris direct peering untuk data center, perbankan, dan enterprise dengan redundansi jalur ganda.',
+    link: '/services',
+    size: 'sm',
+  },
+  {
+    icon: 'bi-camera-video-fill',
+    title: 'Cloud CCTV',
+    badge: 'AI Smart Detect',
+    badgeType: 'default',
+    desc: 'Ekosistem pemantauan CCTV modern berbasis cloud. Rekam rekaman penting dan akses live-feed resolusi tinggi dari HP/laptop.',
+    link: '/services',
+    size: 'sm',
+  },
 ];
 
 const stats = [
@@ -475,23 +573,39 @@ const Home = () => {
       {/* ===== LAYANAN ===== */}
       <section className="services-preview">
         <div className="container">
-          <div className="section-header">
-            <span className="section-tag">Layanan Kami</span>
-            <h2 className="section-title">Solusi Internet Lengkap</h2>
-            <p className="section-subtitle">
-              Dari rumah hingga perusahaan, kami menyediakan solusi konektivitas yang tepat untuk setiap kebutuhan Anda.
-            </p>
+          {/* Split Header: Left Title + Right Description */}
+          <div className="services-split-header">
+            <div className="ssh-left">
+              <span className="section-tag">Layanan Kami</span>
+              <h2 className="section-title">Solusi Internet Lengkap</h2>
+            </div>
+            <div className="ssh-right">
+              <p className="section-subtitle">
+                Dari rumah hingga perusahaan, kami menyediakan solusi konektivitas yang tepat untuk setiap kebutuhan Anda.
+              </p>
+            </div>
           </div>
-          <div className="services-grid-home">
+          <div className="services-bento-grid">
             {services.map((s, i) => (
-              <div className="service-card-home" key={i}>
-                <div className="service-card-icon">
-                  <i className={`bi ${s.icon}`}></i>
+              <div
+                className={`service-card-home ${s.size === 'lg' ? 'bento-card-lg' : 'bento-card-sm'}`}
+                key={i}
+              >
+                <div className="service-card-top">
+                  <div className="service-card-icon">
+                    <i className={`bi ${s.icon}`}></i>
+                  </div>
+                  {s.badge && (
+                    <span className={`service-card-badge badge-${s.badgeType}`}>
+                      {s.badge}
+                    </span>
+                  )}
                 </div>
                 <h3>{s.title}</h3>
                 <p>{s.desc}</p>
-                <Link to="/services" className="service-link">
-                  Selengkapnya <i className="bi bi-arrow-right"></i>
+                <Link to={s.link} className="service-link">
+                  <span>Selengkapnya</span>
+                  <i className="bi bi-arrow-right"></i>
                 </Link>
               </div>
             ))}

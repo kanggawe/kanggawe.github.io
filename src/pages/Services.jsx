@@ -7,72 +7,188 @@ const services = [
     id: 1,
     icon: 'bi-house-fill',
     title: 'Home Broadband',
-    desc: 'Internet rumah super cepat berbasis fiber optic. Cocok untuk streaming 4K, gaming online, dan work from home tanpa gangguan.',
-    features: ['Kecepatan hingga 100 Mbps', 'WiFi Router gratis', 'Instalasi gratis', 'Support 24/7'],
+    tagline: 'Ultra-Reliable Fiber Connection',
+    metric: { value: '100 Mbps', label: 'Max Speed', note: 'Latensi Rendah & Bebas FUP' },
+    desc: 'Internet rumah super cepat berbasis fiber optic murni. Dioptimalkan untuk streaming 4K tanpa buffering, gaming online kompetitif minim lag, dan work from home multi-perangkat.',
+    features: [
+      'Kecepatan simetris hingga 100 Mbps',
+      'WiFi Router Dual Band Gigabit gratis',
+      'Bebas biaya instalasi & setting teknisi',
+      'Dukungan teknis responsif 24/7'
+    ],
     badge: null,
   },
   {
     id: 2,
     icon: 'bi-building-fill',
     title: 'Business Internet',
-    desc: 'Solusi internet korporat dengan jaminan SLA, IP Publik statis, dan dedicated bandwidth untuk operasional bisnis tanpa hambatan.',
-    features: ['Dedicated bandwidth', 'IP Publik statis', 'SLA 99.9%', 'Account manager khusus'],
+    tagline: 'Corporate-Grade Dedicated Network',
+    metric: { value: '99.9%', label: 'SLA Uptime', note: 'Dedicated 1:1 Simetris' },
+    desc: 'Solusi internet korporat dengan jaminan SLA uptime 99.9%, IP Publik statis gratis, dan alokasi dedicated bandwidth 1:1 untuk operasional bisnis tanpa hambatan.',
+    features: [
+      'Dedicated bandwidth simetris 1:1',
+      'Subnet IP Publik Statis gratis',
+      'Jaminan SLA Uptime 99.9% tertulis',
+      'Dedicated Account Manager & Tim NOC'
+    ],
     badge: 'Terpopuler',
   },
   {
     id: 3,
     icon: 'bi-router-fill',
     title: 'WiFi Hotspot',
-    desc: 'Sistem manajemen hotspot terintegrasi untuk hotel, kafe, kampus, dan area publik. Dashboard monitoring real-time.',
-    features: ['Portal login kustom', 'Manajemen bandwidth', 'Dashboard monitoring', 'Multi-lokasi'],
+    tagline: 'Public & Enterprise Access Control',
+    metric: { value: '1.000+', label: 'User Capacity', note: 'Multi-SSID & Voucher' },
+    desc: 'Sistem manajemen hotspot komprehensif untuk hotel, kafe, resto, kampus, dan area publik. Dilengkapi portal login kustom dan monitoring penggunaan real-time.',
+    features: [
+      'Custom Captive Portal & Brand Logo',
+      'Manajemen kuota & pembagian bandwidth',
+      'Dashboard monitoring analitik real-time',
+      'Dukungan multi-lokasi terintegrasi'
+    ],
     badge: null,
   },
   {
     id: 4,
     icon: 'bi-hdd-network-fill',
     title: 'Dedicated Internet',
-    desc: 'Koneksi internet dedicated simetris untuk data center, cloud computing, dan enterprise yang membutuhkan performa maksimal.',
-    features: ['Bandwidth simetris', 'Latensi ultra rendah', 'Redundansi ganda', 'NOC 24/7'],
+    tagline: 'Mission-Critical Direct Fiber Link',
+    metric: { value: '1 Gbps', label: 'Ultra Peering', note: 'Dual-Ring Redundant' },
+    desc: 'Koneksi dedicated direct fiber simetris untuk data center, perbankan, cloud computing, dan enterprise dengan redundansi jalur ganda serta routing terpendek.',
+    features: [
+      'Bandwidth 1:1 murni tanpa rasio bagi',
+      'Latensi ultra rendah ke IIX & OpenIXP',
+      'Redundansi jalur ganda (Dual-Ring)',
+      'Pemantauan proaktif tim NOC 24/7/365'
+    ],
     badge: 'Enterprise',
   },
   {
     id: 5,
     icon: 'bi-camera-video-fill',
     title: 'Cloud CCTV',
-    desc: 'Sistem pemantauan CCTV berbasis cloud. Rekam, simpan, dan akses video dari mana saja dengan penyimpanan aman di cloud.',
-    features: ['Penyimpanan cloud 30 hari', 'Akses remote via app', 'Motion detection', 'Notifikasi real-time'],
+    tagline: 'AI-Powered Smart Cloud Surveillance',
+    metric: { value: '2K/4K', label: 'Ultra HD Feed', note: 'Enkripsi Cloud AES-256' },
+    desc: 'Ekosistem pengawasan kamera keamanan modern berbasis cloud. Rekam kejadian penting, pantau live-feed resolusi tinggi dari HP/laptop, dan simpan secara aman di cloud.',
+    features: [
+      'Penyimpanan aman cloud hingga 30 hari',
+      'Akses pemantauan remote via smartphone',
+      'AI Smart Motion & Human Detection',
+      'Notifikasi peringatan instan real-time'
+    ],
     badge: null,
   },
 ];
 
-const plans = [
+const residentialPlans = [
   {
-    name: 'Starter',
+    name: 'Home Starter',
     price: 'Rp 99.000',
     period: '/bulan',
-    desc: 'Cocok untuk pengguna rumahan',
+    desc: 'Cocok untuk pengguna rumahan santai & 1-3 perangkat',
     speed: '20 Mbps',
-    features: ['Kecepatan hingga 20 Mbps', 'WiFi Router gratis', 'Instalasi gratis', 'Support via WhatsApp', '1 IP Publik (opsional)'],
+    badge: null,
+    features: [
+      'Kecepatan simetris hingga 20 Mbps',
+      'WiFi Router Dual Band gratis',
+      'Instalasi gratis 100%',
+      'Support via WhatsApp 24/7',
+      'Kuota Unlimited tanpa FUP',
+      'Ideal untuk browsing & media sosial',
+    ],
     cta: 'Pilih Paket',
     featured: false,
   },
   {
-    name: 'Professional',
+    name: 'Home Family',
     price: 'Rp 199.000',
     period: '/bulan',
-    desc: 'Ideal untuk keluarga & WFH',
+    desc: 'Paling favorit untuk keluarga, streaming 4K & WFH',
     speed: '50 Mbps',
-    features: ['Kecepatan hingga 50 Mbps', 'WiFi Router 5GHz gratis', 'Instalasi gratis', 'Support 24/7', 'IP Publik statis', 'SLA 99.5%'],
+    badge: 'Paling Populer',
+    features: [
+      'Kecepatan simetris hingga 50 Mbps',
+      'WiFi Router 5GHz Gigabit gratis',
+      'Instalasi gratis prioritas',
+      'Support prioritas 24/7',
+      'Streaming 4K & video call lancar',
+      'Optimal untuk 4–7 perangkat',
+    ],
     cta: 'Pilih Paket',
     featured: true,
   },
   {
-    name: 'Enterprise',
+    name: 'Home Ultra',
+    price: 'Rp 299.000',
+    period: '/bulan',
+    desc: 'Performa tinggi untuk gaming online & download cepat',
+    speed: '100 Mbps',
+    badge: 'Super Cepat',
+    features: [
+      'Kecepatan simetris hingga 100 Mbps',
+      'WiFi Router High-Gain 5GHz',
+      'Instalasi express 1x24 jam',
+      'Support prioritas 24/7',
+      'Ultra low-latency untuk gaming',
+      'Optimal untuk 8+ perangkat',
+    ],
+    cta: 'Pilih Paket',
+    featured: false,
+  },
+];
+
+const businessPlans = [
+  {
+    name: 'Business Lite',
     price: 'Rp 499.000',
     period: '/bulan',
-    desc: 'Untuk bisnis & profesional',
+    desc: 'Solusi internet handal untuk UMKM, ruko & kafe',
+    speed: '50 Mbps',
+    badge: null,
+    features: [
+      'Dedicated Bandwidth 1:1 Simetris',
+      'Router Gigabit WiFi Dual-Band',
+      '1 IP Publik Dinamis / Statis opsional',
+      'Jaminan SLA Uptime 99.5%',
+      'Sistem login hotspot tamu',
+      'Support prioritas via WhatsApp & NOC',
+    ],
+    cta: 'Pilih Paket',
+    featured: false,
+  },
+  {
+    name: 'Business Pro',
+    price: 'Rp 999.000',
+    period: '/bulan',
+    desc: 'Koneksi dedicated untuk kantor, startup & co-working',
     speed: '100 Mbps',
-    features: ['Kecepatan hingga 100 Mbps', 'Dedicated bandwidth', 'Instalasi prioritas', 'Account manager khusus', 'Multiple IP Publik', 'SLA 99.9% tertulis'],
+    badge: 'Paling Populer',
+    features: [
+      'Dedicated Bandwidth 1:1 Simetris',
+      'Router MikroTik Gigabit Enterprise',
+      '1 IP Publik Statis Gratis',
+      'Jaminan SLA Uptime 99.8%',
+      'Monitoring proaktif NOC 24/7',
+      'Dedicated Account Manager khusus',
+    ],
+    cta: 'Pilih Paket',
+    featured: true,
+  },
+  {
+    name: 'Enterprise Dedicated',
+    price: 'Rp 2.499.000',
+    period: '/bulan',
+    desc: 'Infrastruktur mission-critical korporasi & data center',
+    speed: 'Hingga 1 Gbps',
+    badge: 'Enterprise SLA',
+    features: [
+      'Pure Fiber Optic Dedicated 1:1',
+      'Subnet Multi IP Publik Statis (/29)',
+      'Jaminan SLA Uptime 99.9% Tertulis',
+      'Redundansi jalur Dual-Ring',
+      'BGP Peering & Direct Global Peering',
+      'Restitusi downtime & Tim NOC 24/7',
+    ],
     cta: 'Hubungi Sales',
     featured: false,
   },
@@ -80,6 +196,9 @@ const plans = [
 
 const Services = () => {
   const [activeService, setActiveService] = useState(0);
+  const [pricingCategory, setPricingCategory] = useState('residential');
+
+  const currentPlans = pricingCategory === 'residential' ? residentialPlans : businessPlans;
 
   return (
     <div className="services-page">
@@ -100,48 +219,122 @@ const Services = () => {
       </section>
 
       {/* ===== SERVICES TABS ===== */}
-      <section className="services-detail">
+      <section className="services-detail" id="services-overview">
         <div className="container">
-          {/* Tabs */}
-          <div className="service-tabs">
+          {/* Futuristic 5-Column Service Selector Grid */}
+          <div className="service-nav-grid" role="tablist" aria-label="Pilihan Layanan MITRAXCON">
             {services.map((s, i) => (
               <button
                 key={s.id}
-                className={`service-tab ${activeService === i ? 'active' : ''}`}
+                role="tab"
+                aria-selected={activeService === i}
+                className={`service-nav-card ${activeService === i ? 'active' : ''}`}
                 onClick={() => setActiveService(i)}
               >
-                <i className={`bi ${s.icon}`}></i>
-                <span>{s.title}</span>
-                {s.badge && <span className="tab-badge">{s.badge}</span>}
+                <div className="snc-header">
+                  <div className="snc-icon">
+                    <i className={`bi ${s.icon}`}></i>
+                  </div>
+                  {s.badge ? (
+                    <span className={`snc-badge ${s.badge === 'Terpopuler' ? 'badge-popular' : 'badge-enterprise'}`}>
+                      <i className={s.badge === 'Terpopuler' ? 'bi bi-fire' : 'bi bi-shield-fill-check'}></i>
+                      {s.badge}
+                    </span>
+                  ) : (
+                    <span className="snc-status-chip">
+                      <span className="snc-dot"></span>
+                      <span>Ready</span>
+                    </span>
+                  )}
+                </div>
+                <div className="snc-body">
+                  <h3 className="snc-title">{s.title}</h3>
+                  <span className="snc-metric">{s.metric?.value || 'Fiber Optic'}</span>
+                </div>
+                {activeService === i && <div className="snc-active-line"></div>}
               </button>
             ))}
           </div>
 
-          {/* Active Service Detail */}
+          {/* Active Service Detail Card */}
           <div className="service-detail-card">
-            <div className="sd-icon">
-              <i className={`bi ${services[activeService].icon}`}></i>
+            {/* Ambient Lighting & Holographic Grid Backgrounds */}
+            <div className="sd-card-ambient"></div>
+            <div className="sd-card-grid-layer"></div>
+
+            {/* Left Panel: Glowing Emblem + Holographic Spec HUD */}
+            <div className="sd-left-panel">
+              <div className="sd-icon-wrapper">
+                <div className="sd-icon-halo"></div>
+                <div className="sd-icon">
+                  <i className={`bi ${services[activeService].icon}`}></i>
+                </div>
+              </div>
+
+              {/* Spec HUD Telemetry Tile */}
+              {services[activeService].metric && (
+                <div className="sd-spec-hud">
+                  <div className="sd-hud-status">
+                    <span className="sd-hud-dot"></span>
+                    <span>JARINGAN AKTIF</span>
+                  </div>
+                  <div className="sd-hud-value">{services[activeService].metric.value}</div>
+                  <div className="sd-hud-label">{services[activeService].metric.label}</div>
+                  <div className="sd-hud-sub">{services[activeService].metric.note}</div>
+                </div>
+              )}
             </div>
+
+            {/* Right Panel: Content, Features Grid & Action Buttons */}
             <div className="sd-content">
               <div className="sd-header">
-                <h2>{services[activeService].title}</h2>
+                <div className="sd-header-titles">
+                  <div className="sd-pretitle">
+                    <i className="bi bi-broadcast-pin"></i>
+                    <span>{services[activeService].tagline}</span>
+                  </div>
+                  <h2>{services[activeService].title}</h2>
+                </div>
                 {services[activeService].badge && (
-                  <span className="sd-badge">{services[activeService].badge}</span>
+                  <span className={`sd-badge ${services[activeService].badge === 'Terpopuler' ? 'badge-popular' : 'badge-enterprise'}`}>
+                    <i className={services[activeService].badge === 'Terpopuler' ? 'bi bi-fire' : 'bi bi-shield-fill-check'}></i>
+                    {services[activeService].badge}
+                  </span>
                 )}
               </div>
-              <p>{services[activeService].desc}</p>
+
+              <p className="sd-description">{services[activeService].desc}</p>
+
+              {/* Futuristic Feature Chips */}
               <div className="sd-features">
                 {services[activeService].features.map((f, i) => (
-                  <div className="sd-feature" key={i}>
-                    <i className="bi bi-check2-circle"></i>
+                  <div className="sd-feature-chip" key={i}>
+                    <div className="sd-feature-icon">
+                      <i className="bi bi-check2"></i>
+                    </div>
                     <span>{f}</span>
                   </div>
                 ))}
               </div>
+
+              {/* Actions */}
               <div className="sd-actions">
-                <Link to="/contact" className="btn btn-primary">
-                  <i className="bi bi-telephone-fill"></i> Tanyakan Layanan Ini
+                <Link to="/contact" className="btn btn-primary sd-btn-main">
+                  <i className="bi bi-chat-dots-fill"></i>
+                  <span>Tanyakan Layanan Ini</span>
+                  <i className="bi bi-arrow-right"></i>
                 </Link>
+                <a
+                  href="#pricing"
+                  className="btn sd-btn-secondary"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
+                  <i className="bi bi-tag-fill"></i>
+                  <span>Lihat Paket Terkait</span>
+                </a>
               </div>
             </div>
           </div>
@@ -149,17 +342,52 @@ const Services = () => {
       </section>
 
       {/* ===== PRICING ===== */}
-      <section className="pricing-section">
+      <section className="pricing-section" id="pricing">
         <div className="container">
           <div className="section-header">
             <span className="section-tag">Paket Harga</span>
-            <h2 className="section-title">Pilih Paket yang Tepat</h2>
-            <p className="section-subtitle">Semua paket sudah termasuk instalasi gratis dan router WiFi. Tanpa biaya tersembunyi.</p>
+            <h2 className="section-title">
+              {pricingCategory === 'residential' ? 'Pilih Paket Rumahan Terbaik' : 'Pilih Solusi Internet Bisnis'}
+            </h2>
+            <p className="section-subtitle">
+              {pricingCategory === 'residential'
+                ? 'Internet rumah super cepat, kuota tanpa batas (unlimited tanpa FUP), dan instalasi gratis 100%.'
+                : 'Koneksi dedicated simetris 1:1 dengan jaminan SLA uptime tinggi dan IP publik statis untuk operasional bisnis.'}
+            </p>
+
+            {/* Toggle Kategori Rumahan & Bisnis */}
+            <div className="pricing-toggle-wrapper">
+              <div className="pricing-toggle-pill" role="tablist" aria-label="Kategori Paket Internet">
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected={pricingCategory === 'residential'}
+                  className={`pricing-toggle-btn ${pricingCategory === 'residential' ? 'active' : ''}`}
+                  onClick={() => setPricingCategory('residential')}
+                >
+                  <i className="bi bi-house-door-fill"></i>
+                  <span>Paket Rumahan</span>
+                  <span className="toggle-chip">Home</span>
+                </button>
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected={pricingCategory === 'business'}
+                  className={`pricing-toggle-btn ${pricingCategory === 'business' ? 'active' : ''}`}
+                  onClick={() => setPricingCategory('business')}
+                >
+                  <i className="bi bi-building-fill"></i>
+                  <span>Paket Bisnis</span>
+                  <span className="toggle-chip">Corporate</span>
+                </button>
+              </div>
+            </div>
           </div>
-          <div className="pricing-grid">
-            {plans.map((plan, i) => (
-              <div className={`pricing-card ${plan.featured ? 'featured' : ''}`} key={i}>
-                {plan.featured && <div className="featured-ribbon">Paling Populer</div>}
+
+          <div className="pricing-grid" key={pricingCategory}>
+            {currentPlans.map((plan, i) => (
+              <div className={`pricing-card ${plan.featured ? 'featured' : ''}`} key={`${pricingCategory}-${i}`}>
+                {plan.badge && <div className="featured-ribbon">{plan.badge}</div>}
                 <div className="pricing-header">
                   <h3>{plan.name}</h3>
                   <p className="pricing-desc">{plan.desc}</p>
@@ -191,7 +419,11 @@ const Services = () => {
           </div>
           <p className="pricing-note">
             <i className="bi bi-info-circle-fill"></i>
-            Harga belum termasuk PPN 11%. Untuk kebutuhan custom atau paket enterprise, <Link to="/contact">hubungi tim sales kami</Link>.
+            {pricingCategory === 'residential' ? (
+              <>Harga sudah termasuk router WiFi. Harga belum termasuk PPN 11%. Butuh paket khusus? <Link to="/contact">Konsultasi dengan tim sales kami</Link>.</>
+            ) : (
+              <>Harga paket bisnis belum termasuk PPN 11%. Tersedia SLA kustom dan kontrak fleksibel, <Link to="/contact">hubungi tim corporate sales kami</Link>.</>
+            )}
           </p>
         </div>
       </section>

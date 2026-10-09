@@ -207,7 +207,7 @@ const RootLayout = () => {
                 />
                 <span>MITRAXCON</span>
               </div>
-              <p className="footer-company-legal">PT Mitraxcon Synergy Utama</p>
+              <p className="footer-company-legal">PT MITRAXCON SYNERGY UTAMA</p>
               <p className="footer-tagline">Penyedia Jasa Akses Internet (ISP) Berlisensi Resmi Kominfo RI & Anggota APJII.</p>
               <div className="footer-contacts">
                 <div className="footer-contact-item">
@@ -241,11 +241,11 @@ const RootLayout = () => {
               <div className="footer-links-group">
                 <h4 className="footer-heading">Legal & Sertifikasi</h4>
                 <ul>
-                  <li><a href="#">Izin Kominfo RI</a></li>
-                  <li><a href="#">Keanggotaan APJII</a></li>
-                  <li><a href="#">Sertifikasi ISO 27001</a></li>
-                  <li><a href="#">Kebijakan Privasi</a></li>
-                  <li><a href="#">SLA Service Level Agreement</a></li>
+                  <li><Link to="/legal#kominfo">Izin Kominfo RI</Link></li>
+                  <li><Link to="/legal#apjii">Keanggotaan APJII</Link></li>
+                  <li><Link to="/legal#iso">Sertifikasi ISO 27001</Link></li>
+                  <li><Link to="/legal#privacy">Kebijakan Privasi</Link></li>
+                  <li><Link to="/legal#sla">SLA Service Level Agreement</Link></li>
                 </ul>
               </div>
             </div>

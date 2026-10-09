@@ -8,8 +8,9 @@ import Blog from './pages/Blog';
 import BlogDetail from './pages/BlogDetail';
 import Contact from './pages/Contact';
 import CustomerPortal from './pages/CustomerPortal';
+import Legal from './pages/Legal';
 import NotFound from './pages/NotFound';
-import Preloader from './components/Preloader';
+// import Preloader from './components/Preloader';
 
 // Error Boundary Component
 const ErrorBoundary = () => {
@@ -87,6 +88,18 @@ const router = createBrowserRouter([
         element: <CustomerPortal />
       },
       {
+        path: 'legal',
+        element: <Legal />
+      },
+      {
+        path: 'privacy-policy',
+        element: <Legal />
+      },
+      {
+        path: 'sla',
+        element: <Legal />
+      },
+      {
         path: '*',
         element: <NotFound />
       }
@@ -101,7 +114,7 @@ const router = createBrowserRouter([
 function App() {
   return (
     <ThemeProvider>
-      <Preloader />
+      {/* <Preloader /> */}
       <RouterProvider router={router} />
     </ThemeProvider>
   );

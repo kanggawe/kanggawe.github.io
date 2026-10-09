@@ -134,26 +134,143 @@ const About = () => {
       {/* ===== INFRASTRUKTUR TEKNOLOGI MARQUEE SECTION ===== */}
       <TechMarquee />
 
-      {/* ===== VISI MISI ===== */}
+      {/* ===== VISI MISI FUTURISTIK ===== */}
       <section className="vision-mission">
-        <div className="container">
-          <div className="vm-grid">
-            <div className="vm-card vm-vision">
-              <div className="vm-icon"><i className="bi bi-eye-fill"></i></div>
-              <h2>Visi Perusahaan</h2>
-              <p>
-                Menjadi penyedia infrastruktur konektivitas digital terdepan di Indonesia yang dipercaya oleh jutaan keluarga dan korporasi melalui kualitas jaringan super cepat, inovatif, dan berstandar internasional.
-              </p>
+        <div className="vm-bg-effects" aria-hidden="true">
+          <div className="vm-ambient-orb orb-1"></div>
+          <div className="vm-ambient-orb orb-2"></div>
+          <div className="vm-grid-lines"></div>
+        </div>
+
+        <div className="container vm-container">
+          <div className="vm-header">
+            <div className="vm-tag">
+              <span className="vm-tag-dot"></span>
+              <span>// STRATEGIC ORIENTATION 2030</span>
             </div>
-            <div className="vm-card vm-mission">
-              <div className="vm-icon"><i className="bi bi-bullseye"></i></div>
-              <h2>Misi Perusahaan</h2>
-              <ul>
-                <li><i className="bi bi-check2-circle"></i> Membangun jaringan kabel serat optik yang handal hingga ke penjuru Nusantara.</li>
-                <li><i className="bi bi-check2-circle"></i> Memberikan jaminan SLA 99.9% dan latensi ultra rendah untuk kebutuhan bisnis.</li>
-                <li><i className="bi bi-check2-circle"></i> Mengedepankan pelayanan pelanggan responsif 24 jam sehari, 7 hari seminggu.</li>
-                <li><i className="bi bi-check2-circle"></i> Menjaga keamanan data & jaringan konsumen dengan sertifikasi ISO 27001.</li>
-              </ul>
+            <h2 className="vm-title">
+              Kompas <span className="vm-title-highlight">Visi &amp; Misi</span> MITRAXCON
+            </h2>
+            <p className="vm-subtitle">
+              Pondasi fundamental dan peta jalan strategis kami dalam menghadirkan revolusi konektivitas fiber optik tanpa batas ke setiap jengkal Nusantara.
+            </p>
+          </div>
+
+          <div className="vm-grid">
+            {/* CARD 1: VISI */}
+            <div className="vm-card vm-card-vision">
+              <div className="vm-card-corner top-left"></div>
+              <div className="vm-card-corner top-right"></div>
+              <div className="vm-card-corner bottom-left"></div>
+              <div className="vm-card-corner bottom-right"></div>
+
+              <div className="vm-card-hud-bar">
+                <span className="vm-hud-badge">
+                  <i className="bi bi-compass-fill"></i> LONG-TERM VISION
+                </span>
+                <span className="vm-hud-status">
+                  <span className="pulse-ping"></span> EST. HORIZON
+                </span>
+              </div>
+
+              <div className="vm-hero-icon-wrap">
+                <div className="vm-icon-ambient"></div>
+                <div className="vm-icon-box vision-icon">
+                  <i className="bi bi-eye-fill"></i>
+                </div>
+                <div className="vm-icon-label">
+                  <span className="vm-label-sub">CORE DIRECTION</span>
+                  <h3 className="vm-card-heading">Visi Perusahaan</h3>
+                </div>
+              </div>
+
+              <div className="vm-vision-statement">
+                <div className="vm-quote-mark" aria-hidden="true">“</div>
+                <p className="vm-vision-text">
+                  Menjadi penyedia infrastruktur konektivitas digital terdepan di Indonesia yang dipercaya oleh jutaan keluarga dan korporasi melalui kualitas jaringan super cepat, inovatif, dan berstandar internasional.
+                </p>
+              </div>
+
+              <div className="vm-metrics-row">
+                <div className="vm-metric-pill">
+                  <i className="bi bi-lightning-charge-fill"></i>
+                  <span>Super Cepat</span>
+                </div>
+                <div className="vm-metric-pill">
+                  <i className="bi bi-shield-lock-fill"></i>
+                  <span>Global Standard</span>
+                </div>
+                <div className="vm-metric-pill">
+                  <i className="bi bi-globe2"></i>
+                  <span>Skala Nasional</span>
+                </div>
+              </div>
+            </div>
+
+            {/* CARD 2: MISI */}
+            <div className="vm-card vm-card-mission">
+              <div className="vm-card-corner top-left"></div>
+              <div className="vm-card-corner top-right"></div>
+              <div className="vm-card-corner bottom-left"></div>
+              <div className="vm-card-corner bottom-right"></div>
+
+              <div className="vm-card-hud-bar">
+                <span className="vm-hud-badge mission-badge">
+                  <i className="bi bi-bullseye"></i> STRATEGIC EXECUTION
+                </span>
+                <span className="vm-hud-status">
+                  <span className="pulse-ping ping-emerald"></span> 4 PILLARS
+                </span>
+              </div>
+
+              <div className="vm-hero-icon-wrap">
+                <div className="vm-icon-ambient mission-ambient"></div>
+                <div className="vm-icon-box mission-icon">
+                  <i className="bi bi-crosshair"></i>
+                </div>
+                <div className="vm-icon-label">
+                  <span className="vm-label-sub">ACTION FRAMEWORK</span>
+                  <h3 className="vm-card-heading">Misi Perusahaan</h3>
+                </div>
+              </div>
+
+              <div className="vm-mission-list">
+                <div className="vm-mission-item">
+                  <div className="vm-item-index">01</div>
+                  <div className="vm-item-content">
+                    <h4>Infrastruktur Nusantara</h4>
+                    <p>Membangun jaringan kabel serat optik yang handal hingga ke penjuru Nusantara.</p>
+                  </div>
+                  <i className="bi bi-check2-circle vm-item-check"></i>
+                </div>
+
+                <div className="vm-mission-item">
+                  <div className="vm-item-index">02</div>
+                  <div className="vm-item-content">
+                    <h4>SLA 99.9% &amp; Latensi Ultra Rendah</h4>
+                    <p>Memberikan jaminan SLA 99.9% dan latensi ultra rendah untuk kebutuhan bisnis.</p>
+                  </div>
+                  <i className="bi bi-check2-circle vm-item-check"></i>
+                </div>
+
+                <div className="vm-mission-item">
+                  <div className="vm-item-index">03</div>
+                  <div className="vm-item-content">
+                    <h4>Layanan Responsif 24/7</h4>
+                    <p>Mengedepankan pelayanan pelanggan responsif 24 jam sehari, 7 hari seminggu.</p>
+                  </div>
+                  <i className="bi bi-check2-circle vm-item-check"></i>
+                </div>
+
+                <div className="vm-mission-item">
+                  <div className="vm-item-index">04</div>
+                  <div className="vm-item-content">
+                    <h4>Keamanan Sertifikasi ISO 27001</h4>
+                    <p>Menjaga keamanan data &amp; jaringan konsumen dengan standar sertifikasi ISO 27001.</p>
+                  </div>
+                  <i className="bi bi-check2-circle vm-item-check"></i>
+                </div>
+              </div>
             </div>
           </div>
         </div>

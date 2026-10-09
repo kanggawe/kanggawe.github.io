@@ -472,7 +472,9 @@
 /* ===== SIDEBAR ===== */
 .article-sidebar {
   position: sticky;
-  top: 90px;
+  top: 96px;
+  align-self: start;
+  z-index: 10;
 }
 
 .sidebar-widget {
